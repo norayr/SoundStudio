@@ -466,6 +466,7 @@ proc parse_sox { filename } {
 	signed	 { set style {s s}}
 	u-law	 { set style {U u}}
 	a-law	 { set style {A u}}
+	adpcm    { set style {a s}}
    }
 
 #FC if the input file is raw use the actual parameter set
@@ -478,6 +479,7 @@ proc parse_sox { filename } {
 		u	{ set style {u u}}
 		U	{ set style {U u}}
 		A	{ set style {A u}}
+		a       { set style {a s}}
 	}
 	set size	$SAMPLE(size)
 	set format	$SAMPLE(format)
