@@ -279,6 +279,7 @@ case $1 in
                       $dirToSave/SunOS \
                       $dirToSave/SoundStudio.wmconfig \
                       $dirToSave/DOCS ; \
+                      $dirToSave/TODO ; \
                       printf "*** Compressing tar file...\n" ; \
               gzip -9 $TARFILENAME)
              printf "*** Finished Backup.\n"
