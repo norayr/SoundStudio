@@ -410,6 +410,10 @@ The final step is,
 
 3. Please Wait! It usually takes a little time for /iSound /iStudio to insert the samples. The wait depends on the size of the current sample. The mouse pointer will take on the shape of a watch until /iSound /iStudio has completed the insertion.
 
+/C1/tInserting Silence
+
+It is possible to insert a period of silence into a recording without otherwise changing the contents of the file.  If the Insert Silence option is chosen from the edit menu when a range is selected, an equal period of silence is inserted into the file at that point.
+
 /C1/tZoom and Magnify.
 Once an area has been marked it can be expanded to fill the full window. This may be done by using the Zoom Level object. This object consists of two triangular buttons with a number label in the middle.
 
