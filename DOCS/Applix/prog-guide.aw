@@ -1,104 +1,142 @@
-*BEGIN WORDS VERSION=430/320 ENCODING=7BIT
+*BEGIN WORDS VERSION=442/320 ENCODING=7BIT
 <Applix Words>
 <Globals levelIndent:0 hyphMethod:0 headerMargin:500 footerMargin:500 changeBar\
  Pos:0>
 <start_styles>
 <style "Normal" nextStyle "Normal" no-pageBreak no-keepWith no-block justifyFul\
  l indentToLevel spellcheck firstIndent:0 leftIndent:0 rightIndent:0 lineSpacin\
- g:0 preParaSpacing:0 postParaSpacing:83 level:0 hyphZone:0 hyphMinFrag:0  no-b\
- old no-italic no-strikethru no-hidden no-caps no-underline hyphenate color:"Bl\
- ack" face:"Arial" size:12 position:0 tag:""  lB:0:0:"" rB:0:0:"" tB:0:0:"" bB:\
- 0:0:"" hB:0:0:"" vB:0:0:"" shading:18:"":"":"" horizontalMargin:0 verticalMarg\
- in:0 dropShadow:0  localTabs  noFrame  >
+ g:0 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpaci\
+ ngSep:0 preParaSpacing:0 postParaSpacing:83 level:0 hyphZone:0 hyphMinFrag:0  \
+ no-bold no-italic no-strikethru no-hidden no-caps no-underline hyphenate color\
+ :"Black" face:"Arial" size:12 position:0 tag:""  lB:0:0:"" rB:0:0:"" tB:0:0:""\
+  bB:0:0:"" hB:0:0:"" vB:0:0:"" shading:18:"":"":"" horizontalMargin:0 vertical\
+ Margin:0 dropShadow:0  localTabs  noFrame  >
 <style "toc 3" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:985\
-  leftIndent:985 rightIndent:590 level:0  size:10  localTabs lT:5906:"." rT:600\
- 0  >
+  leftIndent:985 rightIndent:590 lineSpacingMode2:6 lineSpacingMode:0 lineSpaci\
+ ngCountHeight:1000 lineSpacingSep:0 level:0  size:10  localTabs lT:5906:"." rT\
+ :6000  >
 <style "toc 2" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:500\
-  leftIndent:500 rightIndent:500 level:0  size:10  localTabs lT:5750:"." rT:600\
- 0  >
+  leftIndent:500 rightIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpaci\
+ ngCountHeight:1000 lineSpacingSep:0 level:0  size:10  localTabs lT:5750:"." rT\
+ :6000  >
 <style "toc 1" parent "Normal" nextStyle "Normal" indentToLevel rightIndent:590\
-  level:0  bold italic capitals size:13  localTabs lT:5906:"." rT:6000  >
+  lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingS\
+ ep:0 level:0  bold italic capitals size:13  localTabs lT:5906:"." rT:6000  >
 <style "index 7" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:1\
- 500 leftIndent:1500 level:0  size:10  >
+ 500 leftIndent:1500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeigh\
+ t:1000 lineSpacingSep:0 level:0  size:10  >
 <style "index 6" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:1\
- 250 leftIndent:1250 level:0  size:10  >
+ 250 leftIndent:1250 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeigh\
+ t:1000 lineSpacingSep:0 level:0  size:10  >
 <style "index 5" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:1\
- 000 leftIndent:1000 level:0  size:10  >
+ 000 leftIndent:1000 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeigh\
+ t:1000 lineSpacingSep:0 level:0  size:10  >
 <style "index 4" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:7\
- 50 leftIndent:750 level:0  size:10  >
+ 50 leftIndent:750 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:\
+ 1000 lineSpacingSep:0 level:0  size:10  >
 <style "index 3" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:5\
- 00 leftIndent:500 level:0  size:10  >
+ 00 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:\
+ 1000 lineSpacingSep:0 level:0  size:10  >
 <style "index 2" parent "Normal" nextStyle "Normal" indentToLevel firstIndent:2\
- 50 leftIndent:250 level:0  size:10  >
-<style "index 1" parent "Normal" nextStyle "Normal" indentToLevel level:0  size\
- :10  >
-<style "line number" parent "Normal" nextStyle "Normal" indentToLevel level:0  \
+ 50 leftIndent:250 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:\
+ 1000 lineSpacingSep:0 level:0  size:10  >
+<style "index 1" parent "Normal" nextStyle "Normal" indentToLevel lineSpacingMo\
+ de2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level:0  \
  size:10  >
-<style "index heading" parent "Normal" nextStyle "index 1" indentToLevel level:\
- 0  size:10  >
-<style "footer" parent "Normal" nextStyle "footer" indentToLevel level:0  local\
- Tabs cT:3000 rT:6000  >
-<style "header" parent "Normal" nextStyle "header" indentToLevel level:0  local\
- Tabs cT:3000 rT:6000  >
-<style "footnote reference" parent "Normal" nextStyle "Normal" indentToLevel le\
- vel:0  size:8 position:3  >
+<style "line number" parent "Normal" nextStyle "Normal" indentToLevel lineSpaci\
+ ngMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level\
+ :0  size:10  >
+<style "index heading" parent "Normal" nextStyle "index 1" indentToLevel lineSp\
+ acingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 le\
+ vel:0  size:10  >
+<style "footer" parent "Normal" nextStyle "footer" indentToLevel lineSpacingMod\
+ e2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level:0  l\
+ ocalTabs cT:3000 rT:6000  >
+<style "header" parent "Normal" nextStyle "header" indentToLevel lineSpacingMod\
+ e2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level:0  l\
+ ocalTabs cT:3000 rT:6000  >
+<style "footnote reference" parent "Normal" nextStyle "Normal" indentToLevel li\
+ neSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:\
+ 0 level:0  size:8 position:3  >
 <style "footnote text" parent "Normal" nextStyle "footnote text" indentToLevel \
- leftIndent:78 level:0  size:10  >
+ leftIndent:78 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000\
+  lineSpacingSep:0 level:0  size:10  >
 <style "heading 9" parent "Normal" nextStyle "Normal indent" indentToLevel firs\
- tIndent:500 leftIndent:500 level:0  italic size:10  >
+ tIndent:500 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCou\
+ ntHeight:1000 lineSpacingSep:0 level:0  italic size:10  >
 <style "heading 8" parent "Normal" nextStyle "Normal indent" indentToLevel firs\
- tIndent:500 leftIndent:500 level:0  italic size:10  >
+ tIndent:500 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCou\
+ ntHeight:1000 lineSpacingSep:0 level:0  italic size:10  >
 <style "heading 7" parent "Normal" nextStyle "Normal indent" indentToLevel firs\
- tIndent:500 leftIndent:500 level:0  italic size:10  >
+ tIndent:500 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCou\
+ ntHeight:1000 lineSpacingSep:0 level:0  italic size:10  >
 <style "heading 6" parent "Normal" nextStyle "Normal indent" indentToLevel firs\
- tIndent:500 leftIndent:500 level:0  underline  >
+ tIndent:500 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCou\
+ ntHeight:1000 lineSpacingSep:0 level:0  underline  >
 <style "heading 2" parent "Normal" nextStyle "Normal" keepWith justifyLeft inde\
- ntToLevel preParaSpacing:333 postParaSpacing:250 level:0  bold capitals size:2\
- 4  >
+ ntToLevel lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lin\
+ eSpacingSep:0 preParaSpacing:333 postParaSpacing:250 level:0  bold capitals si\
+ ze:24  >
 <style "heading 3" parent "heading 2" nextStyle "Normal" keepWith indentToLevel\
-  preParaSpacing:250 postParaSpacing:167 level:0  double-underline size:16  >
-<style "heading 4" parent "heading 3" nextStyle "Normal indent" indentToLevel p\
- reParaSpacing:167 level:0  underline size:14  >
-<style "heading 5" parent "heading 4" nextStyle "Normal indent" indentToLevel p\
- ostParaSpacing:83 level:0  italic capitals size:13  >
+  lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingS\
+ ep:0 preParaSpacing:250 postParaSpacing:167 level:0  double-underline size:16 \
+  >
+<style "heading 4" parent "heading 3" nextStyle "Normal indent" indentToLevel l\
+ ineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep\
+ :0 preParaSpacing:167 level:0  underline size:14  >
+<style "heading 5" parent "heading 4" nextStyle "Normal indent" indentToLevel l\
+ ineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep\
+ :0 postParaSpacing:83 level:0  italic capitals size:13  >
 <style "heading 1" parent "Normal" nextStyle "Normal" justifyLeft indentToLevel\
-  preParaSpacing:333 postParaSpacing:250 level:0  bold capitals size:48  bB:31:\
- 1:"" verticalMargin:14  jumpOver xposColumnRelative xpos:0 yposParaRelative yp\
- os:1 leftFrameMargin:126 rightFrameMargin:126 topFrameMargin:0 bottomFrameMarg\
- in:0  >
+  lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingS\
+ ep:0 preParaSpacing:333 postParaSpacing:250 level:0  bold capitals size:48  bB\
+ :31:1:"" verticalMargin:14  jumpOver xposColumnRelative xpos:0 yposParaRelativ\
+ e ypos:1 leftFrameMargin:126 rightFrameMargin:126 topFrameMargin:0 bottomFrame\
+ Margin:0  >
 <style "Normal indent" parent "Normal" nextStyle "Normal indent" indentToLevel \
- firstIndent:500 leftIndent:500 level:0  size:10  >
+ firstIndent:500 leftIndent:500 lineSpacingMode2:6 lineSpacingMode:0 lineSpacin\
+ gCountHeight:1000 lineSpacingSep:0 level:0  size:10  >
 <style "Title" parent "heading 1" nextStyle "Title" justifyCenter indentToLevel\
-  level:0  color:"Black"  >
+  lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingS\
+ ep:0 level:0  color:"Black"  >
 <style "Bullet" parent "Normal" nextStyle "Bullet" indentToLevel firstIndent:39\
- 4 leftIndent:788 postParaSpacing:0 level:0  color:"Black"  >
-<style "Bullet1" parent "heading 3" nextStyle "Bullet1" indentToLevel postParaS\
- pacing:83 level:0  capitals color:"Black" size:12  >
+ 4 leftIndent:788 lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1\
+ 000 lineSpacingSep:0 postParaSpacing:0 level:0  color:"Black"  >
+<style "Bullet1" parent "heading 3" nextStyle "Bullet1" indentToLevel lineSpaci\
+ ngMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 postP\
+ araSpacing:83 level:0  capitals color:"Black" size:12  >
 <style "Chapter" parent "Normal indent" nextStyle "Chapter" justifyLeft indentT\
- oLevel level:0  color:"Black"  >
+ oLevel lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSp\
+ acingSep:0 level:0  color:"Black"  >
 <style "heading 0" parent "Normal indent" nextStyle "heading 0" indentToLevel l\
- evel:0  color:"Black"  >
-<style "toc ps" parent "toc 1" nextStyle "toc ps" indentToLevel level:0  bold i\
- talic color:"Black" size:12  >
-<style "subtitle" parent "heading 3" nextStyle "subtitle" indentToLevel level:0\
-   capitals color:"Black"  >
-<style "Table" parent "Normal" nextStyle "Table" indentToLevel postParaSpacing:\
- 0 level:0  color:"Black"  >
-<style "commline" parent "Normal" nextStyle "commline" indentToLevel level:0  c\
- olor:"Black" face:"Courier New" size:10  >
+ ineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep\
+ :0 level:0  color:"Black"  >
+<style "toc ps" parent "toc 1" nextStyle "toc ps" indentToLevel lineSpacingMode\
+ 2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level:0  bo\
+ ld italic color:"Black" size:12  >
+<style "subtitle" parent "heading 3" nextStyle "subtitle" indentToLevel lineSpa\
+ cingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 lev\
+ el:0  capitals color:"Black"  >
+<style "Table" parent "Normal" nextStyle "Table" indentToLevel lineSpacingMode2\
+ :6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 postParaSpac\
+ ing:0 level:0  color:"Black"  >
+<style "commline" parent "Normal" nextStyle "commline" indentToLevel lineSpacin\
+ gMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSep:0 level:\
+ 0  color:"Black" face:"Courier New" size:10  >
 <style "listing" parent "Normal" nextStyle "listing" justifyLeft indentToLevel \
- postParaSpacing:0 level:0  color:"Black" size:8  >
+ lineSpacingMode2:6 lineSpacingMode:0 lineSpacingCountHeight:1000 lineSpacingSe\
+ p:0 postParaSpacing:0 level:0  color:"Black" size:8  >
 <S_G "FootnoteBar@" >
 <T "_________________________">
-<P "Normal" postParaSpacing:100 >
+<P "Normal" lineSpacing:0 postParaSpacing:100 >
 <E_G>
 <S_G "FootnoteContBar@" >
 <T "__________________________________________________">
-<P "Normal" postParaSpacing:100 >
+<P "Normal" lineSpacing:0 postParaSpacing:100 >
 <E_G>
 <S_G "EndnoteBar@" >
 <T "_________________________">
-<P "Normal" postParaSpacing:100 >
+<P "Normal" lineSpacing:0 postParaSpacing:100 >
 <E_G>
 <color "Black0":0:0:0:255>
 <color "Black":0:0:0:255>
@@ -121,11 +159,11 @@
 <end_styles>
 <start_flow>
 <WP400 "This file must be filtered to be read in WP 3.11">
-<P "Normal" justifyLeft postParaSpacing:0 >
+<P "Normal" justifyLeft lineSpacing:0 postParaSpacing:0 >
 <T "Programmer's Guide">
-<P "heading 1">
+<P "heading 1" lineSpacing:0 >
 <T "Purpose of this Guide">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "The purpose of this section is to give detail of the way in which ">
 <T "Sound Studio" italic >
 <T " has been implemented. It aims to provide sufficient information to the pro\
@@ -133,9 +171,9 @@
  to give details of individual functions and procedures, these are well documen\
  ted in the source code. A directory of procedures and functions will be provid\
  ed as a map to the listing. A knowledge of TCL/Tk is assumed.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Architecture">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "The architecture of ">
 <T "Studio" italic >
 <T " is a patchwork of software bound together by a TCL/tk shell script. The TC\
@@ -149,9 +187,9 @@
 <T "1">
 <E_F>
 <T ". ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Data Flow">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "There are two types of data flow in ">
 <T "studio" italic >
 <T ", internal and external. The internal data flow of ">
@@ -161,7 +199,7 @@
  t of obtaining data from external applications. This is provided by ensuring t\
  hat the application provides information to the standard output. This can then\
   be stored in a TCL variable, in the following manner.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "set ">
 <T "TCL_Variable" italic >
 <T " [ exec ">
@@ -169,17 +207,19 @@
 <T " -">
 <T "App_Options" italic >
 <T "]">
-<P "Table">
+<P "Table" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object1\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object1\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object1" appId:2 clipMode:1 xScale:0.865000 yScale:0.865000 width:567\
- 4 height:4136>
+ 4 height:4136 picOrigXoffset:0 picOrigYoffset:7 picOrigWidth:6559 picOrigHeigh\
+ t:4782>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1292 yposParaRelative ypos:1 width:5717 mi\
- nHeight:591 leftFrameMargin:126 rightFrameMargin:126 topFrameMargin:0 bottomFr\
- ameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1292 yposParaRelative ypos:1\
+  width:5717 minHeight:591 leftFrameMargin:126 rightFrameMargin:126 topFrameMar\
+ gin:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -199,23 +239,23 @@
 <E_F>
 <E_F>
 <T " - The overall structure of Studio" italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1292 yposParaRelative ypos:1 width:5717 mi\
- nHeight:591 leftFrameMargin:126 rightFrameMargin:126 topFrameMargin:0 bottomFr\
- ameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1292 yposParaRelative ypos:1\
+  width:5717 minHeight:591 leftFrameMargin:126 rightFrameMargin:126 topFrameMar\
+ gin:0 bottomFrameMargin:0 >
 <T "USING TCL ARRAYS">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "As has been explained the data flow in this application is largely provided\
   by global variables. The number of global variables required is large thus ma\
  king it difficult to oversee and remember all the global names.">
-<P "Normal" localTabs lT:1871 >
+<P "Normal" lineSpacing:0  localTabs lT:1871 >
 <T "To overcome this problem TCL arrays were used. Using TCL array has two main\
   advantages. Firstly, it allows the data organised into groups of similar data\
  . Secondly, it reduced the number of ">
 <T "global" face:"Courier New" >
 <T " declarations required within each procedure, since only the array name nee\
  ds to be declared.">
-<P "Normal" localTabs lT:1969 >
+<P "Normal" lineSpacing:0  localTabs lT:1969 >
 <T "An additional advantage is that the indices of TCL arrays may be text, thus\
   keeping the purpose of each array item clear. Performing operations on a comp\
  lete array is easy using the ">
@@ -223,7 +263,7 @@
 <T " command within a ">
 <T "foreach" face:"Courier New" >
 <T " statement.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Table ">
 <S_F fieldType:10
 <start_eval_value>
@@ -243,139 +283,140 @@
 <T "3">
 <E_F>
 <T " in the listing directory.">
-<P "Normal">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
+<P "Normal" lineSpacing:0 >
 <RS leftIndent:44>
 <T "Array Name" bold >
-<P "Normal" bold >
+<P "Normal" lineSpacing:0  bold >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Content" bold >
-<P "Normal" bold >
+<P "Normal" lineSpacing:0  bold >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "CARD">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The diagnostic data of the sound card." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "ConfigInfo ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Descriptive strings for configuration file and use in the user interface fo\
  r setting colours etc." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "ConfigSet ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "The configuration options which affect the look of the GUI, e.g. colours an\
  d fonts." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:21:0:"" >
 <RS leftIndent:44>
 <T "FILE">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "File names and paths for components of " size:10 >
 <T "Studio" italic size:10 >
 <T "." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "FLAG">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The state flags." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "FX">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The effect parameter values and application switches." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "HELP ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The global variables belonging to the on-line help module." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "INFO">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Formatted strings for display in the InfoBar." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "LINE">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Information about play-position line" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "LOAD">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameters of the working sample file." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:40>
 <T "MACHINE">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Machine-dependent (Solaris or Linux) information" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:40>
 <T "MIXER">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Variables for the mixer board, including volume settings for the mixer devi\
  ces." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "PACK">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Information for the packing order of sections." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "PLAY">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Global variables required for the functioning of the estimated time." size:\
  10 >
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "PLOT">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Global variables required for editing plot manipulation. Including position\
   of insertion points." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "SAMPLE">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameters of the original sample file." size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS leftIndent:44>
 <T "VU">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <CE width:1200 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Pertaining to the appearance and function of the VU meters." size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:4075 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <T "table " italic >
 <S_F fieldType:11 editable
@@ -392,9 +433,9 @@
 <E_F>
 <E_F>
 <T " - Arrays in Studio" italic >
-<P "Normal" justifyCenter >
+<P "Normal" justifyCenter lineSpacing:0 >
 <T "Temporary Files">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " makes use of temporary files to handle the sample data. This decision aros\
  e out of the necessity to perform ">
@@ -408,20 +449,23 @@
  ance of ">
 <T "Studio" italic >
 <T " running.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The temporary files are:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "1. ^ajTMP1. This is the ">
 <T "working file." italic >
 <T " The formatted sample file is piped though ">
 <T "Sox " italic >
 <T "upon loading and the raw sample data is stored in this file. When the sampl\
  e data is edited it is generally stored here.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "2.^ajTMP2. This is the ">
 <T "clipboard file" italic >
-<T ". This contains the data that has  been copied to the clipboard.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<T ". This contains the data that has  been copied to the clipboard.  This file\
+  is also used to hold the appropriate period of silence when the Edit">
+<T "^ko" face:"Symbol" >
+<T "Insert Silence menu option is invoked." face:"Arial" >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "3.^ajTMP3. This is the ">
 <T "Sox error file" italic >
 <T ". The sample data that is extracted by ">
@@ -429,18 +473,18 @@
 <T "is sent to the standard error file, not standard out. Thus it seems that th\
  e only way to get to this information is to store it in this file and then rea\
  d it into TCL.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "4.^ajTMP4. This is the ">
 <T "undo file" italic >
 <T ". A copy of TMP1 is stored here when an editing operation is about be perfo\
  rmed, so that the changes may be reversed by copying this file back to TMP1.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "5.^ajTMP5. This is the ">
 <T "overflow file" italic >
 <T ". There is often need for a ">
 <T "temporary" italic >
 <T " temporary file. This is especially the case when using the preview mode.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "6.^ajTMP6.  This is the ">
 <T "status-scan file. " italic >
 <T "This file was introduced at version 0.2.6, and makes possible the avoidance\
@@ -458,18 +502,18 @@
 <T "/" no-bold no-italic face:"Arial" >
 <T "wav" no-bold no-italic face:"Courier" >
 <T " file types." no-bold no-italic face:"Arial" >
-<P "Normal indent" leftIndent:750 >
+<P "Normal indent" leftIndent:750 lineSpacing:0 >
 <T "7.^ajTMP7 is a miscellaneous scratch file.  It is used for grabbing outputs\
   from, eg, sox for later parsing, and also as the record destination when the \
  set-level operation (middle click on the Record button) is being performed.">
-<P "Normal indent" leftIndent:750 >
+<P "Normal indent" leftIndent:750 lineSpacing:0 >
 <T "Editing Method">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " edits the sample file by manipulating the above temporary files.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Generating the Plot">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "The plot is drawn on a canvas widget. It consists of one line per horizonta\
  l point in the canvas co-ordinate system. The vertical co-ordinates are determ\
  ined by the maximum and minimum points of a block of the sample. The program "\
@@ -491,24 +535,26 @@
 <T "Studio" italic >
 <T " has restricted the size of the canvas to not extend beyond its physical si\
  ze.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Maxmin" bold >
 <T " requires bit resolution and number of channels in the sample, since theses\
   vary the size of the samples.">
-<P "Normal">
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:277 width:5708 \
- minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottom\
- FrameMargin:0 >
+<P "Normal" lineSpacing:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:2\
+ 77 width:5708 minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameM\
+ argin:0 bottomFrameMargin:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object2\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object2\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
-<picture "object2" appId:2 clipMode:1 width:1893 height:1269>
+<picture "object2" appId:2 clipMode:1 width:1893 height:1269 picOrigXoffset:6 p\
+ icOrigYoffset:25 picOrigWidth:1893 picOrigHeight:1269>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:277 width:5708 \
- minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottom\
- FrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:2\
+ 77 width:5708 minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameM\
+ argin:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -524,17 +570,17 @@
 <E_F>
 <E_F>
 <T " -X Co-ordinate system" italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:277 width:5708 \
- minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottom\
- FrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:2\
+ 77 width:5708 minHeight:575 leftFrameMargin:125 rightFrameMargin:125 topFrameM\
+ argin:0 bottomFrameMargin:0 >
 <T "Graphical editing">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "All the graphical editing is performed in terms of the canvas. Each line in\
   the plot represents a block of sample data. Upon loading the complete sample \
  is fit within the boundaries of the canvas. Thus the initial resolution is det\
  ermined by the size of the sample file.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "When marking, the boundary positions of the marked area are stored as canva\
  s co-ordinates [">
 <T "PLOT(Startx), Plot(Endx)" size:10 >
@@ -551,14 +597,14 @@
 <T ", or ">
 <T "tail" bold italic >
 <T ".">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Zoom Levels">
-<P "heading 5">
+<P "heading 5" lineSpacing:0 >
 <T "The ">
 <T "Zoom" italic >
 <T " operation complicates the editing concept, since the blocks size (bytes pe\
  r vertical line) changes as the resolution is increased.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "To keep track of each zoom operation the context of the current zoom level \
  is stored when a ">
 <T "Zoom-Up" italic >
@@ -573,16 +619,18 @@
 <T "is a discrete number ">
 <T ">" underline >
 <T " 0.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object3\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object3\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
-<picture "object3" appId:2 clipMode:1 width:4320 height:2663>
+<picture "object3" appId:2 clipMode:1 width:4320 height:2663 picOrigXoffset:5 p\
+ icOrigYoffset:0 picOrigWidth:4320 picOrigHeight:2663>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:792 width:5676 \
- minHeight:1444 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 botto\
- mFrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:7\
+ 92 width:5676 minHeight:1444 leftFrameMargin:125 rightFrameMargin:125 topFrame\
+ Margin:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -599,10 +647,10 @@
 <E_F>
 <T " - Graphical editing" italic >
 <T "." size:10 >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:792 width:5676 \
- minHeight:1444 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 botto\
- mFrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1287 yposParaRelative ypos:7\
+ 92 width:5676 minHeight:1444 leftFrameMargin:125 rightFrameMargin:125 topFrame\
+ Margin:0 bottomFrameMargin:0 >
 <T "With each context change the co-ordinate system is shifted; the left insert\
  ion point is adjusted to the x=0 position. Thus it is necessary to record this\
   offset [">
@@ -614,7 +662,7 @@
 <T "3">
 <E_F>
 <T " illustrates this point.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Furher, as of version 0.8, it is possible to scale the view of the editing \
  canvas.  This facility is available in addition to the zooming function descri\
  bed above.  When working on a large file, it is always advisable to zoom to th\
@@ -622,16 +670,16 @@
  s slower when the whole file is considered rather than a zoomed section.  Magn\
  ification does not section the file in the way that zoom does; it is purely a \
  graphical convenience.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The selection of magnification level is by pull down menu, which permits th\
  e user to jump several magnification steps at once.  This avoids ">
 <T "studio" italic >
 <T " having to rescan the file as the user repeatedly presses the \"magnify\" b\
  utton, as would be the case if it were implemented with a similar user interfa\
  ce to the zoom-in and zoom-out functions." no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Using head and tail">
-<P "heading 5">
+<P "heading 5" lineSpacing:0 >
 <T "The way in which ">
 <T "head" no-bold face:"Courier" >
 <T " and ">
@@ -648,30 +696,34 @@
 <T "4">
 <E_F>
 <T ".">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object4\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object4\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object4" appId:2 clipMode:1 xScale:0.600000 yScale:0.700000 width:261\
- 4 height:1819>
+ 4 height:1819 picOrigXoffset:85 picOrigYoffset:7 picOrigWidth:4357 picOrigHeig\
+ ht:2598>
 <E_F>
 <T " ">
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object5\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object5\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object5" appId:2 clipMode:1 xScale:0.600000 yScale:0.726000 width:282\
- 4 height:1813>
+ 4 height:1813 picOrigXoffset:2 picOrigYoffset:0 picOrigWidth:4706 picOrigHeigh\
+ t:2497>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:14 width:5660 m\
- inHeight:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:1\
+ 4 width:5660 minHeight:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
 <T "^aj^aj">
 <T "(a) Delete^aj^aj^aj^aj(b) Paste" size:10 >
-<P "Normal" justifyLeft  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizontal\
- Margin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:14 width:5660 min\
- Height:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFra\
- meMargin:0 >
+<P "Normal" justifyLeft lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0\
+ :"" horizontalMargin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:14 \
+ width:5660 minHeight:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMarg\
+ in:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -687,25 +739,25 @@
 <E_F>
 <E_F>
 <T " - Deleting and Pasting using head and tail" italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:14 width:5660 m\
- inHeight:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
-<P "Normal">
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1307 yposParaRelative ypos:1\
+ 4 width:5660 minHeight:558 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0 >
 <T "Sound Card Interface">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The sound card interface is a straightforward C-implementation of the conte\
  nt of the VoxWare Hacker's Guide. There are two programs that have been writte\
  n for the purpose of the sound card interface;">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "1.^aj">
 <T "studio_tool" italic >
 <T " (s_tool.c), the dsp interface and diagnostics.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "2.^aj">
 <T "studio_mixer" italic >
 <T " (s_mixer.c), the mixer interface.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "Both these have an interface that resembles the form of a TCL command. This\
   is because they consist of a number of activities. A syntax guide is shown in\
   figure ">
@@ -715,36 +767,40 @@
 <T "5">
 <E_F>
 <T ".">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object6\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object6\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object6" appId:2 clipMode:1 xScale:0.969000 yScale:0.969000 width:568\
- 8 height:2077>
+ 8 height:2077 picOrigXoffset:7 picOrigYoffset:7 picOrigWidth:5904 picOrigHeigh\
+ t:2143>
 <E_F>
 <T "(a) " size:10 >
 <T "studio" italic size:10 >
 <T "_mixer" size:10 >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:12 width:5688 m\
- inHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:1\
+ 2 width:5688 minHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object7\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object7\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
-<picture "object7" appId:2 clipMode:1 width:4678 height:1430>
+<picture "object7" appId:2 clipMode:1 width:4678 height:1430 picOrigXoffset:7 p\
+ icOrigYoffset:7 picOrigWidth:4678 picOrigHeight:1430>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:12 width:5688 m\
- inHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:1\
+ 2 width:5688 minHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
 <T "(b) " size:10 >
 <T "studio" italic size:10 >
 <T "_tool" size:10 >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:12 width:5688 m\
- inHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:1\
+ 2 width:5688 minHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -760,47 +816,47 @@
 <E_F>
 <E_F>
 <T " - Syntax of Sound Card Applications." italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:12 width:5688 m\
- inHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomF\
- rameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1267 yposParaRelative ypos:1\
+ 2 width:5688 minHeight:956 leftFrameMargin:125 rightFrameMargin:125 topFrameMa\
+ rgin:0 bottomFrameMargin:0 >
 <T "The diagnostic routine simply loops through the sampling rates, channels an\
  d bit resolutions, to determine the limits of the card. This is useful for set\
  ting the parameter limits in the interface.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Module overview">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " is split into several files. The C-code listings are naturally in separate\
   files. The TCL/Tk listings are divided into files, or modules. These modules \
  are organised to make it relatively easy to find the required code segments. "\
  >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <page_break>
 <T "There is a module file for:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajeach menu button in the menu bar.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajeach ">
 <T "Studio" italic >
 <T " section.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "The exception to this rule is the effect module, which combines the effect \
  bar and effect menu button into one, since they are both very similar in funct\
  ion.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Additional modules are ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajthe initialisation module. This ties all the modules together.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajthe miscellaneous module. This consists of routines that don't clearly f\
  it into other modules, or are procedures that are self-sufficient, and thus re\
  -usable.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "Table ">
 <S_F fieldType:10>
 <T "xref \"tab:modules\"">
@@ -810,231 +866,231 @@
 <T " gives a summary of the ">
 <T "Studio" italic >
 <T " modules.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <RS>
 <T "Module">
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:21:0:"" bB:21:0:"" >
 <T "File Name">
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:21:0:"" bB:21:0:"" >
 <T "Purpose">
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:21:0:"" bB:21:0:"" >
 <RS>
 <T "Edit menu" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" bB:10:0:"" >
 <T "Provide call-backs to menu items" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" bB:10:0:"" >
 <RS>
 <T "Effect" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Provide call-backs to menu items" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "File menu" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Provide call-backs to menu items" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Help menu" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Provide call-backs to menu items" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Information Bar " size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "info.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Create Information bar and associated procedures." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Initialisation" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "init.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Set-up initial values and bind modules together." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Menu Bar" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Create Menu Bar and menus." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Miscellaneous" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "\"Global\" routines." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Mixer Board" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Create and set-up the mixer board. Provide the mixer routines." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Options menu" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Provide call-backs to menu items" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Control Panel" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Create and set-up the control panel. Provide the sound card routines." size\
  :10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Editing Plot" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Create and set-up the canvas and associated procedures." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Start-up" size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:1297 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "studio" italic size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:947 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "To allow entry of required paths, and call initialisation." size:10 >
-<P "Normal" justifyLeft  xpos:1333 yposParaRelative ypos:18 width:6454 minHeigh\
- t:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMa\
- rgin:0 >
+<P "Normal" justifyLeft lineSpacing:0  xpos:1333 yposParaRelative ypos:18 width\
+ :6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0\
+  bottomFrameMargin:0 >
 <CE width:2739 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:21:0:"" >
 <T "table " italic >
 <S_F fieldType:11 editable
@@ -1051,16 +1107,16 @@
 <E_F>
 <E_F>
 <T " - Module Summary" italic >
-<P "Normal" justifyCenter  xpos:1333 yposParaRelative ypos:18 width:6454 minHei\
- ght:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrame\
- Margin:0 >
+<P "Normal" justifyCenter lineSpacing:0  xpos:1333 yposParaRelative ypos:18 wid\
+ th:6454 minHeight:4583 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin\
+ :0 bottomFrameMargin:0 >
 <T "Additionally, the Solais version of Studio has its own mixer module which c\
  ommunicates via small C programs with Sun's audio pseudo-device.  The programm\
  er is referred to the appropriate source files for further information." size:\
  12 >
-<P "Normal indent" firstIndent:0 leftIndent:0 >
+<P "Normal indent" firstIndent:0 leftIndent:0 lineSpacing:0 >
 <T "Procedure Categories">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "Since ">
 <T "Studio" italic >
 <T " is not a single sequential program it is difficult to show how all the dif\
@@ -1073,18 +1129,20 @@
 <T "6">
 <E_F>
 <T ".">
-<P "Normal">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
+<P "Normal" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object8\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object8\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object8" appId:2 clipMode:1 xScale:0.969000 yScale:0.969000 width:572\
- 4 height:2991>
+ 4 height:2991 picOrigXoffset:0 picOrigYoffset:16 picOrigWidth:5907 picOrigHeig\
+ ht:3087>
 <E_F>
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1304 yposParaRelative ypos:-183 width:5760\
-  minHeight:633 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 botto\
- mFrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1304 yposParaRelative ypos:-\
+ 183 width:5760 minHeight:633 leftFrameMargin:125 rightFrameMargin:125 topFrame\
+ Margin:0 bottomFrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -1100,17 +1158,17 @@
 <E_F>
 <E_F>
 <T " - Interaction between procedure categories" italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1304 yposParaRelative ypos:-183 width:5760\
-  minHeight:633 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 botto\
- mFrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1304 yposParaRelative ypos:-\
+ 183 width:5760 minHeight:633 leftFrameMargin:125 rightFrameMargin:125 topFrame\
+ Margin:0 bottomFrameMargin:0 >
 <T "1.^ajWidget Creation Routines (WCR)">
-<P "Normal" leftIndent:250 >
+<P "Normal" leftIndent:250 lineSpacing:0 >
 <T "Each sound ">
 <T "studio" italic >
 <T " section is created by a widget creation routine. This is a procedure that \
  performs one of three tasks. These tasks are,">
-<P "Normal indent">
+<P "Normal indent" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^aj">
 <T "Initialisation and configuration" bold >
@@ -1118,7 +1176,7 @@
   and attaches call-backs and variables to them. The widgets are always configu\
  red with the current contents of the ConfigSet array, when this task is called\
  . It does not display the section.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^aj">
 <T "Show the section" bold >
@@ -1126,49 +1184,49 @@
 <T "studio" italic >
 <T ". It uses the contents of the PACK array to decide where its position in th\
  e packing order.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^aj">
 <T "Remove the section" bold >
 <T ". This simply unpacks the section widgets from the root window.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "Some WCRs divided their initialisation task into subroutines, particularly \
  when numerous similar widgets are to be created, e.g. ">
 <T "MenuBar" italic >
 <T " and ">
 <T "Mixer" italic >
 <T ".">
-<P "Normal indent" firstIndent:492 leftIndent:492 >
+<P "Normal indent" firstIndent:492 leftIndent:492 lineSpacing:0 >
 <T "2.^ajCall-backs">
-<P "Normal" leftIndent:250 >
+<P "Normal" leftIndent:250 lineSpacing:0 >
 <T "These are the top level of the sequential programs that are attached to wid\
  get events defined in the WCR. It is in these procedures that the actual proce\
  ssing of ">
 <T "Studio " italic >
 <T "lies.">
-<P "Normal indent">
+<P "Normal indent" lineSpacing:0 >
 <T "3.  Sub-routines">
-<P "Normal" leftIndent:250 >
+<P "Normal" leftIndent:250 lineSpacing:0 >
 <T "As is usual in sequential programs, often repeated tasks are assigned to su\
  broutines. This category of procedures refers mainly to those subroutines that\
   are used by more than one call-back.">
-<P "Normal indent">
+<P "Normal indent" lineSpacing:0 >
 <T "4.^ajDual-purpose routines.">
-<P "Normal" leftIndent:250 >
+<P "Normal" leftIndent:250 lineSpacing:0 >
 <T "Dual purpose routines are a procedures that serve as a call-back and a subr\
  outine. Examples of these are apparent in the edit module, where the Copy and \
  Delete call-backs are used as a subroutine for the Cut call-back. Dual purpose\
   routines usually have some parameter which switches the procedure from its ca\
  ll-back function to the subroutine function, since these can differ minutely."\
  >
-<P "Normal indent">
+<P "Normal indent" lineSpacing:0 >
 <T "5.^ajLocal subroutines.">
-<P "Normal" leftIndent:250 >
+<P "Normal" leftIndent:250 lineSpacing:0 >
 <T "These subroutines are those which ideally only have scope in one single cal\
  l-back or within a subroutine. However in practise it appears that procedures \
  in TCL/Tk do not have scope like in C-programming; all procedures are global!"\
  >
-<P "Normal indent">
+<P "Normal indent" lineSpacing:0 >
 <T "A list of all procedures, their purpose and category is found in table ">
 <S_F fieldType:10>
 <T "xref \"tab:procs\"">
@@ -1176,11 +1234,11 @@
 <T "4">
 <E_F>
 <T " in the listing index.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Techniques">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "Using TCL lists">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "TCL has an excellent facility for using lists. Thus in the case where many \
  similar widgets were to be created, all it took was to create a list containin\
  g the features that are unique to each widget, and then loop using the ">
@@ -1188,51 +1246,51 @@
 <T " command and use ">
 <T "lindex " face:"Courier New" >
 <T "to access compound list items using command or variable substitution.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Here is a simple example from the procedure which sets up the effect bar se\
  ction;">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "# Make the list" italic size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "set effects {Filter Reverse Echo Vibrato}" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "# Loop through the list." italic size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "foreach Effect $effects {" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^aj" size:10 >
 <T "# Convert to lower case for widget path name." italic size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^ajset effect [string tolower $Effect]" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^aj" size:10 >
 <T "# Create a checkbutton for the current list item" italic size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^ajcheckbutton .effect.top.$effect -text $Effect" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^ajpack .effect.top.$effect -side left \\" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^aj^aj^aj^aj^aj-padx 1" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^aj" size:10 >
 <T "#Bind button 3 to pop up the window to set the settings" italic size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^ajbind .effect.top.$effect <Button-3> \"s$Effect\"" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  size:10 >
 <T "^aj}" size:10 >
-<P "listing" size:10 >
-<P "Normal">
+<P "listing" lineSpacing:0  size:10 >
+<P "Normal" lineSpacing:0 >
 <T "Note that, in this case, the list is not complex and thus ">
 <T "lindex " face:"Courier New" >
 <T "was not used.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "This technique was particularly useful in creating the menu bar and associa\
  ted menus. Thus to modify a menu, it simply requires a list being changed. It \
  also removed the tedium and enabled the automation of creating the mixer board\
   sliders.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Keeping Track of States">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " consists of many states. These many states are flagged in an array of vari\
  ables titled FLAG. The number of states makes programming difficult, because t\
@@ -1243,15 +1301,15 @@
  e, the user should not try to record whilst ">
 <T "Studio" italic >
 <T " is playing a sample. The sound card cannot do both at the same time! ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The method used in ">
 <T "studio" italic >
 <T " to avoid this kind of conflict is by disabling the relevant widgets. The f\
  ollowing are the techniques used, which ensure that the states of the relevant\
   widgets change at the appropriate time.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Pop-up Windows">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "There are a number of pop-up window requiring the user to provide some info\
  rmation. When ">
 <T "Studio" italic >
@@ -1261,59 +1319,66 @@
  hen requests the 'grab'. The grab is essentially an X flag which give all the \
  focus of the application to this window. Thus in effect the parent window beco\
  mes disabled, until the pop-up window is destroyed. For example,">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "   " face:"Courier New" size:10 >
 <T "# Create toplevel window." face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   toplevel .echo -bg $ConfigSet(cBG1)" face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   wm title .echo \"Echo Settings\"" face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   # Set window as a pop-up child of the root window." face:"Courier" size:\
  10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   wm transient .echo ." face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   # Stop entry from the main window. (grab)." face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "   catch { grab .echo }" face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" size:10 >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" size:\
+ 10 >
 <T "Passive and Active State control">
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "The other methods of state control actually change the state of specific wi\
  dgets. This is somewhat messy since it requires the path name of the widget. T\
  his is particularly awkward because of the automated method in which many of t\
  he widgets are created. Fortunately there are only a few widgets that need to \
  change state. These are, ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajThe control panel buttons (play, stop and record), depending on the play\
   status.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajThe file menu items, depending on whether a file is loaded.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajThe edit menu items, depending on whether there is clipboard data and wh\
  ether a section of the plot is marked.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "In all these cases there is a procedure which changes the state of the corr\
  esponding widgets according to the status of the flags. The paths of these wid\
  gets are hard coded into these procedures. The way in which these procedures a\
  re called vary.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The procedure to change the control panel states is called by a code entry \
  after the flag has been changed in the following ">
 <T "passive" italic >
 <T " manner:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "set FLAG(Playing) 1" face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" >
 <T "# Change Play Panel button states" italic face:"Courier" size:10 >
-<P "listing" firstIndent:500 leftIndent:500  face:"Courier" >
+<P "listing" firstIndent:500 leftIndent:500 lineSpacing:0  face:"Courier" >
 <T "  ^ajPP_ButtonAble" face:"Courier" size:10 >
-<P "listing" face:"Courier" >
-<P "listing" face:"Courier" >
+<P "listing" lineSpacing:0  face:"Courier" >
+<P "listing" lineSpacing:0  face:"Courier" >
 <T "In the latter cases, a more ">
 <T "active" italic >
 <T " method of doing this same task was discovered , using a variable trace. Th\
@@ -1321,10 +1386,10 @@
 <T "trace" face:"Courier New" >
 <T " command allows a procedure to be called every time a particular variable i\
  s written to.  For example,">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^aj">
 <T "trace variable FLAG(Loaded) w FileMenuStates" face:"Courier" >
-<P "commline">
+<P "commline" lineSpacing:0 >
 <T "This proves to be an efficient and effective way of tracking the states. Th\
  e passive method is not really required and should be done away with in future\
   modifications. A trace call-back provides information about the variable that\
@@ -1333,9 +1398,9 @@
  e work would be to over come the inflexibility of having to ">
 <T "hard code" italic >
 <T " the widgets' path names.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Generating Pipes">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " makes use of a number of UNIX system commands, plus the use of Sox. The ">
 <T "grep, awk, dd" italic >
@@ -1357,23 +1422,23 @@
  ple. A variable to contain the command string pipe is built up by adding the p\
  ipe section of each selected effect, and then appending the output file. Thus \
  the constructed pipe string might be,">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "pipe = \"" face:"Courier" size:12 >
 <T "sox " italic face:"Courier" size:12 >
 <T "-t .ub " face:"Courier" size:12 >
 <T "infile" italic face:"Courier" size:12 >
 <T " -t .ub - reverse | \\" face:"Courier" size:12 >
-<P "Table" face:"Courier" size:12 >
+<P "Table" lineSpacing:0  face:"Courier" size:12 >
 <T "        sox " italic face:"Courier" size:12 >
 <T "-t .ub -" face:"Courier" size:12 >
 <T " outfile echo .5 .5\"" italic face:"Courier" size:12 >
-<P "Table" face:"Courier" size:12 >
-<P "Table" face:"Courier" >
+<P "Table" lineSpacing:0  face:"Courier" size:12 >
+<P "Table" lineSpacing:0  face:"Courier" >
 <T "This is then executed in the following manner,">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "eval exec $pipe" face:"Courier" >
-<P "Table" justifyCenter >
-<P "Table" justifyCenter >
+<P "Table" justifyCenter lineSpacing:0 >
+<P "Table" justifyCenter lineSpacing:0 >
 <T "In addition, a small C program has been written to enable the fade-in and f\
  ade-out of samples.  ">
 <T "fader.c" face:"Courier" >
@@ -1387,17 +1452,17 @@
 <T "1" face:"Courier" position:3 >
 <E_F>
 <T " has the following call syntax:">
-<P "Table" justifyFull >
-<P "Table">
+<P "Table" justifyFull lineSpacing:0 >
+<P "Table" lineSpacing:0 >
 <T "fader <channels> <sample_type> <fade_up_samples> <fade_down_samples>" face:\
  "Courier" size:10 >
-<P "Normal" justifyCenter  face:"Courier" size:10 >
+<P "Normal" justifyCenter lineSpacing:0  face:"Courier" size:10 >
 <T "where the sample type parameter may indicate signed or unsigned bytes or wo\
  rds according to the sox syntax.  Fader imposes a liner fade up to a level of \
  -60dB, then fades exponentially to the final level.">
-<P "Table" justifyFull >
+<P "Table" justifyFull lineSpacing:0 >
 <T "Configuration File">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Sound Studio" italic >
 <T " provides a mechanism which allows the user to set-up ">
 <T "studio" italic >
@@ -1410,28 +1475,28 @@
 <T ".  Requesting a \"make default\" menu entry has the effect of updating this\
   file, provifing a user-friendly way of selecting and saving default settings.\
  ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The idea is simple:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajAll the WCRs in ">
 <T "studio" italic >
 <T " use the contents of the ConfigSet array to configure the widgets.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajA dialogue box to allow the user to change the contents of this array is\
   provided. ">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajThe creation and configuration tasks of WCR are kept distinct from each \
  other, so that widgets may be re-configured whilst ">
 <T "Studio" italic >
 <T " is running.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajThe contents of the array may be stored in a configuration file upon use\
  r request.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "This idea was extended to allow the user to store the view options, i.e. wh\
  at sections of ">
 <T "Studio" italic >
@@ -1440,7 +1505,7 @@
  . This complicated the saving procedure slightly since now there are the conte\
  nts of three arrays to be saved and it must be possible to save these independ\
  ently of the others into the configuration file.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The general mechanism for doing this is illustrated in figure ">
 <S_F fieldType:10>
 <T "xref \"fig:fileconfig\"">
@@ -1456,16 +1521,19 @@
 <T " and ">
 <T "SaveSettings" face:"Courier New" >
 <T " in the options module.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <S_F fieldType:7 docType:201 appType:2>
-<T "local_inset \"object9\" -docType \"201\" -appType \"Graphics_\" -picture">
+<T "local_inset \"object9\" -docType \"201\" -appType \"Graphics_\" -clipMode c\
+ lipToFit -picture">
 <FV>
 <picture "object9" appId:2 clipMode:1 xScale:0.895000 yScale:0.895000 width:569\
- 3 height:2410>
+ 3 height:2410 picOrigXoffset:0 picOrigYoffset:0 picOrigWidth:6361 picOrigHeigh\
+ t:2693>
 <E_F>
-<P "Normal" lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizontalMargin:14 ver\
- ticalMargin:14  xpos:1301 yposParaRelative ypos:474 width:5735 minHeight:683 l\
- eftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
+ alMargin:14 verticalMargin:14  xpos:1301 yposParaRelative ypos:474 width:5735 \
+ minHeight:683 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottom\
+ FrameMargin:0 >
 <T "figure " italic >
 <S_F fieldType:11 editable
 <start_eval_value>
@@ -1481,10 +1549,10 @@
 <E_F>
 <E_F>
 <T " - Configuration file Mechanism" italic >
-<P "Normal" justifyCenter  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" horizont\
- alMargin:14 verticalMargin:14  xpos:1301 yposParaRelative ypos:474 width:5735 \
- minHeight:683 leftFrameMargin:125 rightFrameMargin:125 topFrameMargin:0 bottom\
- FrameMargin:0 >
+<P "Normal" justifyCenter lineSpacing:0  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10\
+ :0:"" horizontalMargin:14 verticalMargin:14  xpos:1301 yposParaRelative ypos:4\
+ 74 width:5735 minHeight:683 leftFrameMargin:125 rightFrameMargin:125 topFrameM\
+ argin:0 bottomFrameMargin:0 >
 <T "The description is provided   to provide useful text for dialogue boxes">
 <S_F fieldType:4 botPage footnote "1">
 <T "footnote">
@@ -1492,14 +1560,14 @@
 <T "2" position:3 >
 <E_F>
 <T " and also to make the configuration file readable.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "It is hoped that this mechanism is sufficient for future extensions to the \
  preference options. Unfortunately his ">
 <T "simple" italic >
 <T " job was a bigger task than anticipated and was therefore rushed!">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Icons">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The icons used in ">
 <T "Studio" italic >
 <T " were generated by the X application called ">
@@ -1507,20 +1575,20 @@
 <T " There are two sizes of bitmap used in ">
 <T "Studio" italic >
 <T ".">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" >
 <T "^aj64x64, for the iconified version of ">
 <T "Studio" italic >
 <T " and the ">
 <T "User Manual" italic >
 <T ".">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" >
 <T "^aj16x16, for the button icons in the control panel.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" >
 <T "^aj32x32, for the magnification zoom buttons.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "Each of these bitmaps are stored in files with the extension .ico, and are \
  read into ">
 <T "Studio" italic >
@@ -1529,13 +1597,13 @@
 <T " method">
 <T ". " italic >
 <T "A way to combined all these bitmaps into one file was not found.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The Playline and VU Meters">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "As of version 1.0, Studio supports a playline which gives visual feedback a\
  s to the approximate play position on the plot panel, and VU meters with peak \
  hold to assist in setting recording level and assessing playback volume.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Since TCL is merely a scripting language, it became clear very early on tha\
  t it would not be feasible to implement either the playline or the VU meters i\
  n TCL alone, especially when dealing with the real time issues that both would\
@@ -1544,7 +1612,7 @@
  tly to produce the desired results. It seemed logical to modify the studio_too\
  l application to not only play or record the required soundfile, but also to d\
  o the necessary working and send the required data back to studio.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "This necessitated a change to the data flow, as previously studio only sent\
   data out to the studio_tool application by actually executing it, with the co\
  mmand line parameters set within studio, and then possibly setting an internal\
@@ -1553,22 +1621,22 @@
  dio_tool was actually running. To implement both the playline and the VU meter\
  s a communication channel was needed to be established between studio and stud\
  io_tool.  The responsible code reads as follows:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "# execute studio_tool and open a channel" italic face:"Courier Swa" size:10\
   >
-<P "listing" face:"Courier Swa" size:10  noFrame >
+<P "listing" lineSpacing:0  face:"Courier Swa" size:10  noFrame >
 <T "set pipe [open \"|./$FILE(Tool) play $source $LOAD(bit) $LOAD(chnl)\\" face\
  :"Courier Swa" size:10 >
-<P "listing" face:"Courier Swa" size:10  noFrame >
+<P "listing" lineSpacing:0  face:"Courier Swa" size:10  noFrame >
 <T "                           $LOAD(rate) meter 75 1 $linelist\" r]" face:"Cou\
  rier Swa" size:10 >
-<P "listing" face:"Courier Swa" size:10  noFrame >
+<P "listing" lineSpacing:0  face:"Courier Swa" size:10  noFrame >
 <T "# Call function Reader whenever new data comes in the channel" italic face:\
  "Courier Swa" size:10 >
-<P "listing" face:"Courier Swa" size:10  noFrame >
+<P "listing" lineSpacing:0  face:"Courier Swa" size:10  noFrame >
 <T "fileevent $pipe readable [list Reader $pipe]" face:"Courier Swa" size:10 >
-<P "listing" face:"Courier Swa" size:10  noFrame >
-<P "Normal">
+<P "listing" lineSpacing:0  face:"Courier Swa" size:10  noFrame >
+<P "Normal" lineSpacing:0 >
 <T "The fileevent command forces ">
 <T "Studio" italic >
 <T " into an event loop, calling the function ">
@@ -1577,9 +1645,9 @@
 <T "Reader" face:"Courier" >
 <T " then reads the data from the channel, checks whether it is a VU update req\
  uest or a play-line motion request, and performes the required task.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Preserving the functionality of studio_tool" underline size:12 >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "studio_tool" italic >
 <T " serves not only as the mechanism by which studio interfaces with the sound\
   card, but also as a useful stand-alone program that could play and record sou\
@@ -1590,33 +1658,33 @@
 <T "studio_tool" italic >
 <T " could still be used from the command line prompt, without flooding the scr\
  een with unnecessary data. For example:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "% studio_tool play ultravibe.au 16 1 11025" face:"Courier" size:12 >
-<P "listing" face:"Courier" size:12 >
-<P "listing" face:"Courier" size:12 >
+<P "listing" lineSpacing:0  face:"Courier" size:12 >
+<P "listing" lineSpacing:0  face:"Courier" size:12 >
 <T "will play the soundfile with the specified rate, precision and channels. Th\
  is would be how studio_tool would be used from the command line prompt., where\
  as:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "% studio_tool play ultravibe.au 16 11025 meter 20 1 line 499 109779" face:"\
  Courier" size:10 >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "will play the soundfile, but also emit the VU meter and play-line data. The\
   extra parameters in the command line were designed only to be used by ">
 <T "studio" italic >
 <T ", as their calculation is probably too cumbersome to be expected of a user.\
  " no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Dealing with the Real Time Issues" underline size:12 >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Any program that deals with performing timing on audio data faces real time\
   issues, which must be addressed. For both the playline and the VU meter, the \
  program needs to know exactly how much of the soundfile had been processed at \
  all times. Both Solaris and Linux had very convenient ioctl calls that returne\
  d this information. In Solaris the call is:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "ioctl(fd,AUDIO_GETDEV,&audio_info)" face:"Courier" >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "which fills the structure ">
 <T "audio_info" face:"Courier" >
 <T " with the current soundcard information. One of the fields of ">
@@ -1624,11 +1692,11 @@
 <T " is ">
 <T "play.samples" face:"Courier" >
 <T " which stores the number of samples that the soundcard had processed.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The ioctl command in Linux is:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "ioctl(fd,SNDCTL_DSP_GETOPTR,&info)" face:"Courier" >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "which fills the structure ">
 <T "info" face:"Courier" >
 <T " with soundcard information. One of the fields of ">
@@ -1636,29 +1704,29 @@
 <T " is bytes which stored the number of bytes that the soundcard had processed\
  . Using the channels and precision to work out the sample size (in bytes), thi\
  s value is easily converted to the number of samples processed.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "In Solaris, the number of samples processed was not read from the soundcard\
  , but from the pseudo audio-device, ">
 <T "/dev/audioctl" face:"Courier" >
 <T ":">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "        if (PLATFORM == OS_SUNOS)">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "        {">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if ((fd2=open(\"/dev/audioctl\", O_RDONLY,0))== -1)">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                {">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                        printf(\"Read Failure\\n\");">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                        exit(-1);">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                }">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "        }">
-<P "listing">
-<P "listing">
+<P "listing" lineSpacing:0 >
+<P "listing" lineSpacing:0 >
 <T "This is a control device for the sound hardware that can be used to check o\
  r set the status of the soundcard, but read() or write() system calls to it ar\
  e ignored. The pseudo-device returns the number of samples in blocks of 8 samp\
@@ -1666,49 +1734,49 @@
  o device, ">
 <T "studio_tool" italic >
 <T " is able to track the number of samples processed more accurately.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "In Linux, though, an extra few lines of code were required in order to set \
  the fragment size on the soundcard buffer to 64 samples:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "if (PLATFORM == OS_LINUX)">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "        {">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if (samplesize == 1) fragsize = 0x7fff0006;">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if (samplesize == 2) fragsize = 0x7fff0007;">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if (samplesize == 4) fragsize = 0x7fff0008;">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if (samplesize == 8) fragsize = 0x7fff0009;">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                if (samplesize == 16) fragsize = 0x7fff0010;">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                ioctl(fd, SNDCTL_DSP_SETFRAGMENT, &fragsize);">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "        }">
-<P "listing">
-<P "Normal">
+<P "listing" lineSpacing:0 >
+<P "Normal" lineSpacing:0 >
 <T "Knowing the number of samples processed at all times proved to be vital in \
  solving the real-time issues, as the soundcard itself (or its pseudo control d\
  evice) is used to regulate the flow of output data.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Separate Processes Vs POSIX Threads" underline size:12 >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The play function in the previous version of ">
 <T "studio_tool" italic >
 <T " only performed one function: it played the soundfile. To generate the nece\
  ssary output, the play function had to be modified to perform multiple tasks. \
  These were (in execute-initiation order):">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "1.^ajTo play the soundfile">
-<P "Normal" firstIndent:0 leftIndent:312 >
+<P "Normal" firstIndent:0 leftIndent:312 lineSpacing:0 >
 <T "2.^ajTo calculate and output the play line data">
-<P "Normal" firstIndent:0 leftIndent:312 >
+<P "Normal" firstIndent:0 leftIndent:312 lineSpacing:0 >
 <T "3.^ajTo calculate and output the VU data">
-<P "Normal" firstIndent:0 leftIndent:312 >
+<P "Normal" firstIndent:0 leftIndent:312 lineSpacing:0 >
 <T "4.^ajTo calculate and output a regular decay on the VU signal">
-<P "Normal" firstIndent:0 leftIndent:312 >
+<P "Normal" firstIndent:0 leftIndent:312 lineSpacing:0 >
 <T "Obviously, these multiple processes would need to be run concurrently withi\
  n the play function in order for the program to work as desired. This posed th\
  e question of whether to use separate processes or POSIX threads. At first it \
@@ -1717,7 +1785,7 @@
  re also much more lightweight, since a whole new process is not created, there\
  fore threads do not require to be killed off, they are automatically killed wh\
  en the main process terminates. ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Unfortunately, the use of threads did not allocate processor time fairly to\
   each of the processes; the busier tasks would \"hog\" the processor, and this\
   would be wholly unsuitable for processes with real time issues.  Subsequent i\
@@ -1727,9 +1795,9 @@
  wever, these improvements were achieved only after the structure of the new ">
 <T "studio_tool" italic >
 <T " had matured." no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Forking Hell" underline size:12 >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Separate processes are used to perform the multiple tasking. This raises tw\
  o issues that need to be resolved. Firstly when a ">
 <T "fork" face:"Courier" >
@@ -1738,29 +1806,29 @@
  ges made to a certain variable in the child do not appear in the same variable\
   in the parent. To enable processes to communicate it is necessary to set-up a\
  s a shared structure. This is achieved by the following code:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "/*  get unique key for shared memory block  */">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "if ((VUmemid = shmget (IPC_PRIVATE,">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "                                              sizeof(SharedVUVariables),066\
  0)) == -1) {">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "           fprintf(stderr,\"Shared Memory Failure\");">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "           exit (-1);">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "}">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "  /* attach the variable VUdata to shared memory block */">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "VUdata  = (char *)shmat (VUmemid,(char *)0,0);">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "/* setup shared memory block as transient */">
-<P "listing">
+<P "listing" lineSpacing:0 >
 <T "shmctl (VUmemid,IPC_RMID,NULL);">
-<P "listing">
-<P "Normal">
+<P "listing" lineSpacing:0 >
+<P "Normal" lineSpacing:0 >
 <T "The ">
 <T "shmget" face:"Courier" >
 <T "() call sets up a unique key (">
@@ -1772,7 +1840,7 @@
 <T "shmctl" face:"Courier" >
 <T "() call sets up the shared memory block as transient, which is used to prev\
  ent memory leaks.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The second issue is that of terminating the processes. When ">
 <T "studio_tool" italic >
 <T " is used by ">
@@ -1791,23 +1859,23 @@
 <T "fork" face:"Courier" >
 <T "() call, which nominates a quitting function to be executed when the signal\
   SIGTERM was received by each process:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T " signal(SIGTERM,sigquit);" face:"Courier" >
-<P "Normal" face:"Courier" >
+<P "Normal" lineSpacing:0  face:"Courier" >
 <T "Also, the last command of each process is a kill() command, by which the pr\
  ocess sent itself a SIGTERM signal on its natural completion:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T " kill(pid_number,SIGTERM);" face:"Courier" >
-<P "Normal" face:"Courier" >
+<P "Normal" lineSpacing:0  face:"Courier" >
 <T "The play function uses four ">
 <T "fork" face:"Courier" >
 <T "() calls to execute each of its four tasks. The processes were dealt with i\
  n a last come-first served manner, so the code for the first process to be dea\
  lt with, which was the actual playing of the sound file, appears in the child \
  of the last fork().">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Working Out the Data for the Playline" underline >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "After loading a sound file into studio, it displays a graphical representat\
  ion of the sound file in the PLOT canvas. The basic function of the playline i\
  s to be a visual indicator of how much of the sound file has been played, as i\
@@ -1815,28 +1883,28 @@
   left to right in the PLOT canvas at a speed that ensures that the location of\
   the line is at all time representative of the current position in the sound f\
  ile.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "In order to calculate the required data for the play line, ">
 <T "studio_tool" italic >
 <T " needs to be passed two extra pieces of data by ">
 <T "studio" italic >
 <T ". These are the number of pixels in the PLOT canvas, and the total number o\
  f samples in the soundfile to be played.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The code which emits the output data for the playline is in the third fork(\
  ), so that it was dealt with directly after the soundfile was played.  The out\
  put from this process is \"l.n\" (a letter l, a dot, and a number correspondin\
  g to the number of display pixels that the play-line should be moved).  The pl\
  ay status is polled roughtly every 15ms, when the current audio sample number \
  is read from the sound device.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Data required to Simulate the VU meter" underline >
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "A VU meter displays the average volume level of an audio signal. Its readin\
  g corresponds closely to the level sensing mechanism of the human ear, and so \
  provides a very useful indication of the subjective loudness of an audio signa\
  l.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "A VU meter has two attributes which determine its behaviour, the sample att\
  ack time, and its decay rate. In the real world a VU meter is a peak meter wit\
  h very slow ballistics, therefore it is not very good at tracking fast changes\
@@ -1844,7 +1912,7 @@
  longer time period than a peak meter. This means that the needle is less activ\
  e than that of a peak meter and in this way an average of the audio signal lev\
  els if displayed.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "In order to calculate the data required to simulate a VU meter, ">
 <T "studio_tool" italic >
 <T " required two extra pieces of data, namely the sample attack time, and the \
@@ -1852,13 +1920,13 @@
 <T "studio" italic >
 <T " as command line arguments. From the meter attack time, and the rate of the\
   sound file the number of samples per attack period are calculated.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Since there are two aspects of simulating the VU meter, namely the actual a\
  mplitude output and the meter decay, two separate processes were instantiated.\
   The first process is quite similar to the playline process in that, while the\
   value of outputnow was zero, it checks the soundcard or control device on pla\
  yback or the recorded file size on record.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The amplitude data in value, was converted to decibels by taking the log">
 <T "10" size:10 position:-3 >
 <T " of the normalised amplitude and multiplying by 20.  The result is stored i\
@@ -1867,11 +1935,11 @@
 <T " in the format \"v.n\".  Sumultaneously, every time a VU decay period elaps\
  es, the decay process awakens and reduces the stored VU value by an appropriat\
  e amount.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Changes to the tk Script" underline size:14 >
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "Reading from the channel" size:12 >
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "When playing or recording, the version^ka<^ka1.0 of ">
 <T "studio" italic >
 <T " interfaced with the soundcard by executing ">
@@ -1882,52 +1950,52 @@
 <T ", and set up a pipe and a fileevent command, which ran the TCL procedure ">
 <T "Reader" face:"Courier" >
 <T " every time a new piece of data came in on the channel.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The function of the ">
 <T "Reader" face:"Courier" >
 <T " procedure was to read a line of data from ">
 <T "studio_tool" italic >
 <T "'s output, parse it to decide what the purpose of the data was, and to use \
  that data to perform the required task.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Moving the Play Line" size:12 >
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "The data that studio_tool passed to Studio relating to the play line was a \
  series of numbers. These represented the number of pixels that the line needed\
   to be moved in the PLOT canvas. The implementation of the line was very simpl\
  e, as Tk has the ability to create a line (or any shape) in a canvas and move \
  it with one command:">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T ".canvasname move itemid x-pixels y-pixels" face:"Courier" >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "This means that Studio needs to create a line during its the PLOT canvas in\
  itialisation, and set a global variable equal to the line-id thus:set LINE(Id)\
  ">
-<P "Normal" face:"Courier" >
+<P "Normal" lineSpacing:0  face:"Courier" >
 <T " ">
 <T "[.plotbox.cs.canvas create line 0 0 0 50 -fill red]" face:"Courier" >
-<P "Normal" face:"Courier" >
+<P "Normal" lineSpacing:0  face:"Courier" >
 <T "Two counters of the number of pixels moved were also maintained. One may be\
   used in resetting the line after playing has finished. The other is used to t\
  rack the line at higher magnifications, by switching to the next portion of th\
  e PLOT canvas when the line approached the right hand side of the PLOT window.\
  ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Simulating the VU Meter" size:12 >
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "This is achieved with the help of two procedures. ">
 <T "SetupVU_Display" face:"Courier" >
 <T " {}, creates the VU meter toplevel window, with the required number of chan\
  nels, and ">
 <T "light" face:"Courier" >
 <T "{} displays the required number of lit LEDs.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "The LED lights were defined as movable objects, in the same way as playline\
  , except they were created OFF the canvas, and moved on to the canvas as requi\
  red. ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Sox Version 15 upgrades" size:12 >
-<P "heading 4">
+<P "heading 4" lineSpacing:0 >
 <T "Implementing the support for the new version of ">
 <T "Sox" italic >
 <T " simply involved Studio executing \"sox --h\" during the initial load-up. "\
@@ -1938,7 +2006,7 @@
 <T "Sox" italic >
 <T " was version 12.15 or not. If so, the global flag SOXVersion15 is set to 1,\
   otherwise it was set to 0.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "If SOXVersion15 was set to 1, Studio adds the extra-effect selectors to the\
   Effects bar, and also to the Effects menu. The echo effect, which was already\
   present in the older versions of ">
@@ -1949,7 +2017,7 @@
  ctions for the older ">
 <T "Sox" italic >
 <T " effects.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "When using the new 12.15 effects, ">
 <T "Sox" italic >
 <T " would possibly produce warning messages, indicating that the output soundf\
@@ -1958,33 +2026,33 @@
 <T ", and produced a dialog box, that contained a text widget, which displayed \
  these warnings. The global variable dh was set to ``don't know'' and a vwait c\
  ommand was used to halt everything until this variable had been changed.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Known BUGS">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "Format Conversion">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Studio" italic >
 <T " is not yet fully compatible with all ">
 <T "Sox " italic >
 <T "format conversions. This applies mainly to converting the raw data into the\
   sample format requested of the user. There are a number of conversion that fa\
  il. These are,">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajcdr. This needs the sampling parameters of cd.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajdat. This is very time consuming and fails.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajhcom. Requires sampling rates of, 5512,7350,11025, 20500 only.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajsf. Saves data successfully but format doesn't.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "^lh" face:"Symbol" size:10 >
 <T "^ajsmp. Saves incorrectly.">
-<P "Normal indent" firstIndent:500 leftIndent:750 >
+<P "Normal indent" firstIndent:500 leftIndent:750 lineSpacing:0 >
 <T "Another bug, or even maybe the same bug, is due to the way that ">
 <T "Studio" italic >
 <T " uses ">
@@ -2001,7 +2069,7 @@
  . The flag, ">
 <T "FLAG(Converted)" size:10 >
 <T ", is already in place to make this possible. ">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Studio" italic >
 <T " does not provide any error detection of ">
 <T "Sox " italic >
@@ -2012,12 +2080,12 @@
 <T "catch" face:"Courier New" >
 <T " is awkward. Currently the only compromise is to print the error informatio\
  n to standard out, until all the errors are ironed out.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "From this it is clear that a review of the whole loading and saving mechani\
  sm is required.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Zoom">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Currently ">
 <T "Studio" italic >
 <T " reverts to the root zoom level if an editing operation has been performed \
@@ -2030,9 +2098,9 @@
  used in the ">
 <T "FillPlot" italic >
 <T " operation.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Playline in preview-mode">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The playline does not traverse the audio plot in preview mode.  This is sim\
  ply because the variety of effects which Studio can accommodate, via ">
 <T "Sox" italic >
@@ -2043,9 +2111,9 @@
  s! Because the sound-processing program is not tightly bound to studio develop\
  ment, it was felt the best course was to suppress the playline appearance.  Th\
  is is really more of a limitation than a bug." no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "SOUND BLASTER 8">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "In testing, an 8-bit Sound Blaster card would record successfully at all sa\
  mpling rates, but would only play-back, correctly, recordings sampled with a s\
  ampling rate of 12kHz or less. This appears to be a driver problem. The driver\
@@ -2053,11 +2121,11 @@
   sampling rate, however it just doesn't playback correctly. It cannot be a sou\
  nd card problem since recording and playback is successful at all available sa\
  mpling rates in DOS sound sample applications.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Tests on a 16-bit Sound Blaster did not present this problem.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "VoxWare Manual Error">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "In programming the mixer interface it was found that it is not possible to \
  access the mixer though the dsp device as explained in the VoxWare Hacker's gu\
  ide">
@@ -2068,9 +2136,9 @@
 <E_F>
 <T ". Hours of frustration resulted because of this error. The mixer functions \
  seem only available by ioctl calls to the open mixer device.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Playline does not move smoothly (Linux)">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "studio_tool" italic >
 <T " relies on an ioctrl() call to the sound drivers to obtain information abou\
  t the current output sample.  This is unavailable on some hardware, and under \
@@ -2078,9 +2146,9 @@
   the number of buffer fragments written to the card so far.  Unfortuately, the\
   best guess is not always good enough to ensure the playline moves smoothly, e\
  specially on small files." no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Playline stalls on moving the Mixer Controls (Solaris)">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The hardware on which the program has been tested (Ultra workstations) supp\
  orts high resolution sample counts (see above), but any access to the audio de\
  vice resets the counter.  This invalidates the current-play-position variables\
@@ -2089,14 +2157,14 @@
 <T " and causes the playline to malfunction for the rest of the playback period\
  .  Since Solaris is not our primary development platform, this bug is unlikely\
   to be fixed in the near future." no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "Listing INDEX">
-<P "heading 2">
+<P "heading 2" lineSpacing:0 >
 <T "As a further guide into the source code, the following lists provide inform\
  ation about the global variables and procedures.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "global Variable Index">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "Table ">
 <S_F fieldType:10>
 <T "xref \"tab:globals\"">
@@ -2106,1022 +2174,1022 @@
 <T " shows the global variables used in ">
 <T "Studio" italic >
 <T " and their purpose.">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <RS>
 <T "Global Variable">
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "Type">
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "Description">
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:21:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(Bits)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Bit resolutions available from sound card" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(Chnnls)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Channels (mono, stereo) available from sound card." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(Driver)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VoxWare driver version." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(HW" size:10 >
 <T "n" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Name of sound card hardware detected. " size:10 >
 <T "n" bold italic size:10 >
 <T "=0,1,2,...." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(Maxrates)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Maximum sampling rates of sound card, for each channel setting." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARD(Minrates)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Maximum sampling rates of sound card, for each channel setting." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(BDW)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: Borderwidth" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(FNT_L)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: LargeFont" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(FNT_S)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: SmallFont" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(REL)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: Relief for Sections." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cABG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: ActiveBackGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cAFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: ActiveForeGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cBG1)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: BackGround1" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cBG2)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: BackGround2" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cBG3)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: BackGround3" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cDFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: DisabledForeGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cFG1)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: ForeGround1" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cFG2)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: ForeGround2" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(cFG3)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: ForeGround3" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(fVw_" size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: View Flag for a section. " size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T "=EffectBar,MenuBar,PlayPanel,Mixer, InfoBar, PlotBox" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigInfo(mnoshow)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Description of configuration option: List of mixer devices not to be shown.\
   [see MIXER(noshow)]" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(BDW)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: Borderwidth" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(FNT_L)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: LargeFont" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(FNT_S)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: SmallFont" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(REL)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: Relief for Sections." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cABG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: ActiveBackGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cAFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: ActiveForeGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cBG1)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: BackGround1" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cBG2)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: BackGround2" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cBG3)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: BackGround3" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cDFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: DisabledForeGround" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cFG1)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: ForeGround1" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cFG2)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: ForeGround2" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ConfigSet(cFG3)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Value of configuration option: ForeGround3" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "DialogCfg " size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Configuration list for " size:10 >
 <T "dialog" italic size:10 >
 <T " and " size:10 >
 <T "filebrowser" italic size:10 >
 <T " calls." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(CFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename for the configuration file." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(CURR)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of the current file." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(Fader)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of the " size:10 >
 <T "fader" face:"Courier" size:10 >
 <T " binary" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(Mixer)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of the mixer interface (" size:10 >
 <T "studio_mixer" italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(PID)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The unique part of temporary file names. (" size:10 >
 <T "System clock" italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(SRC)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path of the modules of " size:10 >
 <T "studio" italic size:10 >
 <T "." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(Sox)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of " size:10 >
 <T "Sox" italic size:10 >
 <T "." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(TMP1)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of temporary file 1" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(TMP2)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of temporary file 2" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(TMP3)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of temporary file 3" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(TMP4)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of temporary file 4" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(TMP5)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of temporary file 5" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FILE(Tool)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of the sound card interface. (" size:10 >
 <T "studio_tool" italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Card_Exist)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating a sound card exists." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Clip)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating the clipboard has contents." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Converted)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating the sample has been converted for sound card compatibility.\
  " size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Edited)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating the working file has been edited." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Loaded)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating a working file exists." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Marked)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating a marked area exists in the editing plot." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Mixer_Exist)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating a sound card mixer is available." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Playing)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating playback/recording in progress." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Recording)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating the application is recording." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FLAG(Vw_" size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating the  " size:10 >
 <T "section" bold italic size:10 >
 <T " is visible. " size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <T "Section_WCR" bold italic size:10 >
 <T "=EffectBar,MenuBar,PlayPanel,Mixer, InfoBar, PlotBox." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(ECHDelay)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the echo parameter: Volume." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(ECHVolume)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the echo parameter: Volume." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(FLTCentre)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the filter parameter: Centre Frequency." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(FLTtype)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the filter parameter: Filter Type" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(Preview)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating preview mode." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(VIBDepth)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the vibrato parameter: depth." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(VIBSpeed)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of the vibrato parameter: speed." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(" size:10 >
 <T "effect_name" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating that " size:10 >
 <T "effect" bold italic size:10 >
 <T " is to be applied. " size:10 >
 <T "effect_name" bold italic size:10 >
 <T "=echo, filter, reverse, tempo, vibrato, volume." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(fadein)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "fade-in time for the fade effect in centiseconds" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(fadeout)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Fade-out time in centiseconds" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(list)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of available effects." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(tempoVal)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value for the tempo effect." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FX(volumeVal)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value for the volume effect.." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(AFG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "ActiveForeGround colour for the Help window." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(BG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BackGround colour for the Help window." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(COM)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "ForeGround colour of contents text." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(FG)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "ForeGround colour for the Help window." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(HIL)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "ForeGround colour of highlighted text." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(Log)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VLIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Stores the position in the Help widget that have been viewed via. Contents.\
  " size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HELP(UserGuide)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path+Filename of the user guide text." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "INFO(Length)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "InfoBar string: Length of current sample." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "INFO(Rate)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "InfoBar string: Sample Rate of current sample." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "INFO(Sample)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "InfoBar string: File name of current sample." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "INFO(Stereo)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "InfoBar string: Channels in current sample." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "INFO(Type)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "InfoBar string: Bit resolution of current sample." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LINE(Id)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Play-line handle for use in graphics operations." size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LINE(On)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Whether the play-line is visible." size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LINE(PixelsMovedInPlot)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Number of pixels traversed by the playline." size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LINE(Startx)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Initial position of play-line at commencement of " size:10 >
 <T "studio_tool" italic size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LINE(TotalPoxelsMoved)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Pixels moved by play-line" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(bit)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Bit Resolution." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(chnl)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Channels." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(format)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Format name." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(maxvol)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: " size:10 >
 <T "Sox " italic size:10 >
 <T "maximum volume index." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(rate)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Sampling Rate" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(size)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: a letter indicating the size of each sample, e.g. b=byt\
  e (see " size:10 >
 <T "Sox " italic size:10 >
 <T "documentation)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LOAD(style)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: a letter indicating the data style of each sample, e.g.\
   u=unsigned (see " size:10 >
 <T "Sox " italic size:10 >
 <T "documentation)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MACHINE(PLATFORM)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The type of host operating system under which " size:10 >
 <T "studio" italic size:10 >
@@ -3129,488 +3197,488 @@
 <T "Linux" no-italic face:"Courier" size:10 >
 <T " and " no-italic face:"Arial" size:10 >
 <T "SunOS" no-italic face:"Courier" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(All)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Index numbers of all available Mixer devices." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(I_chnnls)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of input channels to be shown in Mixer board." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(O_chnnls)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of input channels to be shown in Mixer board." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(flag" size:10 >
 <T "DevName" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The flag indicating a recording source is active. " size:10 >
 <T "DevName" bold italic size:10 >
 <T "=an element of MIXER(labels)." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(label" size:10 >
 <T "DevName" bold italic size:10 >
 <T "n " italic underline size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Slider value of a mixer device channel. " size:10 >
 <T "DevName" bold italic size:10 >
 <T "=an element of MIXER(labels). " size:10 >
 <T "n" italic underline size:10 >
 <T "=0,1." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(labels)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of mixer device names, returned from mixer interface." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(noshow)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of mixer devices not to be shown." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIXER(show" size:10 >
 <T "DevName" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Flag indicating a device has a slider in the Mixer Board. " size:10 >
 <T "DevName" bold italic size:10 >
 <T "=an element of MIXER(labels)." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PACK(" size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Path of the section after which " size:10 >
 <T "Section" bold italic size:10 >
 <T " should be packed. " size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T "=EffectBar,MenuBar,PlayPanel,Mixer, InfoBar, PlotBox" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PACK(list)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of section_WCRs, for generating PACK(" size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T ") globals." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PACK(path)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of section paths, for generating PACK(" size:10 >
 <T "Section_WCR" bold italic size:10 >
 <T ") globals." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PID" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VLIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The process id's of background process pipes." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLAY(ButtList)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "List of PlayPanel button names." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLAY(Time)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The value of the " size:10 >
 <T "Play Time" italic size:10 >
 <T " field, in the control panel." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLAY(TimeMark)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The value of the system clock at the time the PP_Playing routine was called\
   during playback, in order to change PLAY(Time) every second." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Blocksize)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The number of bytes represented by a single vertical line of the editing pl\
  ot." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(End)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The position of insertion point 2: in a time format for display. " size:10 \
  >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Endx)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The position of insertion point 2: it's x-coord in the canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Height)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Height of plot canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Magnification)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Stores the current magnification factor of the plot canvas.  Currently rest\
  ricted to 1, 2, 4 or 8." size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(MarkBox)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Handle to the marking rectangle in the plot canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(MaxBlockSize)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CONST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The block size which fits the currents sample entirely within the canvas bo\
  undaries." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Offset)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Number of bytes in sample preceding the point at the x=0 point in the plot \
  canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Start)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "STR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The position of insertion point 1: in a time format for display. " size:10 \
  >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Startx)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The position of insertion point 2: it's x-coord in the canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Total)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The actual number of vertical lines drawn in the plot canvas." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Width)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Width of plot canvas.  May be greater the the visible width if the magnific\
  ation feature is in use." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(ZoomCount)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Number of Zoom levels" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PLOT(Zoom" size:10 >
 <T "n" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VLIST" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Context of the last zoom level." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <T "n" bold italic size:10 >
 <T "=0,1,2,3..." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(Size)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Number of samples in the sample file." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(bit)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Bit Resolution." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(chnl)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Channels." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(format)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Format name." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(rate)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: Sampling Rate" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(size)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Sampling parameter: a letter indicating the size of each sample, e.g. b=byt\
  e (see " size:10 >
 <T "Sox " italic size:10 >
 <T "documentation)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SAMPLE(style)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "Sampling parameter: a letter indicating the data style of each sample, e.g.\
   u=unsigned (see " size:10 >
 <T "Sox " italic size:10 >
 <T "documentation)" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:21:0:"" >
 <RS>
 <T "VU(On)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Whether the peak meter is enabled" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VU(Peak" size:10 >
 <T "channel" bold italic size:10 >
 <T ")" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Current peak value for channel " size:10 >
 <T "channel" bold italic size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VU(PeakOn)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BOOL" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Whether the peak hold feature is visible" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VU(channels)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "The current number of channels being displayed by the VU meter (if VU(On))"\
   size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VU(xpos)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "X position of the VU meters' window" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VU(ypos)" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "Y position of the VU meters' window" size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "button" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:2208 lm:39 rm:39  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "VAR" size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:592 lm:39 rm:39  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "A global of the " size:10 >
 <T "dialogue" italic size:10 >
 <T " subroutine." size:10 >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <CE width:3092 lm:39 rm:39 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <T "table " italic >
 <S_F fieldType:11 editable
@@ -3627,14 +3695,14 @@
 <E_F>
 <E_F>
 <T " - Index of Global Variables" italic >
-<P "Normal" justifyCenter >
+<P "Normal" justifyCenter lineSpacing:0 >
 <T "Variable type abbreviations: CONST=Constant. VAR=Variable. STR=Formatted st\
  ring for display. LIST=a TCL list; VLIST=a dynamic list; BOOL=a flag" size:10 \
  >
 <T "." italic size:10 >
-<P "Normal" justifyLeft  size:10 >
+<P "Normal" justifyLeft lineSpacing:0  size:10 >
 <T "Procedure Index">
-<P "heading 3">
+<P "heading 3" lineSpacing:0 >
 <T "The index in table ">
 <S_F fieldType:10>
 <T "xref \"tab:procs\"">
@@ -3644,1301 +3712,1321 @@
 <T " is to be used as a guide to finding procedures within the source code. The\
   category is provided to give an indication of its position in the procedure h\
  ierarchy.">
-<P "Normal">
-<P "Normal">
+<P "Normal" lineSpacing:0 >
+<P "Normal" lineSpacing:0 >
 <T "Category abbreviations:" size:10 >
-<P "Normal" xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMargin:150 r\
- ightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  xpos:5256 yposParaRelative ypos:31 width:2227 leftFr\
+ ameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
 <RS>
 <T "WCR" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:707 lm:100 rm:100 >
 <T "Widget Creation Routines" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:1507 lm:100 rm:100 last >
 <RS>
 <T "CB" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:707 lm:100 rm:100 >
 <T "Callback" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:1507 lm:100 rm:100 last >
 <RS>
 <T "CB/SUB" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:707 lm:100 rm:100 >
 <T "dual purpose routines" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:1507 lm:100 rm:100 last >
 <RS>
 <T "SUB" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:707 lm:100 rm:100 >
 <T "Subroutine" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:1507 lm:100 rm:100 last >
 <RS>
 <T "LOC" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:707 lm:100 rm:100 >
 <T "Local Subroutine" size:8 >
-<P "Normal" size:8  xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMarg\
- in:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  size:8  xpos:5256 yposParaRelative ypos:31 width:222\
+ 7 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:\
+ 0 >
 <CE width:1507 lm:100 rm:100 last >
-<P "Normal" xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMargin:150 r\
- ightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  xpos:5256 yposParaRelative ypos:31 width:2227 leftFr\
+ ameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
 <T "Entries applicatble only to non-Linux implementations are italicised." size\
  :8 >
-<P "Normal" xpos:5256 yposParaRelative ypos:31 width:2227 leftFrameMargin:150 r\
- ightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
+<P "Normal" lineSpacing:0  xpos:5256 yposParaRelative ypos:31 width:2227 leftFr\
+ ameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameMargin:0 >
 <RS>
 <T "Procedure name" bold >
-<P "Normal" bold >
+<P "Normal" lineSpacing:0  bold >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "Category" bold >
-<P "Normal" bold >
+<P "Normal" lineSpacing:0  bold >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "Module file name" bold >
-<P "Normal" bold >
+<P "Normal" lineSpacing:0  bold >
 <CE width:960 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:21:0:"" bB:10:0:"" >
 <RS>
 <T "About" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:21:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:21:0:"" bB:10:0:"" >
 <RS>
 <T "AddFX" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
+<CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
+<RS>
+<T "AddSilence" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
+<CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
+<T "CB" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
+<CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
+<T "file.tk" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Bit2SoxSize" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC: Load" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CARDSetter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CheckGlob" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:filebrowser" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ColourList" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Colours" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Convert" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Copy" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CreateMenu" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "CreateWidgets" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Cut" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Delete" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "DisplayWarnings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "EditMenuStates" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "TCB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "EffectBar" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "EndCallBack" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Select" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Exit" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FB_Cancel" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:FileBrowser/2" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FB_Exit" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:FileBrowser/2" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FB_RefreshList" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:FileBrowser/2" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FB_Select" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:FileBrowser/2" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FXApply" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FileBrowser" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FileBrowser2" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FileMenuStates" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "TCB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "FillPlot" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "GetArrayName" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "GetSoxVersion" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "GetWordSize" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "HoldWindow" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Info" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Info2Set" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "info.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "InfoBar" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "info.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "InfoFill" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "info.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Insert" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "light" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Reader" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "ListBoxFill" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Load" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "LoadSettings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIX_DeviceGet" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MIX_Reset" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MarkPlot" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MatchList" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Setter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MenuBar" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MenuGetUndl" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MenuItemDisable" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Mixer" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MixerSliders" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "MkSlider" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "New" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "OrderPacking" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PP_ButtonAble" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PP_Recording" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Paste" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Peak_Reset" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "BC" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Play" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PlayPanel" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PlayPort" italic size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PlotBox" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Preview" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "PutPeak" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Reader" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "RecSrcSet" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Record" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "RecPort" italic size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Resetter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SETscaleLim" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Settings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sChorus" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "neweffects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sEcho15" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "neweffects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sFlanger" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "neweffects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sPhaser" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "neweffects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sReverb" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "neweffects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SetVUParamters" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SetupVU_Channels" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "WCR" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "lineVU.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Save" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SaveSettings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Saver" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Sec2Time" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Select" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SelectApply" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Select" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SetInitially" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:SaveSettings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Setter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Settings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Show_VY" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "StartCallBack" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:Select" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Stop" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SoxWarnings" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effects.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUN_GetMixInfo" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUN_Mixer" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUN_SetSliders" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SYBmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUNPlayBalanceSetter" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUNRecBalanceSetter" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUNRecSetter" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "SUNSetter" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUNmixer.tk" italic size:10 >
-<P "Normal" italic size:10 >
+<P "Normal" lineSpacing:0  italic size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Trim" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Trim_Stop" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "playpanel.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Undo" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "UserManual" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "VolSet" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "mixer.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "WaitPlease" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "Zoom" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:21:0:"" >
 <T "edit.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:21:0:"" >
 <RS>
 <T "bindScale" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "dialog" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "misc.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "expandIt" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:CreateMenu" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "menu.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "forAllMatches" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "formatText" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "loadFile" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "parse_sox" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "file.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sEcho" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sFade" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sFilter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sReverse" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sVibrato" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "sVolTemp" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "scrollcb" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:plotbox" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "setPlotMag" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB/SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "plot.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "setRanges" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "LOC:sFilter" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "effect.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "setupText" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "SUB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "help.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "vEffects" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "vInfo" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "vMixer" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <RS>
 <T "vPlot" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1459 lm:75 rm:75  lB:21:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "CB" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:1409 lm:75 rm:75  lB:10:0:"" rB:10:0:"" tB:10:0:"" bB:10:0:"" >
 <T "option.tk" size:10 >
-<P "Normal" size:10 >
+<P "Normal" lineSpacing:0  size:10 >
 <CE width:967 lm:75 rm:75 last  lB:10:0:"" rB:21:0:"" tB:10:0:"" bB:10:0:"" >
 <T "table " italic >
 <S_F fieldType:11 editable
@@ -4955,7 +5043,7 @@
 <E_F>
 <E_F>
 <T " - List of studio procedures" italic >
-<P "Normal" justifyLeft >
+<P "Normal" justifyLeft lineSpacing:0 >
 <section  next_column pageWidth:8267 pageHeight:11692 leftMargin:1250 rightMarg\
  in:1250 topMargin:1000 bottomMargin:1000 bindingMargin:0 paperSize:11 oddHeade\
  r:Normal "_AX_HF_3" oddFooter:None sectNumFmt:-1 sectPageSep:"-" pageNumFmt:0 \
@@ -4969,7 +5057,7 @@
 <E_F>
 <T " The VoxWare manual states (p.12): \"The mixer ioctl calls are accessible t\
  hrough every device of the VoxWare driver.\"">
-<P "footnote text">
+<P "footnote text" lineSpacing:0 >
 <end_footnote>
 <start_footnote "1">
 <S_F fieldType:5>
@@ -4980,7 +5068,7 @@
 <T " See the ">
 <T "colour" italic >
 <T " dialog box in the SnapShots section.">
-<P "footnote text">
+<P "footnote text" lineSpacing:0 >
 <end_footnote>
 <start_hdrftr "_AX_HF_3">
 <T "Programmer's Guide^aj^aj3-">
@@ -4989,7 +5077,7 @@
 <FV>
 <T "19">
 <E_F>
-<P "header" bB:10:0:"" verticalMargin:14 >
+<P "header" lineSpacing:0  bB:10:0:"" verticalMargin:14 >
 <end_hdrftr>
 <object "object9" docType:201 appType:2>
 <start_data Applix>
@@ -7887,12 +7975,12 @@ END PICTURE
 <T " be default.  Use the following command for compilation with " no-italic >
 <T "gcc" no-italic face:"Courier" >
 <T ":" no-italic >
-<P "Normal">
+<P "Normal" lineSpacing:0 >
 <T "gcc -O2 -fsigned-char fader.c -o fader -lm" face:"Courier" >
-<P "Normal" justifyCenter  face:"Courier" >
+<P "Normal" justifyCenter lineSpacing:0  face:"Courier" >
 <end_footnote>
 <start_vars>
-<V "PathName$" "/home/een6njb/Tcl/SoundStudio-1.0.1/DOCS/prog-guide.aw">
+<V "PathName$" "/home/nick/Projects/SoundStudio/DOCS/Applix/prog-guide.aw">
 <V "DocName$" "prog-guide.aw">
 <V "Language@" 1>
 <V "ReadOnly@" 0>
@@ -7902,12 +7990,12 @@ END PICTURE
 <V "AxCreationCodeVersion$" "Thu Mar 13 12:31:34 1997">
 <V "CreationDate$" "Thu Jan 15 10:23:26 1998">
 <V "CreationUser$" "???">
-<V "Updated$" "Release 4.30 (build 807.141.90) #17">
-<V "AxUpdateCodeVersion$" "Mon Sep 22 06:52:06 1997">
-<V "UpdateDate$" "Fri Aug 13 12:29:07 1999">
-<V "UpdateUser$" "???">
+<V "Updated$" "Release 4.42 (build 1021.500) #17">
+<V "AxUpdateCodeVersion$" "Thu Jul  8 01:01:49 1999">
+<V "UpdateDate$" "Tue May 22 16:49:17 2001">
+<V "UpdateUser$" "nick">
 <V "DocWindowAttrType@" 1>
-<V "DocWindowSize$" < 8494 7947>>
+<V "DocWindowSize$" < 8494 7400>>
 <end_vars>
 <end_document>
 *END WORDS
