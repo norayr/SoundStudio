@@ -968,7 +968,7 @@
 <T "3.^ajDragging the mouse with the middle button down permits continuous vari\
  ation of the selected marker.">
 <P "Normal" leftIndent:250 lineSpacing:0 >
-<T "Copying, Cutting, Trimming and Deleting a Marked area.">
+<T "Copying, Cutting, Trimming, and Deleting a Marked area.">
 <P "heading 3" lineSpacing:0 >
 <T "Once an area has been marked there are a number of possible editing operati\
  ons.">
@@ -1060,6 +1060,13 @@
 <T "Sound Studio" italic size:12 >
 <T " has completed the insertion." size:12 >
 <P "heading 9" lineSpacing:0  size:12 >
+<T "Inserting Silence">
+<P "heading 3" lineSpacing:0 >
+<T "It is possible to insert a period of silence into a recording without other\
+ wise changing the contents of the file.  If the Insert Silence option is chose\
+ n from the edit menu when a range is selected, an equal period of silence is i\
+ nserted into the file at that point.">
+<P "Normal" lineSpacing:0 >
 <T "Zoom and Magnify.">
 <P "heading 3" lineSpacing:0 >
 <T "Once an area has been marked it can be expanded to fill the full window. Th\
@@ -1493,8 +1500,7 @@
 <P "footer" lineSpacing:0  bB:10:0:"" verticalMargin:14 >
 <end_hdrftr>
 <start_vars>
-<V "PathName$" "/scsi/home/een6njb/Studio/SoundStudio-1.0.3/DOCS/Applix/user-gu\
- ide.aw">
+<V "PathName$" "/home/nick/Projects/SoundStudio/DOCS/Applix/user-guide.aw">
 <V "DocName$" "user-guide.aw">
 <V "Language@" 1>
 <V "ReadOnly@" 0>
@@ -1506,10 +1512,10 @@
 <V "CreationUser$" "???">
 <V "Updated$" "Release 4.42 (build 1021.500) #17">
 <V "AxUpdateCodeVersion$" "Thu Jul  8 01:01:49 1999">
-<V "UpdateDate$" "Fri Nov  5 10:19:41 1999">
-<V "UpdateUser$" "een6njb">
+<V "UpdateDate$" "Tue May 22 16:38:06 2001">
+<V "UpdateUser$" "nick">
 <V "DocWindowAttrType@" 1>
-<V "DocWindowSize$" < 8494 7947>>
+<V "DocWindowSize$" < 8507 7400>>
 <end_vars>
 <end_document>
 *END WORDS
