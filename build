@@ -3,7 +3,7 @@
 # by Paul D. Sharpe and Nick Bailey
 
 # Update the following to build a new release
-VERSION="1.0.5"
+VERSION="1.0.6"
 
 # Set your system-dependencies here!
 
@@ -115,8 +115,7 @@ case $1 in
 	     sedCmd3="s=@SOX_DIR_CMD@=$SOX_CMD="
 
 	     printf "%s\n" "*** Building script \"studio\""
-	     sed -e "s:@WISH_PATH@:`which wish`:g" \
-                 -e "$sedCmd1" \
+	     sed -e "$sedCmd1" \
                  -e "$sedCmd2" \
                  -e "$sedCmd3" \
                       studio.template > studio
