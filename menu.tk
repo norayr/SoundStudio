@@ -55,36 +55,35 @@ proc MenuBar { {option init} } {
    lappend MenuMixDev # {  {Make Default} command "SaveSettings m" }
 
    
-   set MenuFile 	[ list New Load Save\
-			 {{Save As} command Convert} # \
-			 {Information command Info} # Exit ]
-   set MenuEdit 	[ list Undo Copy Cut Paste Delete Trim \
-			  {{Insert File}} #\
-			  {{Mark Range} command Select } \
-			 [list Zoom cascade {} $MenuZoom] ]
-   set MenuView 	[ list 	{Plot checkbutton { vPlot} FLAG(Vw_PlotBox)} \
-				{Mixer checkbutton {vMixer} FLAG(Vw_Mixer)} \
-				{Effects checkbutton {vEffects}\
-					FLAG(Vw_EffectBar)}\
-				{Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
-				#\
-				{"Make Default" command "SaveSettings f"} ] 
+   set MenuFile [ list New Load Save\
+		       {{Save As} command Convert} # \
+		       {Information command Info} # Exit ]
+   set MenuEdit [ list Undo Copy Cut Paste Delete Trim \
+		       {{Insert Silence} command AddSilence} #\
+		       {{Insert File}} #\
+		       {{Mark Range} command Select } \
+		       [list Zoom cascade {} $MenuZoom] ]
+   set MenuView [ list {Plot checkbutton {vPlot} FLAG(Vw_PlotBox)} \
+		       {Mixer checkbutton {vMixer} FLAG(Vw_Mixer)} \
+		       {Effects checkbutton {vEffects}\
+		          FLAG(Vw_EffectBar)}\
+		       {Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
+		       {"Make Default" command "SaveSettings f"} ] 
    if {$MACHINE(PLATFORM) == "SunOS"} {
-	   set MenuView 	[ list 	{Plot checkbutton { vPlot} FLAG(Vw_PlotBox)} \
-					{Mixer checkbutton {vSUNMixer} FLAG(Vw_Mixer)} \
-					{Effects checkbutton {vEffects}\
-						FLAG(Vw_EffectBar)}\
-					{Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
-					#\
-					{"Make Default" command "SaveSettings f"} ]
-	} 
-   set MenuOptions	[ list {{Set Parameters} command Settings} #\
-			  [list View cascade {} $MenuView ]\
-			  # {{Set Colours} command Colours} #\
-			  [list "Mixer Channels" cascade {} $MenuMixDev] #\
-			  [list "Hide Warning Messages" checkbutton { } WarningDisplay] #\
-			  [list "Show VU Meter" checkbutton { Show_VU } VU(On)]\
-			  [list "VU Parameters" command SetVUParameters ]]
+	   set MenuView [ list 	{Plot checkbutton { vPlot} FLAG(Vw_PlotBox)} \
+			        {Mixer checkbutton {vSUNMixer} FLAG(Vw_Mixer)}\
+			        {Effects checkbutton {vEffects}\
+			          FLAG(Vw_EffectBar)}\
+			        {Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
+			        {"Make Default" command "SaveSettings f"} ]
+   } 
+   set MenuOptions [ list {{Set Parameters} command Settings} #\
+		     [list View cascade {} $MenuView ]\
+			# {{Set Colours} command Colours} #\
+			[list "Mixer Channels" cascade {} $MenuMixDev] #\
+			[list "Hide Warning Messages" checkbutton { } WarningDisplay] #\
+			[list "Show VU Meter" checkbutton { Show_VU } VU(On)]\
+			[list "VU Parameters" command SetVUParameters ]]
 			  
    if {$SOXVersion15 == 0} {
          set MenuEffects	{ {Echo checkbutton sEcho FX(echo) }
