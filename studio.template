@@ -25,7 +25,7 @@ set MYFILES @MYFILES@
 set TEMP_DIR @TEMP_DIR@
 
 # Where do I find Sox?
-set SOX_DIR @SOX_DIR@
+@SOX_DIR_CMD@
 
 
 ##################################
