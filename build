@@ -278,7 +278,7 @@ case $1 in
                       $dirToSave/Linux \
                       $dirToSave/SunOS \
                       $dirToSave/SoundStudio.wmconfig \
-                      $dirToSave/DOCS ; \
+                      $dirToSave/DOCS \
                       $dirToSave/TODO ; \
                       printf "*** Compressing tar file...\n" ; \
               gzip -9 $TARFILENAME)
