@@ -409,6 +409,11 @@ proc parse_sox { filename } {
    {BEGIN { v = "ok" } \
    {if ($1 == "Trying:") v = "ko"} \
    END { print v }}  $filename ]
+#CB Newer versions of SoX just had to change the text :-)
+   set NewStatOut [exec awk \
+   {BEGIN { v = "ok" } \
+   {if ($1 == "Do") v = "ko"} \
+   END { print v }}  $filename ]
 
    # Extract sampling rate.
    set rate [exec grep rate $filename | awk {$NF!=prev {print $NF; prev=$NF}}]
@@ -448,7 +453,16 @@ proc parse_sox { filename } {
 
 
    # Extract the format.
+   set OldAuto [exec awk \
+   {BEGIN { v = "ok" } \
+   {if ($1 == "Trying:") v = "ko"} \
+   END { print v }}  $filename ]
+
+   if ([catch {exec grep AUTO $filename}]==0) {
    set format [exec grep AUTO $filename | awk {prev!=1 {print $NF; prev=1}}]
+   } else {
+       set format [exec grep Detected $filename | awk {prev!=1 {print $NF; prev=1}}] 
+   }
 
    # Convert sample size to a bit resolution
    switch -glob $size {
@@ -470,7 +484,7 @@ proc parse_sox { filename } {
    }
 
 #FC if the input file is raw use the actual parameter set
-   if {$StatOut=="ko"} { 
+   if {$StatOut=="ko" || $NewStatOut=="ko"} { 
 	set rate	$SAMPLE(rate)
 	set bit		$SAMPLE(bit)
 	set chnnl	$SAMPLE(chnl)
