@@ -1,0 +1,4 @@
+proc lister {} {
+	exec ls -l file.wav
+	lister
+}
