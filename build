@@ -58,7 +58,7 @@ case $1 in
 
 	     if SOX="`which sox`" ; then
 		 SOX_DIR=`dirname $SOX`
-		 SOX_CMD="if {[expr [catch {set which_sox [exec which sox]}]]} {set SOX_DIR $MYFILES/$UNAME/sox} else {set SOX_DIR \$which_sox}"
+		 SOX_CMD="if {[expr [catch {set which_sox [exec which sox]}]]} {set SOX_CMD $MYFILES/$UNAME/sox} else {set SOX_CMD \$which_sox}"
  	         if [ "$Ask" != "Don't" ] ; then
 		     choice=1;
  		     printf "%s\n" "Sox is already installed in $SOX_DIR"
@@ -80,9 +80,9 @@ case $1 in
 		       SOX_DIR=${x:-$SOX_DIR}
 		     fi
 		     case $choice in
-		        2)       SOX_CMD="set SOX_DIR [exec which sox]"
+		        2)       SOX_CMD="set SOX_CMD [exec which sox]"
 			    ;;
-			3)       SOX_CMD="set SOX_DIR $SOX_DIR/sox"
+			3)       SOX_CMD="set SOX_CMD $SOX_DIR/sox"
 			    ;;
 			*) if [ "$choice" != "1" ] ; then
 				    echo "eh? Using default."
@@ -98,15 +98,17 @@ case $1 in
 		     printf "%s\n" "application has been provided at $MYFILES/$UNAME/sox"
 		     printf "%s\n" "I recommend acquiring and installing an official version."
 		     if [ -x studio ] ; then
-		         altSoxDir=`awk '$2=="SOX_DIR" {print $3}' studio`
-			 printf "%s\n" "You previously installed Studio using a version of sox at"
-			 printf "%s\n" "$altSoxDir"
+		         altSoxDir=`awk '$2=="SOX_CMD" {print $3}' studio`
+			 if [ "$altSoxDir" != "" ] ; then
+			    printf "%s\n" "You previously installed Studio using a version of sox at"
+			    printf "%s\n" "$altSoxDir"
+			 fi
 	             fi
 
                      printf "%s\n" "Tell me where to find the version of sox you want to use"
 		     printf "%s" "[\"$SOX_DIR\"]: "
 		     read x
-	             SOX_CMD="set SOX_DIR ${x:-$SOX_DIR}"
+	             SOX_CMD="set SOX_CMD ${x:-$SOX_DIR}"
 		     printf "\n"
      		 fi
 	     fi

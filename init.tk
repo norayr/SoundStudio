@@ -47,7 +47,7 @@ global FILE
  # The recording/playback program.
    set FILE(Tool) "$FILE(SRC)/studio_tool"
  # The Conversion Utility
-   set FILE(Sox) $SOX_DIR/sox
+   set FILE(Sox) $SOX_CMD
  # Binary to perform fade-ins and fade-outs
    set FILE(Fader) "$FILE(SRC)/fader"
  # Temporary files
@@ -254,7 +254,7 @@ wm protocol . WM_SAVE_YOURSELF {
 # Clear Globals from the Start-up script.
   unset MYFILES
 # unset TEMP_DIR # This is needed at the end to remove all the temp files
-  unset SOX_DIR
+  unset SOX_CMD
 
 #Check if a sample is to be loaded
 if {($argc==1) } {
