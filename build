@@ -2,6 +2,9 @@
 # Compilation script for Sound Studio
 # by Paul D. Sharpe and Nick Bailey
 
+# Update the following to build a new release
+VERSION="1.0.5"
+
 # Set your system-dependencies here!
 
 # Which compiler would you like to invoke?
@@ -138,7 +141,7 @@ case $1 in
 	     $CC -D$UNAME -D$ENDIAN s_tool.c -o studio_tool -lm
 	     printf "%s\n" "*** Updating version infromation"
 	     for f in help.tk README studio.lsm ; do
-	         sed -e 's/@version@/1.0.4/g' $f.template > $f
+	         sed -e 's/@version@/$VERSION/g' $f.template > $f
 	     done
 	     printf "%s\n" "*** Finished Configuration."
 	     printf "\n"
@@ -242,15 +245,15 @@ case $1 in
     backup)  # Backup all of the important files.
 
 	     printf "%s\n" "*** Making backup"
+             TARFILENAME=studio-$VERSION.tar
 	     (dirToSave=`basename $PWD` ; cd .. ; \
-              tar cvf $dirToSave.tar \
+              tar cvf $TARFILENAME \
                       $dirToSave/*.tk \
                       $dirToSave/*.template \
                       $dirToSave/*.[ch] \
 		      $dirToSave/*.ico \
 		      $dirToSave/*.hlp \
                       $dirToSave/*.au \
-		      $dirToSave/*.wav \
                       $dirToSave/*.xpm \
                       $dirToSave/StudioHelp \
                       $dirToSave/COPYING \
@@ -260,7 +263,7 @@ case $1 in
                       $dirToSave/SoundStudio.wmconfig \
                       $dirToSave/DOCS ; \
                       printf "*** Compressing tar file...\n" ; \
-              gzip -9 $dirToSave.tar)
+              gzip -9 $TARFILENAME)
              printf "*** Finished Backup.\n"
              ;;
 
