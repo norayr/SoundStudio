@@ -3,7 +3,7 @@
 # by Paul D. Sharpe and Nick Bailey
 
 # Update the following to build a new release
-VERSION="1.0.6"
+VERSION="1.1.0"
 
 # Set your system-dependencies here!
 
@@ -132,6 +132,9 @@ case $1 in
              printf "%s" " maxmin..."
              $CC maxmin.c -o maxmin
              printf "%s\n" " done."
+             printf "%s" " maxminstereo..."
+             $CC maxminstereo.c -o maxminstereo
+             printf "%s\n" " done."
 	     if [ $UNAME = Linux ] ; then
 	         printf "%s\n" "*** Building Linux-specific executables..."
 	         printf "%s" "   studio_mixer..."
@@ -157,7 +160,7 @@ case $1 in
 	     printf "%s\n" "*** Building studio_tool for $UNAME, $ENDIAN architecture"
 	     $CC -D$UNAME -D$ENDIAN s_tool.c -o studio_tool -lm
 	     printf "%s\n" "*** Updating version infromation"
-	     for f in help.tk README studio.lsm ; do
+	     for f in help.tk README studio.lsm studio.template; do
 	         sed -e 's/@version@/$VERSION/g' $f.template > $f
 	     done
 	     printf "%s\n" "*** Finished Configuration."
