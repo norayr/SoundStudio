@@ -337,7 +337,7 @@ proc Load {{file default} {loadfile ""}} {
 	exec $FILE(Sox) -V -t .auto $loadfile \
 		-t .raw -c $LOAD(chnl)\
 		 -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
-		 $file rate >& $FILE(TMP3)
+		 $file >& $FILE(TMP3)
 	
    }
    # Set Loaded status flag.
@@ -543,7 +543,6 @@ proc Saver {filename format } {
 	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
 	        -r $SAMPLE(rate) -c $chnl \
 	        $filename rate} err
-# NJB 21/10/97: postponed rate effect until second sox invocation
     catch {exec $FILE(Sox) -t .raw \
 		-r $LOAD(rate) \
 		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
@@ -564,13 +563,13 @@ proc Saver {filename format } {
 		$FILE(TMP6) \
 	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
 	        -r $SAMPLE(rate) -c $chnl \
-	        $filename rate} err
+	        $filename } err
                 #puts "$FILE(Sox) -r $LOAD(rate) -c $chnl \
                 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
 		$FILE(TMP6) \
 	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
 	        -r $SAMPLE(rate) -c $chnl \
-	        $filename rate"
+	        $filename "
 
     if { $err != "" } {puts stderr $err}
 
@@ -581,7 +580,7 @@ proc Saver {filename format } {
 		 -t .$SAMPLE(style) $SAMPLE(size) -c $chnl\
 		- copy |\
 		$FILE(Sox) -t .$SAMPLE(style) $SAMPLE(size) - -t .$format\
-		-$SAMPLE(style) -r $SAMPLE(rate) -c $chnl $filename rate} err
+		-$SAMPLE(style) -r $SAMPLE(rate) -c $chnl $filename } err
 #puts $err
 #
 #modified to set sample rate correctly (Rich Drewes <drewes@interstice.com>

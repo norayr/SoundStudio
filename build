@@ -216,7 +216,7 @@ case $1 in
 		         targetDir=${x:-$targetDir}
 		     fi
 		     mkdir -p $targetDir
-		     cp -a * $targetDir
+		     cp -rp * $targetDir
 		 fi
 
 		 if [ $UNAME = Linux ] ; then
