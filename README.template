@@ -163,3 +163,9 @@ Patch history:
 	       Major improvements to zoom in and out: it even works a bit
 	       in conjunction with magnification now!
 	                                           NJB 4th November 1999.
+
+	1.0.5: (and 1.0.4) Various patches to make the thing work with
+	       more recent Soxes.
+
+	1.0.6: Working furiously through CVS.  Changes include:
+		Added "Insert Silence" function
