@@ -168,8 +168,84 @@ Patch history:
 	       more recent Soxes.
 
 	1.0.6: Working furiously through CVS.  Changes include:
-		Added "Insert Silence" function
+		   Added "Insert Silence" function
 
 	       More patches from Chris to make things work with the new
 	       new sox; Kevin's change to modernize the way wish is
 	       invoked.
+
+    1.1.0: In October 2002, I received an enormous contribution from
+           Gerhard Hilgers. I have decided to call this release 1.1.0, but
+           he has been more modest and sent it to me as 1.0.7. Thank
+           you, Gerhard! This is what Open Source Software is all about!
+           He writes:
+
+8><-------------------------------------------------------------------
+This is the README-file to SoundStudio, Version 1.0.7 [rel 1.1.0 - NJB]
+
+When I planned to copy my collection of vinyl records to CDs, I looked
+for a program to record them to the computer's hard disk. All programs I
+found suited my needs more or less, but SoundStudio-1.0.6 was that one,
+which I believed to be easiest adopted to my needs.
+
+
+These are the changes and additions I made to SoundStudio-1.0.6:
+
+1. Menu:
+  - Added: menu item "Save Marked As"
+  - Added: option "Timer recording" in dialogue "Options|Parameters"
+
+2. Plot window:
+  - Stereo records are shown as dual plot:
+    upper plot: left channel
+    lower plot: right channel
+  - Added: new information fields: "Window Start Time", "Window End Time"
+    and "Cursor Position Time"
+  - Added: set second marker with right mouse button click
+
+3. Mixer:
+  - Added: adjust the channels of a stereo source simultaneuosly such
+    that the ratio between the levels of the two channels is kept
+    constant (i.e. the balance is preserved) by pressing the middle
+    mouse button together with the CNTRL-key (of course, preserving the
+    balance does not work perfectly due to round-off errors).
+    Note: Make sure that the CNTRL-key is pressed and released before the
+    middle mouse button.
+
+4. VU-Meter:
+  - Added: "Info" button: shows up a dialogue with the number of overloaded
+    samples and with the maximum amplitude for each channel; is resetted
+    with the "Reset" button of the VU-Meter window.
+
+5. Version numbering:
+  - well, I took the freedom to increment the version number to 1.0.7
+    [changed to 1.1.0 by NJB]
+
+6. Bug fixes:
+  - fixed a few bugs with the play line and the "Play Time" display when
+    working with long audio files of more than 30 minutes play time with
+    a sampling rate of 44100 Hz.
+
+7. Online-Help:
+  - Updated online-help according to the changes and extensions
+    mentioned above.
+
+
+
+Well, after having built these items into the program, I thought it
+might also be useful for other users, so I sent the whole new package
+to the maintainers of SoundStudio.
+
+Of course, as it has never been and most probably will never be, there
+is no warranty, that all changes and additions I made are free of bugs.
+8><-------------------------------------------------------------------
+
+           Note that, as of the release, there is some work to be done
+           on the off-line docs, mainly because they are written using
+           the Applix office system (for historical reasons including
+           the unreasonable bias of The University of Leeds, UK, against
+           file formats not owned by Microsoft (TM)), which I have some
+           difficulty in running these days. "Will I ever learn?" I hear
+           you ask?  Well, I learned years ago. It wasn't my fault,
+           guv'nor. In particular, the TimerRec structure (see init.tk)
+           needs a good looking at.
