@@ -366,32 +366,32 @@
   source directory.  Please also honour the copyright conditions: send us a pos\
  tcard!" no-italic >
 <P "Normal" lineSpacing:0 >
-<T "Nick Bailey <nick@polonius.demon.co.uk>" bold italic >
+<T "Nick Bailey <nick@bailey-family.org.uk>" bold italic >
 <T "," italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "Lecturer in Electronic Engineering," italic >
+<T "Snr Lecturer in Music Technology and DSP," italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "Dept of Electronic and Electrical Engineering," italic >
+<T "Dept of Electronics and Electrical Engineering," italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "The University of Leeds," italic >
+<T "The University of Glasgow," italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "Woodhouse Lane," italic >
+<T "Rankine Building," italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "Leeds." italic >
+<T "Oakfiled Avenue." italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
-<T "LS2 9JT." italic >
+<T "Glasgow." italic >
 <P "Table" justifyLeft lineSpacing:0  xpos:4168 yposParaRelative ypos:10059 wid\
  th:3494 leftFrameMargin:150 rightFrameMargin:150 topFrameMargin:0 bottomFrameM\
  argin:0 >
@@ -401,8 +401,7 @@
  None oddFooter:None sectNumFmt:-1 sectPageSep:"-" pageNumFmt:0 pageNumCtl:0>
 <end_flow>
 <start_vars>
-<V "PathName$" "/mnt/hdc1/home/nick/Studio/SoundStudio-1.0.3/DOCS/Applix/prefac\
- e.aw">
+<V "PathName$" "/home/nick/Projects/SoundStudio/DOCS/Applix/preface.aw">
 <V "DocName$" "preface.aw">
 <V "Language@" 1>
 <V "ReadOnly@" 0>
@@ -414,10 +413,10 @@
 <V "CreationUser$" "???">
 <V "Updated$" "Release 4.42 (build 1021.500) #17">
 <V "AxUpdateCodeVersion$" "Thu Jul  8 01:01:49 1999">
-<V "UpdateDate$" "Fri Nov  5 20:37:24 1999">
+<V "UpdateDate$" "Tue May 22 17:06:18 2001">
 <V "UpdateUser$" "nick">
 <V "DocWindowAttrType@" 1>
-<V "DocWindowSize$" < 8494 7947>>
+<V "DocWindowSize$" < 8494 7400>>
 <end_vars>
 <end_document>
 *END WORDS
