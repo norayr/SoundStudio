@@ -530,33 +530,19 @@ proc Saver {filename format } {
 	set chnl $SAMPLE(chnl)
    }
 
-   # If we are reducing the number of channels, change the effect to avg
-   if {$chnl>=$LOAD(chnl)} { set effect copy } else { set effect avg }
-
    # Perform conversion and save in the file given by filename.
-#FC changed to make it possible saving -> wav and -> raw
-#   catch {exec $FILE(Sox) -t raw \
-		-r $LOAD(rate) \
-		-u -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
-		 -t .$SAMPLE(style)$SAMPLE(size) -c $chnl\
-		- $effect |\
-		$FILE(Sox) -r $LOAD(rate) -c $chnl \
-                -t .$SAMPLE(style)$SAMPLE(size) - \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
-	        -r $SAMPLE(rate) -c $chnl \
-	        $filename rate} err
     catch {exec $FILE(Sox) -t .raw \
 		-r $LOAD(rate) \
 		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
 		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
 		 -r $LOAD(rate) -c $chnl\
-		$FILE(TMP6) $effect} err
+		$FILE(TMP6)} err
                 #puts "$FILE(Sox) -t .raw \
 		-r $LOAD(rate) \
 		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
 		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
 		 -r $LOAD(rate) -c $chnl\
-		$FILE(TMP6) $effect"
+		$FILE(TMP6)"
 
     if { $err != "" } {puts stderr $err}
 		
@@ -574,22 +560,6 @@ proc Saver {filename format } {
 	        $filename "
 
     if { $err != "" } {puts stderr $err}
-
-# Original as follows:
-#   catch {exec $FILE(Sox) -t raw \
-		-r $LOAD(rate) \
-		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
-		 -t .$SAMPLE(style) $SAMPLE(size) -c $chnl\
-		- copy |\
-		$FILE(Sox) -t .$SAMPLE(style) $SAMPLE(size) - -t .$format\
-		-$SAMPLE(style) -r $SAMPLE(rate) -c $chnl $filename } err
-#puts $err
-#
-#modified to set sample rate correctly (Rich Drewes <drewes@interstice.com>
-#inserted extra -c $chnl to stop sox complaining about having to use avg
-#Made the effect in the first sox either copy if chnl>=LOAD(chnl), else avg
-#Also assumed TMP1 always unsigned.
-#NJB
 
    # Update Edited status flag.
    set FLAG(Edited) 0

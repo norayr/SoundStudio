@@ -232,7 +232,7 @@ proc AddSilence {{file default}} {
         # Create a file with silence of just the right length, then
         # paste it in if the dd worked
         set err [ catch {
-		    exec dd if=/dev/zero count=1 bs=$len | sox -t .raw -s -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) - -t .raw -$LOAD(style) -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) $file
+		    exec dd if=/dev/zero count=1 bs=$len | $FILE(Sox) -t .raw -s -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) - -t .raw -$LOAD(style) -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) $file
 		  }
 	]
 puts "$err"
