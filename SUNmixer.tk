@@ -24,6 +24,7 @@ proc SUN_Mixer { option } {
     global ConfigSet SUN
     
     if {$option == "init" } {
+        SUN_GetMixInfo 
         if {![winfo exists .mixer]} {
             # Create the widgets
 	    frame .mixer
