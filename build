@@ -245,7 +245,7 @@ case $1 in
     backup)  # Backup all of the important files.
 
 	     printf "%s\n" "*** Making backup"
-             TARFILENAME=studio-$VERSION.tar
+             TARFILENAME=SoundStudio-$VERSION.tar
 	     (dirToSave=`basename $PWD` ; cd .. ; \
               tar cvf $TARFILENAME \
                       $dirToSave/*.tk \
