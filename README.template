@@ -169,3 +169,7 @@ Patch history:
 
 	1.0.6: Working furiously through CVS.  Changes include:
 		Added "Insert Silence" function
+
+	       More patches from Chris to make things work with the new
+	       new sox; Kevin's change to modernize the way wish is
+	       invoked.
