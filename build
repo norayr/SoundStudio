@@ -118,6 +118,7 @@ case $1 in
 	     sed -e "$sedCmd1" \
                  -e "$sedCmd2" \
                  -e "$sedCmd3" \
+                 -e "s:@version@:$VERSION:" \
                       studio.template > studio
 	     chmod a+x studio
 
@@ -160,7 +161,7 @@ case $1 in
 	     printf "%s\n" "*** Building studio_tool for $UNAME, $ENDIAN architecture"
 	     $CC -D$UNAME -D$ENDIAN s_tool.c -o studio_tool -lm
 	     printf "%s\n" "*** Updating version infromation"
-	     for f in help.tk README studio.lsm studio.template; do
+	     for f in help.tk README studio.lsm ; do
 	         sed -e 's/@version@/$VERSION/g' $f.template > $f
 	     done
 	     printf "%s\n" "*** Finished Configuration."
