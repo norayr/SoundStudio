@@ -311,12 +311,12 @@ proc Load {{file default} {loadfile ""}} {
 		-t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
 		-r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
 		-t .raw -$LOAD(style) -$LOAD(size) \
-		-r $LOAD(rate) -c $LOAD(chnl) $file rate"
+		-r $LOAD(rate) -c $LOAD(chnl) $file"
 	exec $FILE(Sox) -V \
 		-t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
 		-r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
 		-t .raw -$LOAD(style) -$LOAD(size) \
-		-r $LOAD(rate) -c $LOAD(chnl) $file rate >& $FILE(TMP3)
+		-r $LOAD(rate) -c $LOAD(chnl) $file >& $FILE(TMP3)
 #FC
 	}
 
@@ -419,8 +419,16 @@ proc parse_sox { filename } {
    # Extract the channels.     
    set chnnl [lindex $line [expr [lsearch $line channel*]-1]]
 
+   set searchstyle [lsearch $line style]
+
    # Extract the style.
-   set style [string trim [lindex $line [expr [lsearch $line style]+1]] ,]
+   if {$searchstyle == -1} {
+     set style [string trim [lindex $line [expr [lsearch $line encoding]+1]] ,]
+   } else {
+     set style [string trim [lindex $line [expr [lsearch $line style]+1]] ,]
+   }
+
+   catch {exec echo $style $FILE(TMP3)}
 
    # Extract the sample size.
    set size [string trim [lindex $line [expr [lsearch $line size]+1]] ,]

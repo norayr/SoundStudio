@@ -33,7 +33,7 @@ proc About {} {
    global DialogCfg FILE
    set Text [format \
    	"Sound Studio \n\
-	version 1.0.3\n\
+	version 1.0.4\n\
   	by Paul D. Sharpe\n\n\
 	A Sound File Editor for Linux\n\
 	Written in TCL/TK (and a little C)\n\n\
