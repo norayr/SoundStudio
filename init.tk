@@ -53,11 +53,9 @@ global FILE
  # Temporary files
  # Use system clock for uniqueness
    if {$MACHINE(PLATFORM) == "SunOS"} {
-   set FILE(Head) "$FILE(SRC)/heady"
-   set PID [exec date +%m%d%H%M%S][pid]
-   } else {
-   set PID [exec date +%s][pid]
-   }
+       set FILE(Head) "$FILE(SRC)/heady"
+   }	
+   set PID [exec date +%m%d%H%M%S]
 
    set FILE(TMP1) $TEMP_DIR/SoundStudio.tmp$PID.01.main
    set FILE(TMP2) $TEMP_DIR/SoundStudio.tmp$PID.02.clip
