@@ -1,4 +1,6 @@
 #!/bin/sh
+# Don't edit the file 'studio'; make changes to studio.template
+# and then run the build script.
 # Restart using wish.  Don't delete the backslash! \
 exec wish "$0" -- "$@"
 
@@ -28,6 +30,9 @@ set TEMP_DIR @TEMP_DIR@
 
 # Where do I find Sox?
 @SOX_DIR_CMD@
+
+# What's the current version number?
+set VERSION "@version@\n"
 
 
 ##################################

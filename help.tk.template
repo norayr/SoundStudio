@@ -31,9 +31,10 @@ set HELP(Log) "0"
 # It creates a dialog box giving Credit information about Sound Studio.
 proc About {} {
    global DialogCfg FILE
+   global VERSION
    set Text [format \
    	"Sound Studio \n\
-	version @version@\n\
+	version $VERSION\n\
   	by Paul D. Sharpe\n\n\
 	A Sound File Editor for Linux\n\
 	Written in TCL/TK (and a little C)\n\n\

@@ -740,7 +740,7 @@ proc Resetter {} {
 # conversions.
 proc Settings {} {
 
-   global SAMPLE CARD ConfigSet FLAG
+   global SAMPLE CARD ConfigSet FLAG TimerRec
    
    if {!$FLAG(Loaded) } {
 	
@@ -902,6 +902,74 @@ proc Settings {} {
 	.set.main.smpl.label \
 	  -side left -fill x -expand 1
 
+
+
+
+   frame .set.main.timer -bg $ConfigSet(cBG1)\
+			    -relief groove\
+			    -bd 2
+   label .set.main.timer.label \
+			  -bg $ConfigSet(cBG1)\
+			  -fg $ConfigSet(cFG1)\
+			  -text "Timer Recording"\
+			  -font $ConfigSet(FNT_S) \
+ 		 	  -anchor w
+   pack .set.main.timer.label -fill x -expand 1
+   checkbutton .set.main.timer.timedrec \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text "Recording time"\
+			-selectcolor $ConfigSet(cAFG)\
+			-anchor w\
+			-variable TimerRec(On)\
+			-relief groove
+   entry .set.main.timer.minutes \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "TimerRec(minutes)"\
+			-font $ConfigSet(FNT_S) \
+			-width 3\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   label .set.main.timer.minutext \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Minutes"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+   entry .set.main.timer.seconds \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "TimerRec(seconds)"\
+			-font $ConfigSet(FNT_S) \
+			-width 3\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   label .set.main.timer.sectext \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Seconds"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+
+
+
+   pack .set.main.timer.timedrec .set.main.timer.minutes .set.main.timer.minutext\
+   .set.main.timer.seconds .set.main.timer.sectext\
+    -side left -padx 3m -pady 3m -fill x -expand 1
+
+
+
+
+
+
    # Done Button
    frame .set.main.done -bg $ConfigSet(cBG1)\
 			  -relief groove\
@@ -934,15 +1002,19 @@ proc Settings {} {
 					set LOAD(size) $SAMPLE(size)
 					set LOAD(style) $SAMPLE(style)
 				}
+				if {$TimerRec(On)} {
+					set TimerRec(total) [expr round($TimerRec(minutes)*60+$TimerRec(seconds))]
+				}
 				destroy .set}
    pack .set.main.done.butt -expand 1 -ipadx 2m -pady 3m
    bind .set.main.done.butt <Return> { .set.main.done.butt invoke }
    focus .set.main.done.butt
 
    pack .set.main.label .set.main.smpl .set.main.bit .set.main.chnl\
-	.set.main.done \
+	.set.main.timer .set.main.done \
 	-fill both -expand 1 -side top
    pack .set.main -fill both -expand 1	
+
 }
 
 

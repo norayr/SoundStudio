@@ -56,7 +56,8 @@ proc MenuBar { {option init} } {
 
    
    set MenuFile [ list New Load Save\
-		       {{Save As} command Convert} # \
+		       {{Save As} command Convert} \
+		       {{Save Marked As} command SaveMarked} # \
 		       {Information command Info} # Exit ]
    set MenuEdit [ list Undo Copy Cut Paste Delete Trim \
 		       {{Insert Silence} command AddSilence} #\

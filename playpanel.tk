@@ -38,9 +38,9 @@ proc PlayPanel { option } {
 	frame .playpanel -background $ConfigSet(cBG1)
 	frame .playpanel.title 
 	label .playpanel.title.label -text Controls
-	label .playpanel.title.timel -text "Play Time:" -justify left
-	label .playpanel.title.time -textvariable PLAY(Time)\
-				     -width 3 -anchor w
+	label .playpanel.title.timel -text "Play Time: " -justify left
+	label .playpanel.title.time -textvariable PLAY(DisplayTime)\
+				     -width 10 -anchor w
 	pack .playpanel.title.label -side left -fill x -expand 1\
 		-anchor w -ipady 1m
 	pack .playpanel.title.timel .playpanel.title.time -side left\
@@ -208,6 +208,8 @@ proc PlayPanel { option } {
 proc Play {} {
    global  FILE FLAG FX PLAY DialogCfg LOAD PLOT LINE WarningCommand MACHINE peakon2 VU Peak_Marker
 
+   set max_pos_integer 32760
+
    # Only play if there is a loaded file and a sound card is detected.
    if {$FLAG(Loaded) && $FLAG(Card_Exist)} {		
      set test [catch {exec $FILE(Tool) diagnostics} err ]
@@ -248,17 +250,19 @@ proc Play {} {
 	} else {
 		# Set state variables.
   		set PLAY(Time) 0
+  		set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
   		set FLAG(Playing) 1
-  	
+
+                Reset_Peak_Info	
   		PP_ButtonAble
 	
 		# Play the sample.
 	
 		#set  FILE(PID)  [exec $FILE(Tool) play $source $LOAD(bit)\
 			$LOAD(chnl) $LOAD(rate) &]
-		set PLOT(NumberOfSamples) [expr (([file size $FILE(TMP1)] * 8) / $LOAD(bit)) / $LOAD(chnl)]
-	
-	
+
+		set PLOT(NumberOfSamples) [expr round(([file size $FILE(TMP1)] * 8.0) / $LOAD(bit)) / $LOAD(chnl)]
+
 		if {$MACHINE(PLATFORM) == "SunOS"} {
 			SUN_GetMixInfo
 			SUN_SetSliders
@@ -274,12 +278,15 @@ proc Play {} {
 		if {$FLAG(Marked) == 1} {
          
             		set LINE(Startx) $PLOT(Startx)
+	                set PLAY(Time) [expr (($PLOT(Startx)*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
 
             		if {$LINE(Startx) > $PLOT(Endx)} {
                   
                   		set LINE(Startx) $PLOT(Endx)
+                        	set PLAY(Time) [expr ( ($PLOT(Endx)*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
                   
             		}      
+	  		set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
             		.plotbox.cs.canvas xview moveto [expr [expr $LINE(Startx) - 20] / $PLOT(Total).0] 
   
        		 } else {
@@ -320,7 +327,7 @@ proc Play {} {
         	
 		.plotbox.cs.canvas move $LINE(Id) $LINE(Startx) 0
 
-                # puts "Playback command: $FILE(Tool) play $source $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10] $linelist"
+# puts "Playback command: $FILE(Tool) play $source $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10] $linelist"
 
 		set pipe [open "|$FILE(Tool) play $source $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10] $linelist" "r+"]
 
@@ -395,6 +402,7 @@ proc Stop {} {
      }
 	set FLAG(Recording) 0
    }
+   
 }
 
 ###################################################################
@@ -448,6 +456,8 @@ proc Record {{target default}} {
 	set LINE(On) 0
 	set LINE(PixelsMovedInPlot) 0
 	set LINE(TotalPixelsMoved) 0
+
+        Reset_Peak_Info	
 
 	# Enable Stop Button
 	PP_ButtonAble
@@ -505,7 +515,7 @@ proc PP_ButtonAble {} {
 
 proc PP_Recording {action} {
 
-   global FILE FLAG PLAY MACHINE
+   global FILE FLAG PLAY MACHINE TimerRec
 
    if {"$action" == "start"} {
      set PLAY(TimeMark) 0
@@ -516,12 +526,18 @@ proc PP_Recording {action} {
        if {$PLAY(TimeMark)!=0} {
 	 set temp $PLAY(TimeMark)
 	 set PLAY(TimeMark) [exec date +%s]
-	 set PLAY(Time) [expr $PLAY(Time)+($PLAY(TimeMark)-$temp) ]
+	 set PLAY(Time) [expr $PLAY(Time)+($PLAY(TimeMark)-$temp)] 
+	 set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
 	 update idletasks
+
+         if {$FLAG(Recording) && $TimerRec(On) && ($PLAY(Time) >= $TimerRec(total))} {
+         	Stop
+         }
 	 
 	 # Set the time mark (the first time).
        } else {
 	 set PLAY(Time) 0
+	 set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
 	 set PLAY(TimeMark) [exec date +%s]
        }
 
@@ -529,6 +545,11 @@ proc PP_Recording {action} {
 	 after 200 PP_Recording next
      } else {
        set PLAY(TimeMark) 0
+       set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
      }
    }
 }
+
+
+
+

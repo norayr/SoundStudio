@@ -482,7 +482,7 @@ proc Select {} {
 			-fg $ConfigSet(cFG1)\
 			-textvariable "ED(Left)"\
 			-font $ConfigSet(FNT_S) \
-			-width 5\
+			-width 8\
 			-insertbackground $ConfigSet(cFG1)\
 			-selectforeground $ConfigSet(cAFG)\
 			-selectbackground $ConfigSet(cABG)\
@@ -496,8 +496,8 @@ proc Select {} {
 			-fg $ConfigSet(cFG1)\
 			-activebackground $ConfigSet(cABG)\
 			-from 0 -to $SAMPLE(Size)\
-			-width 10 -length 100\
-			-orient horizontal\
+			-width 10 -length 434\
+			-orient vertical\
 			-command "StartCallBack"
 
 
@@ -529,7 +529,7 @@ proc Select {} {
 			-fg $ConfigSet(cFG1)\
 			-textvariable "ED(Right)"\
 			-font $ConfigSet(FNT_S) \
-			-width 5\
+			-width 8\
 			-insertbackground $ConfigSet(cFG1)\
 			-selectforeground $ConfigSet(cAFG)\
 			-selectbackground $ConfigSet(cABG)\
@@ -543,8 +543,8 @@ proc Select {} {
 			-fg $ConfigSet(cFG1)\
 			-activebackground $ConfigSet(cFG1)\
 			-from 0 -to $SAMPLE(Size)\
-			-width 10 -length 100\
-			-orient horizontal\
+			-width 10 -length 434\
+			-orient vertical\
 			-command "EndCallBack"
 
    # Set initial value of scale, and update the label.
@@ -593,6 +593,7 @@ proc Select {} {
   # Pack the time labels. 
   pack .select.main.time.left .select.main.time.right\
 	-side left  -expand 1 -padx 15
+
 
   # Apply Checkbutton
   checkbutton .select.main.apply \

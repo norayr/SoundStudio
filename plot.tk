@@ -30,7 +30,7 @@ proc PlotBox { option } {
   # Get User Settings
   global ConfigSet
   global Menu_anc PLOT FILE
-  set PLOT(Height) 100
+  set PLOT(Height) 200
 
   if {$option == "init" } {
 if {![winfo exists .plotbox]} {
@@ -38,23 +38,47 @@ if {![winfo exists .plotbox]} {
 	label .plotbox.title -text Plot
 	frame .plotbox.cs
 	canvas .plotbox.cs.canvas
-	scrollbar .plotbox.cs.scroll -orient horizontal\
+#	scrollbar .plotbox.cs.scroll -orient horizontal\
 				-command ".plotbox.cs.canvas xview"
+	scrollbar .plotbox.cs.scroll -orient horizontal\
+				-command {scroll_it}
 	.plotbox.cs.canvas configure -xscrollcommand {.plotbox.cs.scroll set}
 	frame .plotbox.cs.marker
 	frame .plotbox.cs.marker.start
-	label .plotbox.cs.marker.start.label -text "Point 1"
+	label .plotbox.cs.marker.start.label -text "First Marker Time"
 	label .plotbox.cs.marker.start.data -textvariable PLOT(Start)	
+	label .plotbox.cs.marker.start.wintimelabel -text "Window Start Time"
+	label .plotbox.cs.marker.start.wintimedata -textvariable PLOT(WStart)	
+#	pack 	.plotbox.cs.marker.start.wintimedata\
+		.plotbox.cs.marker.start.data\
+		-side top -fill x -expand 1
+#	pack 	.plotbox.cs.marker.start.wintimelabel\
+		.plotbox.cs.marker.start.label\
+		-side left -fill x -expand 1
+	pack 	.plotbox.cs.marker.start.wintimedata\
+		.plotbox.cs.marker.start.wintimelabel\
+		-side top -fill x -expand 1
 	pack 	.plotbox.cs.marker.start.data\
 		.plotbox.cs.marker.start.label\
 		-side top -fill x -expand 1
 	frame .plotbox.cs.marker.end
- 	label .plotbox.cs.marker.end.label -text "Point 2"
+ 	label .plotbox.cs.marker.end.label -text "Second Marker Time"
 	label .plotbox.cs.marker.end.data -textvariable PLOT(End)
+	label .plotbox.cs.marker.end.wintimelabel -text "Window End Time"
+	label .plotbox.cs.marker.end.wintimedata -textvariable PLOT(WEnd)	
+	pack 	.plotbox.cs.marker.end.wintimedata\
+		.plotbox.cs.marker.end.wintimelabel\
+		-side top -fill x -expand 1
 	pack 	.plotbox.cs.marker.end.data\
 		.plotbox.cs.marker.end.label\
 		-side top -fill x -expand 1
+
 	frame .plotbox.cs.marker.zoom
+ 	label .plotbox.cs.marker.zoom.label -text "Cursor Position Time"
+	label .plotbox.cs.marker.zoom.data -textvariable PLOT(CursorTime)
+	pack 	.plotbox.cs.marker.zoom.data\
+		.plotbox.cs.marker.zoom.label\
+		-side top -fill x -expand 1
         button .plotbox.cs.marker.zoom.zoomin \
                 -bitmap @$FILE(SRC)\/zoomin.ico\
                 -command {scrollcb {1}}
@@ -63,7 +87,8 @@ if {![winfo exists .plotbox]} {
                 -command {scrollcb {-1}}
 	# Callback for zooming (used to be a scrollbar 8-)
 	proc scrollcb {value} {
-		if {$value==1} { Zoom up}\
+		global PLOT
+		if {$value==1} {Zoom up}\
 		elseif {$value==-1} {Zoom down}
 	}
 	label .plotbox.cs.marker.zoom.level\
@@ -81,7 +106,7 @@ if {![winfo exists .plotbox]} {
               -text "View 1/1"
         menu .plotbox.cs.marker.mag.b.choices \
 	      -font $ConfigSet(FNT_L)
-        for {set i 8} {$i >= 1} {set i [expr $i/2]} {
+        for {set i 32} {$i >= 1} {set i [expr $i/2]} {
 	  .plotbox.cs.marker.mag.b.choices add command          \
 	      -label 1/$i \
 	      -command ".plotbox.cs.marker.mag.b config -text \"View 1/$i\"
@@ -106,6 +131,14 @@ if {![winfo exists .plotbox]} {
 
 	pack .plotbox.title -fill x -expand 1
 	pack .plotbox.cs -padx 10
+
+
+	bind .plotbox.cs.canvas <Motion> {
+		set cursorpos [expr round([.plotbox.cs.canvas canvasx %x])]
+                set cursorpos [expr (($cursorpos*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+                set PLOT(CursorTime) [Sec2Time $cursorpos]
+#                puts $cursorpos
+	}
 
 
 	# Bindings for Canvas
@@ -189,8 +222,23 @@ if {![winfo exists .plotbox]} {
 	}
   
 	# Button 3: Drag the canvas view.
-	bind .plotbox.cs.canvas <Button-3> { .plotbox.cs.canvas scan mark %x %y }
-	bind .plotbox.cs.canvas <B3-Motion> { .plotbox.cs.canvas scan dragto %x %y }
+#	bind .plotbox.cs.canvas <Button-3> { .plotbox.cs.canvas scan mark %x %y }
+#	bind .plotbox.cs.canvas <B3-Motion> { .plotbox.cs.canvas scan dragto %x %y }
+
+	# Button 3: Ende Markieren.
+	bind .plotbox.cs.canvas <Button-3> {
+ 
+		# Set the end marker
+		set PLOT(Endx) [expr round([.plotbox.cs.canvas canvasx %x])]
+		if {$PLOT(Endx)>$PLOT(Total)} { set PLOT(Endx) $PLOT(Total)}
+		if {$PLOT(Endx)<0} {set PLOT(Endx) 0}
+		# Mark the area.	
+		MarkPlot
+		if {[info exists PLOT(MarkBox)] } {.plotbox.cs.canvas lower $PLOT(MarkBox) graph}
+			set FLAG(Marked) 1
+	}
+
+
 }
 
 
@@ -217,8 +265,19 @@ if {![winfo exists .plotbox]} {
 			-foreground $ConfigSet(cFG1) \
 			-anchor w\
 			-font $ConfigSet(FNT_S)
-			
+	.plotbox.cs.marker.start.wintimelabel config\
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor w\
+			-font $ConfigSet(FNT_S)
 	.plotbox.cs.marker.start.data config\
+			-background $ConfigSet(cBG2) \
+			-foreground $ConfigSet(cFG2) \
+			-anchor c\
+			-font $ConfigSet(FNT_L)\
+			-width 15\
+			-relief groove
+	.plotbox.cs.marker.start.wintimedata config\
 			-background $ConfigSet(cBG2) \
 			-foreground $ConfigSet(cFG2) \
 			-anchor c\
@@ -231,8 +290,19 @@ if {![winfo exists .plotbox]} {
 			-foreground $ConfigSet(cFG1) \
 			-anchor e\
 			-font $ConfigSet(FNT_S)
-			
 	.plotbox.cs.marker.end.data config\
+			-background $ConfigSet(cBG2) \
+			-foreground $ConfigSet(cFG2) \
+			-anchor c\
+			-font $ConfigSet(FNT_L)\
+			-width 15\
+			-relief groove
+ 	.plotbox.cs.marker.end.wintimelabel config\
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor e\
+			-font $ConfigSet(FNT_S)
+	.plotbox.cs.marker.end.wintimedata config\
 			-background $ConfigSet(cBG2) \
 			-foreground $ConfigSet(cFG2) \
 			-anchor c\
@@ -241,6 +311,18 @@ if {![winfo exists .plotbox]} {
 			-relief groove
 
 	.plotbox.cs.marker.zoom config -background $ConfigSet(cBG1) 
+ 	.plotbox.cs.marker.zoom.label config\
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor e\
+			-font $ConfigSet(FNT_S)
+	.plotbox.cs.marker.zoom.data config\
+			-background $ConfigSet(cBG2) \
+			-foreground $ConfigSet(cFG2) \
+			-anchor c\
+			-font $ConfigSet(FNT_L)\
+			-width 15\
+			-relief groove
         .plotbox.cs.marker.zoom.zoomin config\
 	      -background $ConfigSet(cBG2) -foreground $ConfigSet(cFG2)\
 	      -activebackground $ConfigSet(cABG)		\
@@ -316,14 +398,20 @@ if {$opt=="default"} {
 } else { set file $opt }
 set mask [expr (($LOAD(bit)>>4)<<1) + ($LOAD(chnl)>>1) ]
 
+
+# set PLOT(ViewWinLeft) [expr round([.plotbox.cs.canvas canvasx 0])]
+# set PLOT(ViewWinLeft) 0
+
+
 # Set an initial block size based on the number of samples 
 if {$blocksize=="init"} {
 	   set maxmin [exec $FILE(SRC)/maxmin 10000 $mask $file] 
 	   set length [join [lindex $maxmin 1]]
            set bytes [GetWordSize]
 	   set PLOT(Total) [expr ($PLOT(Width)-5)]
-           set PLOT(Blocksize) \
+#           set PLOT(Blocksize) \
                [expr $bytes*round(($length/$PLOT(Width).0)/$bytes)]
+           set PLOT(Blocksize) [expr round($length/$PLOT(Width).0)]
 	   if {$opt=="default"} {
 	     set PLOT(MaxBlockSize) $PLOT(Blocksize)
 	     set PLOT(Zoom0) "$PLOT(Blocksize) 0 0 0"
@@ -333,12 +421,19 @@ if {$blocksize=="init"} {
 	     InfoFill	
 	     Zoom init
 	   }
+	   set PLOT(WStart) [expr (($PLOT(ViewWinLeft)*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+	   set PLOT(WEnd) [expr ((($PLOT(ViewWinLeft)+$PLOT(Width))*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+	   # And now formatted
+	   set PLOT(WStart) [Sec2Time $PLOT(WStart)]
+	   set PLOT(WEnd) [Sec2Time $PLOT(WEnd)]
 } elseif {$blocksize=="delete"} {
 	# Delete complete contents 
 	.plotbox.cs.canvas delete all
 	catch {unset PLOT(MarkBox)}
 	set PLOT(Startx)		0
 	set PLOT(Endx)			0
+        set PLOT(WStart) [Sec2Time 0]
+	set PLOT(WEnd)   [Sec2Time 0]
 	set PLOT(Start) 	[Sec2Time 0]
 	set PLOT(End) 		[Sec2Time 0]
 	set PLOT(Total)		$PLOT(Width)
@@ -348,9 +443,55 @@ if {$blocksize=="init"} {
 } \
 else {
 	set PLOT(Blocksize) $blocksize
+	set PLOT(WStart) [expr (($PLOT(ViewWinLeft)*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+	set PLOT(WEnd) [expr ((($PLOT(ViewWinLeft)+$PLOT(Width))*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+	# And now formatted
+	set PLOT(WStart) [Sec2Time $PLOT(WStart)]
+	set PLOT(WEnd) [Sec2Time $PLOT(WEnd)]
 }
 
+
+if {$LOAD(chnl)==2} {
+
 # Get points with new blocksize
+
+if {$PLOT(Blocksize)>0} {
+  set maxmin [exec $FILE(SRC)/maxminstereo [expr int(round($PLOT(Blocksize)))] \
+					  $mask $file]
+set PLOT(Points) [lindex $maxmin 0]
+} else {FillPlot delete; return}
+
+
+set i 0
+# Delete any previous plot 
+.plotbox.cs.canvas delete graph
+
+# Plot the points
+set count 0
+foreach point $PLOT(Points) {
+incr count
+# get from normalised values to Canvas coordinates
+set minleft [expr round( [lindex $point 0] *($PLOT(Height)/2))]
+set maxleft [expr round( [lindex $point 1] *($PLOT(Height)/2))]
+set minright [expr round( [lindex $point 2] *($PLOT(Height)/2)+$PLOT(Height)/2)]
+set maxright [expr round( [lindex $point 3] *($PLOT(Height)/2)+$PLOT(Height)/2)]
+
+# Ensure that a dot is placed
+if {$minleft==$maxleft} { incr maxleft}
+if {$minright==$maxright} { incr maxright}
+.plotbox.cs.canvas create line $i $minleft $i $maxleft -tags graph -fill $ConfigSet(cFG3)
+.plotbox.cs.canvas create line $i $minright $i $maxright -tags graph -fill $ConfigSet(cFG3)
+
+incr i
+
+}
+
+set mitte [expr round($PLOT(Height)/2)]
+.plotbox.cs.canvas create line 0 $mitte $PLOT(Width) $mitte -tags graph -fill $ConfigSet(cFG3)
+	
+
+} else {
+	
 if {$PLOT(Blocksize)>0} {
   set maxmin [exec $FILE(SRC)/maxmin [expr int(round($PLOT(Blocksize)))] \
 					  $mask $file]
@@ -373,10 +514,14 @@ set max [expr round( [lindex $point 1] *($PLOT(Height)))]
 # Ensure that a dot is placed
 if {$min==$max} { incr max}
 .plotbox.cs.canvas create line $i $min $i $max -tags graph -fill $ConfigSet(cFG3)
-		
+
 incr i
 
 }
+	
+}
+
+
 # Set the total lines drawn
 set PLOT(Total) $count
 
@@ -402,7 +547,7 @@ unset PLOT(Points)
 if {[info exists LINE(Id)] == 1} {
 	.plotbox.cs.canvas move $LINE(Id) -1 0
 }
-set LINE(Id) [.plotbox.cs.canvas create line 0 0 0 100 -width 1 -fill red -tag moveable]
+set LINE(Id) [.plotbox.cs.canvas create line 0 0 0 $PLOT(Height) -width 1 -fill red -tag moveable]
 }
 
 
@@ -453,5 +598,31 @@ proc setPlotMag {factor} {
       FillPlot
     }
   }
+
+}
+
+
+proc scroll_it args {
+   global PLOT LOAD
+	
+   set j 0
+   foreach i $args {set argum($j) $i
+                    incr j}
+
+   if ($j==2) {
+      .plotbox.cs.canvas xview $argum(0) $argum(1)
+   }
+	
+   if ($j==3) {
+      .plotbox.cs.canvas xview $argum(0) $argum(1) $argum(2)
+   }
+
+   set PLOT(ViewWinLeft) [expr round([.plotbox.cs.canvas canvasx 1])]
+	
+   set PLOT(WStart) [expr (($PLOT(ViewWinLeft)*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+   set PLOT(WEnd) [expr ((($PLOT(ViewWinLeft)+$PLOT(Width)/$PLOT(Magnification))*$PLOT(Blocksize))+$PLOT(Offset))/$LOAD(rate).0]
+   # And now formatted
+   set PLOT(WStart) [Sec2Time $PLOT(WStart)]
+   set PLOT(WEnd) [Sec2Time $PLOT(WEnd)]
 
 }

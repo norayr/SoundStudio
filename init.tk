@@ -124,6 +124,23 @@ global MIXER
 global DialogCfg
 # This global contains a resource list to be used for the dialog boxes.
 
+global TimerRec
+   set TimerRec(On) 1
+   set TimerRec(total) 0
+   set TimerRec(minutes) 30
+   set TimerRec(seconds) 0
+
+global VUPeakinfo
+   set VUPeakinfo(Over0) 0
+   set VUPeakinfo(Over1) 0
+   set VUPeakinfo(Over2) 0
+   set VUPeakinfo(Over3) 0 
+   set VUPeakinfo(Ampl0) -51
+   set VUPeakinfo(Ampl1) -51
+   set VUPeakinfo(Ampl2) -51
+   set VUPeakinfo(Ampl3) -51 
+
+
 ###################################################################
 # Load the modules.
   source $FILE(SRC)/menu.tk

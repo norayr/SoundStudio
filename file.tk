@@ -97,8 +97,9 @@ proc New {{option any}} {
    set PLOT(Startx)		0
    set PLOT(Endx)		0
    set PLOT(Blocksize)		0
-   set PLOT(Width)            500
+   set PLOT(Width)            550
    set PLOT(Magnification)      1
+   set PLOT(ViewWinLeft)        0
    PlotBox reset
 
    # The following is not required upon initialisation.
@@ -128,6 +129,7 @@ proc New {{option any}} {
 
 	# Set traces to adjust states of menu items.
 	trace variable FLAG(Loaded) w FileMenuStates
+	trace variable FLAG(Marked) w FileMenuStates
 	trace variable FLAG(Edited) w EditMenuStates
 	trace variable FLAG(Marked) w EditMenuStates
 	trace variable FLAG(Clip) w EditMenuStates
@@ -627,6 +629,106 @@ proc Convert {} {
 }
 
 
+
+###################################################################
+# SaveMarked
+# This procedure is the callback to the File-Save Marked As menu item.
+# It produces a dialog box which allows the user to enter a filename
+# and specify a file format for marked area of the sample to be 
+# converted into.
+
+proc SaveMarked {} {
+   global FLAG SAMPLE ConfigSet FILE
+
+   if {$FLAG(Marked)} {
+      Copy
+   }
+
+   if {$FLAG(Clip)} {
+
+      set MARKED(bit) $SAMPLE(bit)
+      set MARKED(chnl) $SAMPLE(chnl)
+      set MARKED(rate) $SAMPLE(rate)
+      set MARKED(size) [lindex [Bit2SoxSize $SAMPLE(bit)] 0]
+      if { $MARKED(size) == "b" } {
+         set MARKED(style) "u"
+      } else {
+         set MARKED(style) "s"
+      }
+
+      # Get a filename and the desired format from User
+      # Create a list of the available sample file formats.
+      # (For the call to FileBrowser2)
+      set ConversionList { "Convert to:" 5 5\
+		        aiff au cdr dat hcom raw sf smp voc wav }
+      # Get the font family for the configuration list of FileBrowser2.
+      set temp [split $ConfigSet(FNT_L) -]
+      set fontname [lindex $temp 2 ]
+      # Call FileBrowser2.
+      set path_filename [split $FILE(CURR) /]
+      set lastelement [expr ([llength $path_filename]-1)]
+      set temp1 Marked_[lindex $path_filename $lastelement]
+      set path_filename [lreplace $path_filename $lastelement $lastelement $temp1]
+      set markedname [join $path_filename /]
+      set result [FileBrowser2 {Save Marked As} \
+		       [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
+	   	       $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] {}\
+		       "[file tail $markedname]" $ConversionList]
+
+      # Store the results of the FileBrowser.
+      set filename [lindex $result 0]
+      set format [lindex $result 1]
+
+      # The following requires a file name.
+      if {$filename!=""} {
+   	# If no format was selected use the samples own.
+	if {$format==""} { set format $SAMPLE(format) }
+
+          # Check that the number of channels is not to be increased.
+          if {($SAMPLE(chnl)>=$MARKED(chnl))} {
+	   set chnl $MARKED(chnl)
+          } else {
+	   set chnl $SAMPLE(chnl)
+          }
+
+          # Perform conversion and save in the file given by filename.
+          catch {exec $FILE(Sox) -t .raw \
+		-r $MARKED(rate) \
+		-$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
+		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+		 -r $MARKED(rate) -c $chnl\
+		$FILE(TMP6)} err
+          #puts "$FILE(Sox) -t .raw \
+		-r $MARKED(rate) \
+		-$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
+		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+		 -r $MARKED(rate) -c $chnl\
+		$FILE(TMP6)"
+
+          if { $err != "" } {puts stderr $err}
+		
+          catch {exec $FILE(Sox) -r $MARKED(rate) -c $chnl \
+                -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+		$FILE(TMP6) \
+	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+	        -r $SAMPLE(rate) -c $chnl \
+	        $filename } err
+          #puts "$FILE(Sox) -r $MARKED(rate) -c $chnl \
+                -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+		$FILE(TMP6) \
+	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+	        -r $SAMPLE(rate) -c $chnl \
+	        $filename "
+
+          if { $err != "" } {puts stderr $err}
+
+      }
+      
+   }
+
+}
+
+
 ###################################################################
 # Info
 # This procedure is the callback to File-Information menu item.
@@ -758,6 +860,12 @@ proc FileMenuStates {var w op} {
 	MenuItemDisable .menubar.file.menu Save 1
 	MenuItemDisable .menubar.file.menu "Save As" 1
 	MenuItemDisable .menubar.edit.menu "Mark Range" 1
+   }
+   if {$FLAG(Marked)} {
+	MenuItemDisable .menubar.file.menu "Save Marked As" 0
+
+   } else {
+	MenuItemDisable .menubar.file.menu "Save Marked As" 1
    }
 }
 

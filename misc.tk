@@ -510,7 +510,7 @@ set FB_Glob "*"
 				-anchor w 
 
   # The Entry area.
-  entry .filebrowse.main.entry -relief sunken -bg $BG -fg $FG 
+  entry .filebrowse.main.entry -relief sunken -bg $BG -fg $FG
 
   # The Listbox.
   listbox .filebrowse.main.list -relief sunken -bg $BG -fg $FG \
@@ -533,7 +533,8 @@ set FB_Glob "*"
   # Pack the .main widgets.
   pack .filebrowse.main.label .filebrowse.main.entry -fill x -expand 1
   pack .filebrowse.main.list  	-fill both -expand 1 -side left
-  pack  .filebrowse.main.scroll -fill both -expand 1 -side right
+#  pack .filebrowse.main.scroll -fill both -expand 1 -side right
+  pack .filebrowse.main.scroll -fill y -expand 0 -side right
 
   
   # The Preset RadioButtons.
@@ -581,6 +582,7 @@ set FB_Glob "*"
 
 		# Pack the button into ..main
 		pack .filebrowse.radio$count -expand 1 -fill x -side bottom -anchor w
+#		pack .filebrowse.radio$count -expand 0 -fill x -side bottom -anchor w
 		incr count
 	}
   }
@@ -630,7 +632,7 @@ set FB_Glob "*"
 				-ipadx 2m -ipady 1m 
   pack .filebrowse.button.pwd.dirlabel .filebrowse.button.pwd.label \
 				-anchor sw -fill x \
-				-side bottom
+				-side bottom 
   pack .filebrowse.button.pwd 	-side top -expand 1 \
 				-padx 3m -pady 2m
 

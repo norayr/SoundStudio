@@ -110,7 +110,7 @@ A click with the right mouse button over the record button will produce a window
 There is also a field named /hPlay /hTime. This is a rough guide to how long a sample has been playing or recording in seconds.
 
 /C1/tThe Editing Plot.
-The Editing Plot is characterised by a large window with a scroll bar underneath. When a sample is loaded or recorded, a plot of the sampled sound is created in this window. /iSound /iStudio compresses this plot, usually into one window. Sometimes it does extend slightly beyond the window. To view these points the scroll bar may be used to move the plot as necessary.
+The Editing Plot is characterised by a large window with a scroll bar underneath. When a sample is loaded or recorded, a plot of the sampled sound is created in this window. /iSound /iStudio compresses this plot, usually into one window. Sometimes it does extend slightly beyond the window. To view these points the scroll bar may be used to move the plot as necessary.  For stereo records the two channels are plotted separately, the upper plotted curve is the left channel, the lower one is the right channel.
 The Editing plot allows you to mark sections of the sample, for editing purposes. For more details see the section /iEditing /ia /iSample.
 
 /C1/tThe Effects Bar.
@@ -176,6 +176,8 @@ In the file menu there are two items that relate to saving a file.
 The first is titled /hSave (ALT-F-S). This option saves the current file with the same name and format that it was loaded with. This then replaces the original file.
 
 The second is titled /hSave /hAs (ALT-F-A). This option produces a dialogue box, similar to that appears when loading a file. This allow you to alter the file name and the format of the current file.
+
+The third is titled /hSave /hMarked /hAs (ALT-F-V). This option produces a dialogue box, similar to that appears when loading a file. This allow you to save a marked area of the current file. By default, the format of the file containing the marked area is that of the current file.
 
 /C2/tAltering the File Name
 The file name is altered by editing the file name in the entry area. A name may also be selected from the directory listing. Note: If this name is not modified it will replace the file in the directory. The directory may be changed by double clicking on a directory name in the directory listing. These appear at the top of the list and have a leading  "// ".
@@ -297,7 +299,7 @@ In the case of a /hnew /hfile, it is first necessary to set the sampling paramet
 	a. Selecting Set Parameters from the options menu. (ALT-O-S)
 	b. Clicking the right button over the record button.
 
-This dialogue box contains three sections, sampling rate, bit resolution and channels.
+This dialogue box contains four sections, sampling rate, bit resolution, channels and recording time.
 
 /C2/tChanging the Sampling Rate.
 A slider is used to change the sampling rate settings. The value of the slider is displayed to the left of the slider. Holding the mouse pointer over the value, allows keyboard entry of a value. Alternatively, moving the slider will adjust the value when moved by dragging with the left mouse button depressed.
@@ -306,6 +308,9 @@ The sound card may not accept the exact value specified, but it will take on the
 
 /C2/tChanging the Bit Resolution and Channels
 The bit resolutions and channels available to your card are listed and are selected with the left button. When the sampling parameters show in the dialogue box are those desired press the done button to return to /iSound /iStudio.
+
+/C2/tSetting the Recording Time
+If you want to record only for a specific duration after starting the recording, select the button "Recording Time". In the fields on the right of the button you can enter the desired recording time.
 
 /C1/tSetting the Recording Level
 Just like an anlogue tape recorder, it may be desirable to set the recording levels using the /hmixing /hpanel before undertaking the recording.  Digital recording levels are particularly important because any clipping is "hard", producing the almost immediate onset of severe distortion.
@@ -347,28 +352,37 @@ The following will explain the way in which the editing facilities are used.
 /C1/tMarking a Sample.
 The most basic editing action is marking a section of the sample. This is performed in a way that is very similar to marking text in, say, a text editor. If an area is not marked then most editing operations are not available.
 
-The /iSound /iStudio editor has two insertion points. The space between these points is the marked area. If these points are at the same point then the sample isn't marked. The location of these points are indicated by the fields labelled "Point 1" and "Point 2". The format of these fields is Minutes : Seconds : Milliseconds.
+The /iSound /iStudio editor has two insertion points. The space between these points is the marked area. If these points are at the same point then the sample isn't marked. The location of these points are indicated by the fields labelled "First Marker Time" and "Second Marker Time". The location of the cursor is indicated by the field labelled "Cursor Position Time". The format of these fields is Minutes : Seconds : Milliseconds.
 
 To mark a section in the plot,
 
 	1. Press the left mouse button at the starting point of 
 	   the area to be marked.
-	2. Keeping the left button depressed move the mouse 
+	2. Keeping the left button depressed move the mouse
 	   to the finishing point of the area to be marked.
+or,
+	1. Press the left mouse button at the starting point of 
+	   the area to be marked.
+	2. Press the right mouse button at the ending point of 
+	   the area to be marked.
 or,
 	1. Select Mark Range from the Edit menu (ALT-E-M), to obtain the
 	   Mark Range dialogue box.
-	2. Move the sliders in the dialogue box to set the values of the insertion points.
+	2. Move the sliders in the dialogue box to set the values of the
+	   insertion points.
 	3. Select the button labelled, Mark Range.
 	4. Press the Done button or press Return.
 
 To adjust the marked area,
 
-        1. Move the pointer to the point to which the area is to be adjusted and press the middle button.
-	2. The point which is nearest the current mouse position will be altered to be exactly the current mouse position.
-	3. Dragging the mouse with the middle button down permits continuous variation of the selected marker.
+	1. Move the pointer to the point to which the area is to be adjusted and 
+	   press the middle button.
+	2. The point which is nearest the current mouse position will be altered to 
+	   be exactly the current mouse position.
+	3. Dragging the mouse with the middle button down permits continuous
+	   variation of the selected marker.
 
-\C1\tCopying, Cutting Trimming and Deleting a Marked area.
+/C1/tCopying, Cutting Trimming and Deleting a Marked area.
 Once an area has been marked there are a number of possible editing operations.
 
 /C2/tCopying
@@ -508,6 +522,8 @@ The levels of both input and output source are adjust by using the sliders in th
 
 If you would like to adjust all of the sliders on a multi-channel source to the same level use the middle mouse button.  The other sliders associated with that source will automatically track the moved slider.
 
+If you would like to adjust the sliders on a two-channel source such that the ratio of the two levels is kept constant (i.e. the balance is preserved) use the middle mouse button with the CNTRL-key pressed simultaneously. The other slider associated with that source will automatically track the moved slider. Make sure that the /hCNTRL/h-/hkey is /hpressed and /hreleased /hbefore the /hmiddle /hmouse /hbutton.
+
 Clicking the /hRecord /hButton with the /hmiddle /hmouse /hbutton enables level setting with live VU readout.  See the section on /hPreparing /hto /hrecord for more informaion.
 
 
@@ -531,7 +547,7 @@ The VU Meters become active whenever:
 
 *	/hPlayback is in operation;
 *	/hRecording is in operation;
-*	/hLevel-setting (middle mouse button over "Record") is in operation.
+*	/hLevel/h-/hsetting (middle mouse button over "Record") is in operation.
 
 The number of channels is selected for you automatically, but it may be a suprise: if you insert a mono recording into a stereo one, /iStudio has to convert the format appropriately.  So even if the number of meters displayed strikes you as strange, trust /iStudio: it knows what it's doing!
 
@@ -539,9 +555,9 @@ There are two parameters associated with the behaviour of the VU meter: the samp
 
 Both these parameters can be set by selecting the Set VU Parameters option from the Options menu, although currently the attack time is ignored and the meters always act instantaneously to peaks in the incoming signal.  This will bring up a separate dialog box with two sliders and a /hMeter /hOn//hMeter /hOff checkbutton.  The VU meter may also be toggled on and off using the Show VU meter option in the /hOptions menu.
 
-The meter has two modes: peak-hold mode and non-peak-hold mode. In peak-hold mode, the meter keeps displaying the LED of the highest level reached so far. This LED will be lit in blue to distinguish it from the green/orange/red LEDs in normal operation.
+The meter has two modes: peak-hold mode and non-peak-hold mode. In peak-hold mode, the meter keeps displaying the LED of the highest level reached so far. This LED will be lit in blue to distinguish it from the green-orange-red LEDs in normal operation.
 
-At any time during the use of the VU meter, the peak may be reset by clicking on the its /hPeak /hReset button. This simply resets the peak indicator, which will then display the highest peak reached from that point onwards.
+Pressing the /hInfo button opens a dialogue which for each channel displays the highest level reached so far and the number of overloaded samples. At any time during the use of the VU meter, the peak may be reset by clicking on the its /hPeak /hReset button. This simply resets the peak indicator, the maximum level value and the overload samples counter, which will then display the number of overloaded samples and the highest peak reached from that point onwards.
 
 The peak-hold mode may be toggled on and off by clicking on the /hPeak /hON//hOFF checkbutton. If peak-hold mode is switched off, and then on again, the VU meter will not "remember" the previous peak displayed, it will simply display the highest peak from when it was switched back on.
 

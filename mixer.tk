@@ -154,8 +154,14 @@ proc MIX_DeviceGet {} {
 	    # Store the current volume setting of the source.
 	    lappend temp [exec $FILE(Mixer) get vol $item]
 
+ 	    # Balance
+	    lappend temp 0.0
+
  	    # Store a flag indicating whether this is a recording source.
 	    lappend temp 0
+
+ 	    # Balance
+#	    lappend temp 0.0
 
 	    # Add to the Output source list.
 	    lappend MIXER(O_chnnls) $temp
@@ -181,8 +187,14 @@ proc MIX_DeviceGet {} {
 	    # Store the current volume setting of the source.
 	    lappend temp [exec $FILE(Mixer) get vol $item]
 
+ 	    # Balance
+	    lappend temp 0.0
+
  	    # Store a flag indicating whether this is a recording source.
 	    lappend temp 1
+
+ 	    # Balance
+#	    lappend temp 0.0
 
 	    # Add to the Input source list.
 	    lappend MIXER(I_chnnls) $temp
@@ -244,7 +256,8 @@ proc MixerSliders {w text chnls {opt init}} {
 			[lindex $channel 0]\
 			[lindex $channel 1]\
 			[lindex $channel 2]\
-			[lindex $channel 3]
+			[lindex $channel 3]\
+			[lindex $channel 4]
 	}
 
 	#Pack label & scales
@@ -273,7 +286,8 @@ proc MixerSliders {w text chnls {opt init}} {
 		MkSlider $w.scales\
 			[lindex $channel 0]\
 			[lindex $channel 1]\
-			[lindex $channel 2]	 
+			[lindex $channel 2]\
+			[lindex $channel 3]	 
       }
 
    } elseif {$opt=="reset"} {
@@ -298,8 +312,10 @@ proc MixerSliders {w text chnls {opt init}} {
 # rec_flag : a boolean indicating a recording source.
 #
 # Returns a list of the actual scale widgets.
-proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} {rec_flag 0} } {
-   global ConfigSet
+proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} balance {rec_flag 0} } {
+   global ConfigSet hold_balance
+
+   set hold_balance 0
 
    # Get a lower case version of Name for use in widget paths.
    set name [lindex [string tolower $Name] 0]
@@ -307,6 +323,18 @@ proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} {rec_flag 0} } {
    # Initialise the return list.
    set returnlist {}
 	
+   # Balance berechnen
+   if {$chnnls==2} {
+     set vol_left [lindex $volume 0]
+     set vol_right [lindex $volume 1]
+     set temp [expr ($vol_left + $vol_right)]
+     if {$temp==0} {
+       set balance 0.0
+     } else {
+       set balance [expr double(double($vol_left - $vol_right)/double($vol_left + $vol_right))]
+     }
+   }
+
    # Set left/right labels for channels if necessary
    if {$chnnls==2} { set ch_list { L R }}\
    else  { set ch_list {  }}
@@ -349,9 +377,32 @@ proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} {rec_flag 0} } {
 			-showvalue 0\
 			-from 100 -to 0\
 			-width 10 -length 100\
-			-command "VolSet $Name $i"
+			-command "SetVol $slPath.box $i $Name $chnnls"
 
-	        proc setall {root which name chans} {
+	        proc SetVol {root which name chans value} {
+	        global hold_balance balance
+		  if {$chans==2} {
+		    set vol_left [$root.0.scale get]
+		    set vol_right [$root.1.scale get]
+		    if {$hold_balance==0} {
+		      set temp [expr ($vol_left + $vol_right)]
+		      if {$temp==0} {
+		        set balance 0.0
+		      } else {
+		        set balance [expr double(double($vol_left - $vol_right)/double($vol_left + $vol_right))] 
+		      }
+		    }
+		  }
+		  VolSet $name $which $value
+	        }
+
+
+	        proc setall {root which name chans holdbal} {
+	        global hold_balance
+		  if {$holdbal=="hold"} {
+		    set hold_balance 1
+		  }
+		  set balance 0.0
 		  set val [$root.$which.scale get]
 		  for {set sld 0} {$sld < $chans} {incr sld} {
 		    if {$sld != $which} {
@@ -359,13 +410,62 @@ proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} {rec_flag 0} } {
 		      VolSet $name $sld $val
 		    }
 		  }
-		}
+		  if {$holdbal=="nohold"} {
+		    set hold_balance 0
+		  }
+	        }
 
 	        bind $slPath.box.$i.scale <ButtonRelease-2> \
-		    "setall $slPath.box $i $Name $chnnls"
+		    "setall $slPath.box $i $Name $chnnls nohold"
 	        bind $slPath.box.$i.scale <B2-Motion> \
-		    "setall $slPath.box $i $Name $chnnls"
+		    "setall $slPath.box $i $Name $chnnls hold"
 
+
+
+	        proc setbalance {root which name chans holdbal} {
+	        global hold_balance balance
+		  if {$holdbal=="hold"} {
+		    set hold_balance 1
+		  }
+		  if {$chans==2} {
+		    if {$balance==0.0} {
+		      set val [$root.$which.scale get]
+		      for {set sld 0} {$sld < $chans} {incr sld} {
+		        if {$sld != $which} {
+      		          $root.$sld.scale set $val
+		          VolSet $name $sld $val
+		        }
+		      }
+		    } else {
+		      set val [$root.$which.scale get]
+		      if {$which==0} {
+		        set otherval [expr round((double($val)-double($val)*double($balance))/\
+					   (double($balance)+double(1.0)))]
+		      } else {
+		        set otherval [expr round((double($val)+double($val)*double($balance))/\
+					   (double(1.0)-double($balance)))]
+		      }
+		      for {set sld 0} {$sld < $chans} {incr sld} {
+		        if {$sld != $which} {
+     		          $root.$sld.scale set $otherval
+		          VolSet $name $sld $otherval
+		        }
+		      }
+                        }
+		  }
+		  if {$holdbal=="nohold"} {
+		    set hold_balance 0
+		  }
+	        }
+
+
+	        bind $slPath.box.$i.scale <Control-ButtonRelease-2> \
+		  "setbalance $slPath.box $i $Name $chnnls nohold"
+	        bind $slPath.box.$i.scale <Control-ButtonPress-2> \
+		  "setbalance $slPath.box $i $Name $chnnls hold"
+	        bind $slPath.box.$i.scale <Control-B2-Motion> \
+	            "setbalance $slPath.box $i $Name $chnnls hold"
+	
 		# Set the scale and entry to the initial setting.
 		$slPath.box.$i.scale set [lindex $volume $i]
 		set MIXER(label$name$i) [$slPath.box.$i.scale get]
@@ -485,7 +585,9 @@ proc RecSrcSet { index } {
 proc VolSet { Index channel value } {
    global MIXER FILE
 
-   if {$value==100} { set value 99 }
+#   if {$value==100} { set value 99 }
+   if {$value>99} { set value 99 }
+
    # Get a lower case version of the source name.   
    set index [string tolower $Index]
 
@@ -506,3 +608,7 @@ proc VolSet { Index channel value } {
    set temp [exec $FILE(Mixer) set vol $num \
 		$MIXER([format "label%s0" $index]) $temp]
 }
+
+
+
+

@@ -18,7 +18,7 @@
 # the VU display is updated.
 # Date 29/4/99
 proc Reader { pipe } { 
-        global PLOT FLAG PLAY LINE FILE FX LOAD VU
+        global PLOT FLAG PLAY LINE FILE FX LOAD VU VUPeakinfo
         
         if {$FILE(PID) == 0} {
              gets $pipe FILE(PID)            
@@ -77,20 +77,20 @@ proc Reader { pipe } {
         
         if {[string index $number 0] == "l"} {
 	  set number [lindex [split $number .] 1]
-	  
 	  if {$LINE(On) == 1} {
 	    if {$number != ""} {
-	      set LINE(PixelsMovedInPlot) [expr $number + $LINE(PixelsMovedInPlot)]	
-	      .plotbox.cs.canvas move $LINE(Id) $number 0
-	      set PLAY(Time) [expr round((($PLOT(NumberOfSamples).0 / $LOAD(rate)) / $PLOT(Total)) * $LINE(TotalPixelsMoved) * 10) / 10.0]
-	      update idletasks
-	      set LINE(TotalPixelsMoved) [expr $LINE(TotalPixelsMoved) + $number]
+	         set LINE(PixelsMovedInPlot) [expr $number + $LINE(PixelsMovedInPlot)]	
+	         .plotbox.cs.canvas move $LINE(Id) $number 0
+	         update idletasks
+	         set LINE(TotalPixelsMoved) [expr $LINE(TotalPixelsMoved) + $number]
+                   set PLAY(Time) [expr $PLAY(Time)+($number*$PLOT(Blocksize))/$LOAD(rate).0]
+  	         set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]
 	    }
-	    
 	  } else {
 	    set LINE(PixelsMovedInPlot) 0
 	    set LINE(TotalPixelsMoved) 0
 	    set PLAY(Time) 0
+	    set PLAY(DisplayTime) [Sec2Time $PLAY(Time)]	    
 	  }
 
         }
@@ -107,8 +107,12 @@ proc Reader { pipe } {
 		     	
 		     	if {$vu_data == "-Inf"} {set vu_data -51}
 		     	
+		     	if {$vu_data >= -0.1} {incr VUPeakinfo(Over$i)}
+		     	
 		     	set vu_data [expr round($vu_data)]
-		     
+		     	
+		     	if {$vu_data > $VUPeakinfo(Ampl$i)} {set VUPeakinfo(Ampl$i) $vu_data}
+		     			     
 		     	if {$vu_data == 0} {light $i 10
 		     	} elseif {$vu_data == -1} {light $i 9
 		     	} elseif {$vu_data == -2} {light $i 8
@@ -191,10 +195,19 @@ proc SetupVU_Channels { channels } {
 			-activebackground $ConfigSet(cABG) \
 			-activeforeground $ConfigSet(cAFG) \
 			-disabledforeground $ConfigSet(cDFG) \
- 			-text "Peak Reset"\
+ 			-text "Reset"\
 			-command {if {$VU(PeakOn) && $FLAG(Playing)} {
 					Peak_Reset
 				  	}}	
+	
+	button .vu.main.info \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text "Info"\
+			-command {Peak_Info}
 	
 	canvas .vu.main.set.c -height 130 -width 76 -bg black
 	
@@ -259,6 +272,7 @@ proc SetupVU_Channels { channels } {
 	pack .vu.main.set
 	pack .vu.main.peak -anchor w -expand 1 -fill x -pady 1m
 	pack .vu.main.reset -side left -padx 1 -pady 1
+	pack .vu.main.info -side left -padx 1 -pady 1
 	pack .vu.main.done -side right -padx 1 -pady 1
 	pack .vu.main
 	set VU(On) 1
@@ -553,5 +567,40 @@ proc Peak_Reset {} {
 	for {set i 0} {$i < $LOAD(chnl)} {incr i} {
 		PutPeak $i 0
 	}
-
+        Reset_Peak_Info
 }
+
+
+
+
+###################################################################
+# Info_Overload
+# 
+# 
+proc Peak_Info {} {
+   global VUPeakinfo	
+   global DialogCfg
+   set Text [format \
+	" Number of overloads:\n\
+	Left : $VUPeakinfo(Over0)\n\
+	Right: $VUPeakinfo(Over1)\n\n\
+	Maximum amplitude:\n\
+	Left : $VUPeakinfo(Ampl0) dB\n\
+	Right: $VUPeakinfo(Ampl1) dB"]
+   dialog .vuoverinfo "VU-Overload" $Text $DialogCfg {info} 0 OK
+}
+
+
+
+proc Reset_Peak_Info {} {
+   global VUPeakinfo
+   set VUPeakinfo(Over0) 0
+   set VUPeakinfo(Over1) 0
+   set VUPeakinfo(Over2) 0
+   set VUPeakinfo(Over3) 0 
+   set VUPeakinfo(Ampl0) -51
+   set VUPeakinfo(Ampl1) -51
+   set VUPeakinfo(Ampl2) -51
+   set VUPeakinfo(Ampl3) -51 
+}
+
