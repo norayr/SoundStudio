@@ -2,7 +2,7 @@
 # Restart using wish.  Don't delete the backslash! \
 exec wish "$0" -- "$@"
 
-# The above path needs to be changed to location of wish on your system.
+# Bs sure wish is in your $PATH!
 
 #################################
 # Sound Studio
