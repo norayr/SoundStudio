@@ -1,0 +1,2 @@
+For some reason, with ALSA at least, the output volume control gets
+considered an input.  Dunno why.
