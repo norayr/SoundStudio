@@ -1,0 +1,395 @@
+#################################
+# The MenuBar Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 15/2/95
+#
+# Revision:4
+# Date: 11/4/95
+
+###################################################################
+# MenuBar
+# This procedure sets up and displays the menu bar at the top of the window. 
+# Thus most of the action starts here!
+# There are 3 options.
+# 1. init : this sets up the menu bar and menus, but doesn't display them.
+# 2. show : this packs the menubar.
+# 3. noshow this unpacks the menubar.
+# The actual menus are created by the procedure CreateMenu, but the lists
+# MenuXxxx are all that need to be edited to change their contents.
+proc MenuBar { {option init} } {
+   global ConfigSet MIXER SOXVersion15 MACHINE
+
+   # Constants for this procedure.
+   set Menu_anc w
+   set BWdth 10
+   set ConfigSet(REL) ridge
+   set PadY 1
+   set PadX 1
+
+   # List of the menu buttons
+   # A second list element is the index of the underline character
+   set MenuNames [list File Edit {Effects 6} Options Help]
+
+   # The following lists define the contents of the menu.
+   # They are created from this list by the procedure CreateMenu
+   # "#" means a separator.
+
+   set MenuZoom \
+	[ list {"Zoom In" {command} {Zoom up}} {"Zoom Out" {command} {Zoom down}}]
+
+   # Set the list for mixer slider settings, MenuMixDev.
+   
+   foreach devn $MIXER(All) {
+	set i [expr $devn +1]
+	set dev [lindex $MIXER(labels) $devn]
+	lappend MenuMixDev "$dev checkbutton\
+		 \"set MIXER(noshow) \[lreplace \$MIXER(noshow) $i $i\
+		 \[expr ($i*(!\$MIXER(show$dev)))-1\]\]; MIX_Reset\"\
+		 MIXER(show$dev)"
+	
+   }
+   lappend MenuMixDev # {  {Make Default} command "SaveSettings m" }
+
+   
+   set MenuFile 	[ list New Load Save\
+			 {{Save As} command Convert} # \
+			 {Information command Info} # Exit ]
+   set MenuEdit 	[ list Undo Copy Cut Paste Delete Trim \
+			  {{Insert File}} #\
+			  {{Mark Range} command Select } \
+			 [list Zoom cascade {} $MenuZoom] ]
+   set MenuView 	[ list 	{Plot checkbutton { vPlot} FLAG(Vw_PlotBox)} \
+				{Mixer checkbutton {vMixer} FLAG(Vw_Mixer)} \
+				{Effects checkbutton {vEffects}\
+					FLAG(Vw_EffectBar)}\
+				{Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
+				#\
+				{"Make Default" command "SaveSettings f"} ] 
+   if {$MACHINE(PLATFORM) == "SunOS"} {
+	   set MenuView 	[ list 	{Plot checkbutton { vPlot} FLAG(Vw_PlotBox)} \
+					{Mixer checkbutton {vSUNMixer} FLAG(Vw_Mixer)} \
+					{Effects checkbutton {vEffects}\
+						FLAG(Vw_EffectBar)}\
+					{Info checkbutton {vInfo} FLAG(Vw_InfoBar)}\
+					#\
+					{"Make Default" command "SaveSettings f"} ]
+	} 
+   set MenuOptions	[ list {{Set Parameters} command Settings} #\
+			  [list View cascade {} $MenuView ]\
+			  # {{Set Colours} command Colours} #\
+			  [list "Mixer Channels" cascade {} $MenuMixDev] #\
+			  [list "Hide Warning Messages" checkbutton { } WarningDisplay] #\
+			  [list "Show VU Meter" checkbutton { Show_VU } VU(On)]\
+			  [list "VU Parameters" command SetVUParameters ]]
+			  
+   if {$SOXVersion15 == 0} {
+         set MenuEffects	{ {Echo checkbutton sEcho FX(echo) }
+				{Vibrato checkbutton sVibrato FX(vibrato) }
+				{Fade checkbutton sFade FX(fade) }
+				{Reverse  checkbutton {} FX(reverse) }
+				{Filter checkbutton sFilter FX(filter) }
+				{Volume checkbutton sVolTemp FX(volume) }
+				{Tempo checkbutton {sVolTemp Tempo} FX(tempo) }
+				# 
+				{ "Preview Mode" checkbutton  {} FX(Preview)}
+				#
+				{ "Apply Now!" command FXApply }
+	                        }
+	 }
+   if {$SOXVersion15 == 1} {			
+         set MenuEffects	{ {Echo checkbutton sEcho15 FX(echo) }
+				{Vibrato checkbutton sVibrato FX(vibrato) }
+				{Fade checkbutton sFade FX(fade) }
+				{Reverse  checkbutton {} FX(reverse) }
+				{Filter checkbutton sFilter FX(filter) }
+				{Volume checkbutton sVolTemp FX(volume) }
+				{Tempo checkbutton {sVolTemp Tempo} FX(tempo) }
+				{Reverb checkbutton sReverb FX(reverb) }
+				{Flanger checkbutton sFlanger FX(flanger) }
+				{Phaser checkbutton sPhaser FX(phaser) }
+				{Chorus checkbutton sChorus FX(chorus) }
+				# 
+				{ "Preview Mode" checkbutton  {} FX(Preview)}
+				#
+				{ "Apply Now!" command FXApply }
+				}
+	}			
+   set MenuHelp		[ list {{User's Guide} {command} {UserManual}}\
+				 {{About Sound Studio}} ] 
+
+   # Initialisation option.
+   if {$option == "init" } { 
+
+      # Create widgets if non-existant.
+      if {![winfo exists .menubar]} {
+
+	# Create the general frame.
+	frame .menubar
+	# Set this as the default focus.
+	focus  .menubar
+
+	# Create the Menu Buttons.
+	foreach Name $MenuNames { 
+		# Get the underline index (default to zero)
+		if {[llength $Name]>1} {
+			set uline [lindex $Name 1]
+			set Name  [lindex $Name 0]
+		} else 	{
+			set uline 0
+		}
+ 
+		#Convert name to lower case for use in widget path name.
+		set name [ string tolower $Name]
+
+		menubutton .menubar.$name\
+				-menu .menubar.$name.menu\
+				-underline $uline -text $Name
+
+		# Pack to left, except help, to right.		
+		if {$name=="help"} {
+			pack .menubar.$name -side right -ipadx 1 -ipady 1
+		} else {	
+			pack .menubar.$name -side left -ipadx 1 -ipady 1
+		}
+
+		# Collect info to set up keyboard traversals
+		lappend MenuPaths .menubar.$name		
+		#Create the Menus	
+		CreateMenu .menubar.$name.menu\
+			 [lindex [eval list $[format "Menu%s" $Name]] 0]
+	}
+
+	# Set the Keyboard traversal
+	eval tk_menuBar .menubar $MenuPaths
+	# The alt key in linux is Meta1 not Alt or Meta2 (TCL defn.),
+	# therefore bind Meta1 to invoke Meta-2 command.
+	bind .menubar <Any-M1-Key> [bind .menubar <Any-M2-Key>]
+      }
+
+	# Configure the Menu Bar general frame.
+	 .menubar config\
+			-background $ConfigSet(cBG1)\
+			-borderwidth $ConfigSet(BDW)\
+			-relief $ConfigSet(REL)
+
+	# Configure the menu buttons and menus.
+	foreach Name $MenuNames {  
+		# Convert name to lower case for use in widget path name.
+		set name [ string tolower [lindex $Name 0]]
+
+		# MenuButtons
+		 .menubar.$name config\
+			-width $BWdth\
+			-anchor $Menu_anc\
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)\
+			-activeforeground $ConfigSet(cAFG)\
+			-disabledforeground $ConfigSet(cDFG)\
+			-font $ConfigSet(FNT_L)
+		# Menus
+		 .menubar.$name.menu config \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)		\
+			-activeforeground $ConfigSet(cAFG)		\
+			-disabledforeground $ConfigSet(cDFG)		\
+			-font $ConfigSet(FNT_L)\
+			-selectcolor $ConfigSet(cAFG)
+		# Cascaded Menus
+		foreach menu [winfo children .menubar.$name.menu] {
+		 $menu config \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)		\
+			-activeforeground $ConfigSet(cAFG)		\
+			-disabledforeground $ConfigSet(cDFG)		\
+			-font $ConfigSet(FNT_L)\
+			-selectcolor $ConfigSet(cAFG)
+		}	
+	}
+
+   # The following can only be used if init has been called.		
+   } \
+   elseif {[winfo exists .menubar]} {
+
+	# The Show option.
+ 	if {$option == "show"} { 
+	   # Pack at the top of the packing list.
+	   set PackTop [lindex [pack slaves .] 0]
+	   if {$PackTop !=""} {
+		pack .menubar -fill x -padx $PadY -pady $PadY \
+			 -before [lindex [pack slaves .] 0] 
+	   } else { 
+		pack .menubar -fill x -expand 1 -padx $PadY -pady $PadY 
+	   }
+
+	   # Set the focus on the menubar.
+	   focus .menubar
+
+	# The No Show option.
+ 	}\
+ 	elseif {$option == "noshow" } { 
+		pack forget .menubar
+	} \
+ 	else {
+		# debug information. 
+		puts "Error in MenuBar: illegal option." 
+	}
+   }\
+   else { 
+	# Debug information.
+	puts "Error in MenuBar: 'init' option must be called first!"
+   }
+}
+
+
+###################################################################
+# CreateMenu
+# This Procedure creates a menu of the name given in
+# the "MenuPath" parameter and adds the items contained in the "List"
+# parameter.
+# 
+# The parameter "List" is a list of upto 4 elements.
+# Element 1: The label text
+# Element 2: The type of menu item; cacade, radiobutton, etc.
+# Element 3: The command string. 
+# Element 4: The variable name for radio- or checkbuttons, 
+# 	     or a list defining another Menu using CreateMenu, if 
+#  	     type==cascade.
+#
+# If List contains 1 element then one of two things will happen;
+# 1. If the element is a hash (#) then a separator will be placed.
+# 2. Otherwise a command button will be placed, with 
+proc CreateMenu { MenuPath List } {
+   global ConfigSet
+
+   #------------------------------
+   # LOCAL PROCEDURES START
+
+   # expandIt
+   # Procedure to expand type if only first few letter were used.
+   # if string is empty first item in list is returned;(command)
+   proc expandIt { string } {
+	upvar $string dummy
+	set list [list command radiobutton checkbutton cascade]
+	set dummy [lindex $list [lsearch -glob $list $dummy\*]]
+   }
+
+   # MenuGetUndl
+   # Procedure to get a unique keyboard shortcut
+   proc MenuGetUndl {var name {i 0}} {
+	upvar $var list
+
+	if {![info exists list]} { set list " "}
+	set ch [string tolower [string range $name $i $i] ]
+	if {!($i>[llength $list])} {
+		if {[lsearch $list $ch] !=-1} {
+			incr i
+			set i [MenuGetUndl list $name $i]
+		} else {
+			lappend list $ch
+		}
+		return $i
+	}
+	return ""
+   }
+
+
+   # LOCAL PROCEDURES END
+   #------------------------------
+
+
+   # Create the Menu if it doesn't already exist
+  catch {
+	menu $MenuPath \
+			-background $ConfigSet(cBG1) -foreground $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)		\
+			-activeforeground $ConfigSet(cAFG)		\
+			-disabledforeground $ConfigSet(cDFG)		\
+			-font $ConfigSet(FNT_L)\
+			-selectcolor $ConfigSet(cAFG)		
+		} 
+
+
+   # Add each item, configuring accordingly.
+   foreach item $List {
+	set name 	[lindex $item 0]
+	set type 	[lindex $item 1]
+	expandIt type
+	set command 	[lindex $item 2]
+	set variable	[lindex $item 3]
+	set accelerator [lindex $item 4]
+	set acc_bind  	[lindex $item 5]
+
+	# Get a unique underline character.
+	set undl [MenuGetUndl ulist $name]
+	if {$undl!=""} { set undlc "-underline"}
+
+	# Create Menu item.
+	switch  $type { 
+	 command {  
+		# Add Separator to Menu.
+		if  { $name == "#"} {
+			$MenuPath add separator 
+		} \
+		else {
+			# Give a command name if not present
+			if {$command==""} { set command [lindex $name 0]}
+			#Add Command to Menu.
+			$MenuPath add command \
+				-label $name \
+				-command $command $undlc $undl
+				}
+		}
+	cascade {
+		# Add cascade to Menu.
+		set temp [string tolower [lindex $name 0]]
+		$MenuPath add cascade \
+			-label $name \
+			-command $command \
+			-menu $MenuPath.$temp $undlc $undl
+				CreateMenu  $MenuPath.$temp $variable
+		}
+	radiobutton {
+		# Add radiobutton to Menu.
+		$MenuPath add radiobutton \
+			-label $name \
+			-command $command \
+			-variable $variable $undlc $undl
+		}
+	checkbutton {
+		# Add checkbutton to Menu.
+		$MenuPath add checkbutton \
+			-label $name \
+			-command $command \
+			-variable $variable  $undlc $undl
+		}
+	default { 
+		# Debug information.
+		puts "Error in CreateMenu:invalid type" 
+		}
+	}
+       }	
+}
+
+
+###################################################################
+# MenuItemDisable
+# This procedure disables individual items in a menu.
+# The menu's path name is to be given in MenuPath.
+# The label of the item in the menu is to be given in ItemName
+# Disable is a boolean variable, where 1=disable 0=return to normal.
+proc MenuItemDisable { MenuPath ItemName Disable} {
+   set ItemIndex [$MenuPath index $ItemName]
+   if { $Disable } {
+	$MenuPath entryconfigure $ItemIndex -state disabled
+   }\
+   else {
+	$MenuPath entryconfigure $ItemIndex -state active
+	}
+}

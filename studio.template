@@ -1,0 +1,33 @@
+#!@WISH_PATH@
+
+# The above path needs to be changed to location of wish on your system.
+
+#################################
+# Sound Studio
+# A Sound Sample Utility
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+
+# This is the Start-Up Script.
+# Revision:1
+# Date: 3/96
+
+#################################
+# The following globals are system specific
+# Please set them as is applicable.
+
+
+# I need the full path Where my files are;
+set MYFILES @MYFILES@
+
+# I need a directory to store my temporary files;
+set TEMP_DIR @TEMP_DIR@
+
+# Where do I find Sox?
+set SOX_DIR @SOX_DIR@
+
+
+##################################
+# Please Leave the Rest to me.....
+source $MYFILES/init.tk

@@ -1,0 +1,271 @@
+#!/bin/sh
+# Compilation script for Sound Studio
+# by Paul D. Sharpe and Nick Bailey
+
+# Set your system-dependencies here!
+
+# Which compiler would you like to invoke?
+CC="gcc -O2"
+
+if [ $# = 0 -o $# -gt 1 ] ; then
+    printf "%s\n" "Usage: build (config|default|install|dfltinst|backup)"
+    exit 1
+fi
+
+UNAME=`uname`
+PROCESSOR=`uname -m`
+
+case $1 in
+    default) # Don't prompt the user; assume defaults
+             Ask="Don't" ./build config ;;
+             # Drop through to the configuration part...
+
+    config)  # Make a configuration suitable for this machine
+             # We're going to build up a sed command to change
+             # the template into the working studio
+
+             MYFILES=${MYFILES:-$PWD}
+	     if [ "$Ask" != "Don't" ] ; then
+		printf "%s\n" "Directory where the studio files will be stored: NB this does"
+		printf "%s\n" "not have to be in the path.  Only the \"studio\" script itself"
+		printf "%s\n" "has to be [\"$MYFILES\"]: "
+		read x;
+		MYFILES=${x:-$MYFILES}
+		printf "\n"
+	     fi
+	     sedCmd1="s:@MYFILES@:$MYFILES:"
+
+	     if [ -x studio ] ; then
+	        TEMP_DIR=`awk '$2=="TEMP_DIR" {print $3}' studio`
+	     else
+	        TEMP_DIR="/tmp"
+	     fi
+
+	     if [ "$Ask" != "Don't" ] ; then
+	         printf "%s\n" "Sound Studio creates a number of temporary files while running"
+		 printf "%s\n" "You can specify where these are to be stored.  /tmp is OK,"
+		 printf "%s\n" "because each instance of Studio will generate a unique file"
+		 printf "%s\n" "name, but you might want to specify somewhere else (eg if"
+		 printf "%s" "/tmp is a small filesystem). [\"$TEMP_DIR\"]: "
+		 read x;
+		 TEMP_DIR=${x:-$TEMP_DIR}
+		 printf "\n"
+	     fi
+	     sedCmd2="s:@TEMP_DIR@:$TEMP_DIR:"
+
+	     if SOX="`which sox`" ; then
+		 SOX_DIR=`dirname $SOX`
+ 	         if [ "$Ask" != "Don't" ] ; then
+ 		     printf "%s\n" "Sox is already installed in $SOX_DIR"
+		     printf "%s\n" "You should use this one unless you have a good excuse."
+		     printf "%s\n" "However, for your convenience, you could cause studio to "
+		     printf "%s\n" "use $MYFILES/$UNAME/sox instead."
+		     printf "%s" "Use Studio's local (untested) sox? [n]: "
+		     read x
+		     if [ "$x" = "y" -o "$x" = "yes" ] ; then
+		         SOX_DIR=$MYFILES/$UNAME
+		     else
+		       printf "%s\n" "If you want to use some other copy of sox I don't know about"
+		       printf "%s" "tell me its directory [\"$SOX_DIR\"]:"
+		       read x
+		       SOX_DIR=${x:-$SOX_DIR}
+		     fi
+		     printf "\n"
+		 fi
+	     else
+	         SOX_DIR="$MYFILES/$UNAME"
+	         if [ "$Ask" != "Don't" ] ; then
+		     printf "%s\n" "Sox isn't in your path, but a convenience version of this"
+		     printf "%s\n" "application has been provided at $MYFILES/$UNAME/sox"
+		     printf "%s\n" "I recommend acquiring and installing an official version."
+		     if [ -x studio ] ; then
+		         altSoxDir=`awk '$2=="SOX_DIR" {print $3}' studio`
+			 printf "%s\n" "You previously installed Studio using a version of sox at"
+			 printf "%s\n" "$altSoxDir"
+	             fi
+
+                     printf "%s\n" "Tell me where to find the version of sox you want to use"
+		     printf "%s" "[\"$SOX_DIR\"]: "
+		     read x
+	             SOX_DIR=${x:-$SOX_DIR}
+		     printf "\n"
+     		 fi
+	     fi
+	     sedCmd3="s:@SOX_DIR@:$SOX_DIR:"
+
+	     printf "%s\n" "*** Building script \"studio\""
+	     sed -e "s:@WISH_PATH@:`which wish`:g" \
+                 -e $sedCmd1 \
+                 -e $sedCmd2 \
+                 -e $sedCmd3 \
+                      studio.template > studio
+	     chmod a+x studio
+
+             case $PROCESSOR in
+                 i?86) ENDIAN=LittleEndian ;;
+                 sun*) ENDIAN=BigEndian ;;
+             esac
+
+	     printf "%s\n" "*** Building common executables..."
+	     printf "%s" "   fader..."
+             $CC -fsigned-char fader.c -o fader -lm
+             printf "%s" " maxmin..."
+             $CC maxmin.c -o maxmin
+             printf "%s\n" " done."
+	     if [ $UNAME = Linux ] ; then
+	         printf "%s\n" "*** Building Linux-specific executables..."
+	         printf "%s" "   studio_mixer..."
+                 $CC s_mixer.c -o studio_mixer
+	         printf "%s" " reset_dsp..."
+                 $CC reset_dsp.c -o reset_dsp
+                 printf "%s\n" " Done."
+             fi
+             if [ $UNAME = SunOS ] ; then
+                 printf "%s\n" "*** Building SunOS-specific executables..."
+		 printf "studio_device..."
+                 $CC s_device.c -o studio_device
+		 printf " SUNKillVol..."
+		 $CC -DSunOS SUNKillVol.c -o SUNKillVol
+		 printf " heady..."
+		 $CC heady.c -o heady
+                 printf " SUN..."
+                 $CC -DSunOS SUN.c -o SUN
+                 printf " SUN_details"
+                 $CC -DSunOS SUN_details.c -o SUN_Card_Details
+		 printf " Done.\n"
+	     fi
+	     printf "%s\n" "*** Building studio_tool for $UNAME, $ENDIAN architecture"
+	     $CC -D$UNAME -D$ENDIAN s_tool.c -o studio_tool -lm
+	     printf "%s\n" "*** Updating version infromation"
+	     for f in help.tk README studio.lsm ; do
+	         sed -e 's/@version@/1.0.4/g' $f.template > $f
+	     done
+	     printf "%s\n" "*** Finished Configuration."
+	     printf "\n"
+	     ;;
+
+    install) # Check that there is a valid (executable) copy of studio
+             if [ -x studio ] ; then
+                 if studioPath=`which studio` ; then
+		     studioPath=`dirname $studioPath`
+		     if [ "$Ask" != "Don't" ] ; then
+                         printf "%s\n" "The copy of studio currently available from your path is at"
+                         printf "%s" "\"$studioPath\".  "
+                     fi
+	         else
+                     studioPath=/usr/local/bin
+		 fi
+
+		 if [ "$Ask" != "Don't" ] ; then
+                     printf "%s\n" "Path for new studio version [$studioPath]: "
+		     read x
+		     studioPath=${x:-$studioPath}
+		 fi
+
+		 studioFile=$studioPath/studio
+		 if [ -f $studioFile ] ; then
+		     if [ -L $studioFile ] ; then
+		         printf "%s\n" "*** Removing symbolic link to `ls -L $studioFile`"
+			 rm $studioFile
+		     else
+		         if [ "$Ask" != "Don't" ] ; then
+                             printf "%s\n" "Really remove file \"$studioFile\"?"
+                             printf "%s" "It is a regular file, not a symbolic link! [n]: "
+	    		     read x
+			 else
+			     x="yes"
+			 fi
+
+                         if [ "$x" = "y" -o "$x" = "yes" ] ; then
+			     rm -f $studioFile
+			 else
+                             printf "%s\n" "*** Aborting"
+                             exit
+                         fi
+		     fi
+                 fi
+		 printf "*** Installing studio script\n"
+                 install -o root -g bin -m 0755 studio $studioFile
+		 targetDir=`awk '$2=="MYFILES" {print $3}' studio`
+		 if [ $targetDir != $PWD ] ; then
+		     if [ "$Ask" != "Don't" ] ; then
+		         printf "%s\n" "Copy stdio files and binaries into which target directory?"
+		         printf "%s" "\(must not already exist\) [\"$targetDir\"]: "
+		         read x
+		         targetDir=${x:-$targetDir}
+		     fi
+		     mkdir -p $targetDir
+		     cp -a * $targetDir
+		 fi
+
+		 if [ $UNAME = Linux ] ; then
+		     # Check that /dev/{audio,mixer,dsp} are user r/w
+		     WrongPerms=""
+		     ChangePerms="no"
+		     for a in /dev/mixer /dev/dsp /dev/audio ; do
+		         if [ "`find $a ! -perm -666`" != "" ] ; then
+		             WrongPerms="$WrongPerms $a"
+			     ChangePerms="yes"
+			 fi
+		     done
+		     if [ $ChangePerms = yes ] ; then
+			 if [ "$Ask" != "Don't" ] ; then
+		             printf "%s\n" "The following device-special files do not have global"
+			     printf "%s\n\n" "read and write permissions:"
+			     ls -l $WrongPerms
+			     printf "\n%s\n" "Non-privilidged users may not be able to record or play"
+                             printf "%s" "sound with Studio. Change their mode to accordingly? [y]: "
+			     read x
+			     x=${x:-y}
+			     printf "\n"
+			 else
+			     x="yes"
+                         fi
+
+			 if [ $x = "y" -o $x = "yes" ] ; then
+			     printf "*** Setting Permissions\n"
+			     chmod a+rw $WrongPerms
+			 fi
+                     fi
+                 fi
+
+		 printf "*** Finished Installation.\n"
+             else
+                 ./build config ; ./build install
+	     fi
+	     ;;
+
+    dfltinst) # A quiet version of install
+             Ask="Don't" ./build install
+	     ;;
+
+    backup)  # Backup all of the important files.
+
+	     printf "%s\n" "*** Making backup"
+	     (dirToSave=`basename $PWD` ; cd .. ; \
+              tar cvf $dirToSave.tar \
+                      $dirToSave/*.tk \
+                      $dirToSave/*.template \
+                      $dirToSave/*.[ch] \
+		      $dirToSave/*.ico \
+		      $dirToSave/*.hlp \
+                      $dirToSave/*.au \
+		      $dirToSave/*.wav \
+                      $dirToSave/*.xpm \
+                      $dirToSave/StudioHelp \
+                      $dirToSave/COPYING \
+                      $dirToSave/build \
+                      $dirToSave/Linux \
+                      $dirToSave/SunOS \
+                      $dirToSave/SoundStudio.wmconfig \
+                      $dirToSave/DOCS ; \
+                      printf "*** Compressing tar file...\n" ; \
+              gzip -9 $dirToSave.tar)
+             printf "*** Finished Backup.\n"
+             ;;
+
+    *)       # Anything else has got to be wrong.
+             ./build
+	     ;;
+    esac
+

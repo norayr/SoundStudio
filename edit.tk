@@ -1,0 +1,773 @@
+#################################
+# The Edit Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 27/2/95
+#
+# Revision:1 for Tk4.0
+# Date: 12/4/96
+# Revision: 2 use only head and tail, calculate bytes
+# Chel van Gennip <chel@vangennip.nl>
+# Date 23/4/98
+
+
+###################################################################
+# Undo
+# This procedure is the callback to the Edit-Undo menu item.
+# It replaces the working temporary file with the undo file (TMP4),
+# thus discarding all edits.
+proc Undo {} {
+   global FLAG FILE
+
+   # Only take action if the file has been edited and there is an undo file.
+   if {$FLAG(Edited) && [file exists $FILE(TMP4)]} {
+	# Indicate that there will be a delay.
+   	WaitPlease
+
+	# Replace the Working file with the undo file.
+   	exec mv $FILE(TMP4) $FILE(TMP1)
+	FillPlot  
+	WaitPlease 0
+   }
+}
+
+###################################################################
+# GetWordSize
+# This function returns the number of bytes per sample of the current
+# sample.
+proc GetWordSize {} {
+   global LOAD
+
+   # Since bit resolutions are multiples of 8 (8,16,32..) use bit shifting to get
+   # corresponding bytes (1,2,4..) and multiply by number of channels.
+     set bytes [expr ($LOAD(bit)>>3)*($LOAD(chnl))]
+
+   # Return the number of bytes
+     return $bytes
+}
+
+
+###################################################################
+# Copy
+# This procedure is the callback to the Edit-Copy menu item.
+# It copies the contents of the marked area into the file specified 
+# by the parameter, file. 
+# The default file is the clipboard file(TMP2).
+proc Copy {{file default}} {
+   global FLAG PLOT FILE MACHINE
+
+   # Assign default file to be the clipboard. 
+   if { $file =="default" } {
+	set file $FILE(TMP2)
+	
+	set FLAG(Clip) 1
+   }
+
+   # Only take action if there is a marked area.
+   if {$FLAG(Marked)} {
+
+	# Indicate that there will be a delay
+	WaitPlease
+	
+	# Get the size of the samples in bytes
+	set bytes [GetWordSize]
+	# Set the bytes to len and ofs for the "head/tail" operations later.
+	# The "if" statement is necessary since the insertion point marker
+	# "Startx" is not necessarily before "Endx".
+	if {$PLOT(Startx)>$PLOT(Endx)} { 
+            set ofs [expr ($PLOT(Offset) + $PLOT(Endx) * $PLOT(Blocksize) ) * $bytes]
+            set len [expr ($PLOT(Startx) - $PLOT(Endx)) * $PLOT(Blocksize) * $bytes]
+	} else {
+            set ofs [expr ($PLOT(Offset) + $PLOT(Startx) * $PLOT(Blocksize) ) * $bytes]
+            set len [expr ($PLOT(Endx) - $PLOT(Startx)) * $PLOT(Blocksize) * $bytes]
+	}
+
+        #puts "$PLOT(Offset) $PLOT(Blocksize) $bytes $PLOT(Startx) $PLOT(Endx) $ofs $len"
+	# Use the system commands "tail" and "head", to extract the marked data
+	# from the file. The catch command is used to catch an error if there
+	# is stray output to standard out, causing an undesired error.
+	
+        if {$MACHINE(PLATFORM) == "SunOS"} {
+            catch {exec tail +[expr 1 + $ofs]c $FILE(TMP1) | $FILE(Head) $len > $file}
+        } else {
+            catch { exec tail -c +[expr 1 + $ofs] $FILE(TMP1)  | head -c $len > $file }
+        }        
+                 
+	# End delay indication.
+ 	WaitPlease 0
+   }
+}
+
+###################################################################
+# Cut
+# This procedure is the callback to the Edit-Cut menu item.
+# It copies the contents of the marked area into the clipboard file
+# and then removes the samples in the marked area.
+proc Cut {} {
+   global FLAG PLOT FILE
+
+   # Only take action if there is a marked area.
+   if {$FLAG(Marked)} {
+
+	# Indicate that there will be a delay.
+	WaitPlease
+
+	# Copy marked area to the clipboard.
+	Copy
+
+	# Delete the marked area.
+	Delete
+
+	# End delay indication.
+	WaitPlease 0
+   }
+}
+
+###################################################################
+# Delete
+# This procedure is the callback to the Edit-Delete menu item.
+# It removes the samples in the marked area from the working file.
+# The paramemter toUndo is a boolean value indicating whether the
+# original working file should be copied to the undo file.
+proc Delete {{toUndo 1}} {
+   global FLAG PLOT FILE MACHINE
+
+   # Only take action if there is a marked area.
+   if {$FLAG(Marked)} {
+	# Indicate that there will be a delay.
+   	WaitPlease
+
+	# Get the size of the samples in bytes.
+	set bytes [GetWordSize]
+
+	# Set the bytes to len and ofs for the "head/tail" operations later.
+	# The "if" statement is necessary since the insertion point marker
+	# "Startx" is not necessarily before "Endx".
+	if {$PLOT(Startx)>$PLOT(Endx)} { 
+            set ofs [expr ($PLOT(Offset) + $PLOT(Endx) * $PLOT(Blocksize)) * $bytes]
+            set len [expr ($PLOT(Startx) - $PLOT(Endx)) * $PLOT(Blocksize) * $bytes]
+	    # Set the two points equal (to the left-most marker)
+	    set PLOT(Startx) $PLOT(Endx)
+	} else {
+            set ofs [expr ($PLOT(Offset) + $PLOT(Startx) * $PLOT(Blocksize)) * $bytes]
+            set len [expr ($PLOT(Endx) - $PLOT(Startx)) * $PLOT(Blocksize) * $bytes]
+	    # Set the two points equal (to the left-most marker)
+	    set PLOT(Endx) $PLOT(Startx)
+	}
+	
+	# Use system calls "head" and "tail" to remove the marked samples.
+ 	# The catch command is used to catch an error if there
+	# is stray output to standard out, causing an undesired error.
+	# Store in the temporary file (TMP5)
+	
+	if {$MACHINE(PLATFORM) == "SunOS"} {
+	
+            catch { exec cat $FILE(TMP1) | $FILE(Head) $ofs > $FILE(TMP5) }
+	    catch { exec tail +[expr 1+ $ofs + $len ]c $FILE(TMP1) >>$FILE(TMP5) }
+                        
+        } else {
+            catch { exec head -c $ofs $FILE(TMP1) > $FILE(TMP5) }
+	    catch { exec tail -c +[expr 1+ $ofs + $len ] $FILE(TMP1) >>$FILE(TMP5) }
+        }
+	
+ 	# Move the working file to the undo file (TMP4) if requested.
+	if {$toUndo} {
+		# Store original in undo buffer
+		exec mv $FILE(TMP1) $FILE(TMP4)
+	}
+
+	# Move the temporary file to the working file.
+	exec mv $FILE(TMP5) $FILE(TMP1)
+   
+	# Update the editing plot only if copied to undo file.
+	# This is to avoid duplicated work (used in paste).
+   	if {$toUndo} { FillPlot }
+
+	# Update status flags.
+   	set FLAG(Marked) 0
+   	set FLAG(Edited) 1
+
+	# End delay indication.
+   	WaitPlease 0
+   }
+}
+
+###################################################################
+# Trim
+# This procedure is the callback to the Edit-Trim menu item.
+# It removes the samples not in the marked area from the working file.
+# The paramemter toUndo is a boolean value indicating whether the
+# original working file should be copied to the undo file.
+proc Trim {{toUndo 1}} {
+   global FLAG PLOT FILE
+
+   # Only take action if there is a marked area.
+   if {$FLAG(Marked)} {
+	# Indicate that there will be a delay.
+   	WaitPlease
+
+	# Get the selected sound
+	Copy
+
+	# Make a backup in the undo buffer if required
+	if {$toUndo} {
+		# Store original in undo buffer
+		exec mv $FILE(TMP1) $FILE(TMP4)
+	}
+
+	# Restore the saved clip
+	Paste
+
+	# After trimming, the entire file will be selected.
+	set PLOT(Startx) 0
+	set PLOT(Endx) $PLOT(Width)
+	MarkPlot
+
+	# End delay indication.
+   	WaitPlease 0
+   }
+}
+
+###################################################################
+# Paste
+# This procedure is the callback to the Edit-Paste menu item. 
+# It places the contents of "file" into the working file at the
+# point of the insertion points. If the insertion points form a
+# marked area, the marked area is replaced by the contents of file.
+# The parameter file is the filename of a sample file.
+# The default file is the clipboard file (TMP2).
+proc Paste {{file default}} {
+   global FLAG PLOT FILE LOAD SAMPLE MACHINE
+
+   # Assign default file to be the clipboard.
+   if { $file =="default" } {
+	set file $FILE(TMP2)
+	set FLAG(Clip) 1
+   }
+
+   # Only take action if the file exists.
+   if {[file exist $file]} {
+
+      # A paste into a new file is the same as recording into it, but the
+      # LOAD parameters won't be set.  This means you can't copy a section
+      # from an existing file, then put it into a new file unless the original
+      # was at the default sample rate &c.  The following fixes this.  Paste
+      # will now work to a new file ** as long as the parameters have been
+      # left unchanged **.  It is basically the same thing that happens when
+      # you press the record button.
+
+        if { !$FLAG(Loaded) } {
+	  set LOAD(bit) $SAMPLE(bit)
+	  set LOAD(chnl) $SAMPLE(chnl)
+	  set LOAD(rate) $SAMPLE(rate)
+	  set SAMPLE(size) [lindex [Bit2SoxSize $SAMPLE(bit)] 0]
+	  set LOAD(size) $SAMPLE(size)
+	  if { $LOAD(size) == "b" } {
+	    set LOAD(style) "u"
+	  } else {
+	    set LOAD(style) "s"
+	  }
+	}
+
+	set FLAG(Loaded) 1
+
+
+      # Store original working file in the undo file and remove the marked area.
+      if {[file exist $FILE(TMP1)]} {
+	# Copy the working file to the undo file.
+	exec cp $FILE(TMP1) $FILE(TMP4)
+
+   	# If a block is marked, replace with the contents of the clipboard file.
+   	if {$FLAG(Marked)} {
+		Delete 0
+   	}
+	
+	# Indicate that there will be a delay.
+   	WaitPlease
+
+	# Get the size of the samples in bytes.
+   	set bytes [GetWordSize]
+
+	# Set the bytes to len and ofs for the "head/tail" operations later.
+	# The "if" statement is necessary since the insertion point marker
+	# "Startx" is not necessarily before "Endx".
+	if {$PLOT(Startx)>$PLOT(Endx)} { 
+            set ofs [expr ($PLOT(Offset) + $PLOT(Endx) * $PLOT(Blocksize)) * $bytes]
+            set len [expr ($PLOT(Startx) - $PLOT(Endx)) * $PLOT(Blocksize) * $bytes]
+	} else {
+            set ofs [expr ($PLOT(Offset) + $PLOT(Startx) * $PLOT(Blocksize)) * $bytes]
+            set len [expr ($PLOT(Endx) - $PLOT(Startx)) * $PLOT(Blocksize) * $bytes]
+	}
+
+	# Use system calls "head" and "tail" to insert the samples.
+ 	# The catch command is used to catch an error if there
+	# is stray output to standard out, causing an undesired error.
+
+   	# Copy upto insertion point of original using the system call "head".
+   	
+   	if {$MACHINE(PLATFORM) == "SunOS"} {
+            catch { exec cat $FILE(TMP1) | $FILE(Head) $ofs > $FILE(TMP5) } err
+   	    # Copy the clipboard
+   	    catch {exec cat $file >> $FILE(TMP5)} err
+   	    # Copy rest of original
+	    catch { exec tail +[expr 1+ $ofs + $len ]c $FILE(TMP1) >>$FILE(TMP5) } err
+	    
+        } else {
+            catch { exec head -c $ofs $FILE(TMP1) > $FILE(TMP5) } err
+   	    # Copy the clipboard
+   	    catch {exec cat $file >> $FILE(TMP5)} err
+   	    # Copy rest of original
+	    catch { exec  tail -c +[expr 1+ $ofs + $len ] $FILE(TMP1) >>$FILE(TMP5) } err
+
+        }
+
+	# Store the temporary file in the working file.
+	exec mv $FILE(TMP5) $FILE(TMP1)
+
+      } else {
+	# This is the case of pasting the file contents into a new sample.
+
+	# Indicate that there will be a delay.
+	WaitPlease
+
+	# Copy the file's contents into the working file.
+	exec cp $file $FILE(TMP1)
+
+   	# Update load status flag.
+   	set FLAG(Loaded) 1
+	# Enable play panel buttons.
+   	PP_ButtonAble
+      }
+
+      # Update the editing plot.
+      FillPlot
+      # Update status flags.
+      set FLAG(Marked) 0
+      set FLAG(Edited) 1
+      # End delay indication.
+      WaitPlease 0
+   } else { 
+	# Debug information.
+	puts stderr "Sound Studio; proc Paste: $file not found."
+   }
+}
+
+
+
+
+###################################################################
+# Select
+# This procedure is the callback to the Edit-Select menu item.
+# It creates a dialog box which is an alternative interface for 
+# marking a section of the sample.
+proc Select {} {
+   global ConfigSet ED PLOT SAMPLE
+
+   #------------------------------
+   # LOCAL PROCEDURES START 	
+   # The callback to the left scale, to adjust insertion points.
+   proc StartCallBack {value} { 
+    	global  PLOT LOAD ED
+    	set ED(Apply) 0
+    	set ED(Left) $value
+    	set PLOT(Startx) [expr round( $value/$PLOT(Blocksize) )]
+    	set PLOT(Start) \
+		[Sec2Time [expr ($value/$LOAD(rate).0)]]
+   }
+
+   # Callback to right scale, to adjust insertion points.
+   proc EndCallBack {value} { 
+    	global  PLOT LOAD ED
+   	set ED(Apply) 0
+    	set ED(Right) $value
+    	set PLOT(Endx) [expr round($value/$PLOT(Blocksize))]
+    	set PLOT(End)\
+	 [Sec2Time [expr ($value/$LOAD(rate).0)]]
+   }
+
+   # Callback to the Apply button.
+   proc SelectApply {} {
+	global ED FLAG PLOT
+	if {$ED(Apply)} { 
+		MarkPlot 
+		set FLAG(Marked) [expr $ED(Left)!=$ED(Right)]
+		
+	 }
+   }
+
+   # LOCAL PROCEDURES END
+   #------------------------------
+
+   # Create the toplevel .select for the dialog box.
+   toplevel .select -bg $ConfigSet(cBG1)
+   wm title .select "Mark Range"
+   # Set window as a pop-up child of the root window.
+   wm transient .select .
+   # Stop entry from the main window. (grab).
+   catch { grab .select }
+
+   # Create Widgets.
+   # The General Frame.	   
+   frame .select.main 	-bg $ConfigSet(cBG1)\
+			-bd 2 -relief $ConfigSet(REL)
+
+   # The set frame.
+   frame .select.main.set -bg $ConfigSet(cBG1)  
+
+   # The scale widget for setting the insertion point 1.
+   frame .select.main.set.left -bg $ConfigSet(cBG1)
+   label .select.main.set.left.instr \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Left Insertion Point"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+
+   entry .select.main.set.left.label \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "ED(Left)"\
+			-font $ConfigSet(FNT_S) \
+			-width 5\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   # Bind the entry with special characteristics.
+   bindScale .select.main.set.left .select.main.done.butt
+		 
+   scale .select.main.set.left.scale\
+			-showvalue 0\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)\
+			-from 0 -to $SAMPLE(Size)\
+			-width 10 -length 100\
+			-orient horizontal\
+			-command "StartCallBack"
+
+
+
+   # Set initial value of scale, and update the label.
+   if {[info exist ED(Left)]} {
+		if {$ED(Left)==""} { set ED(Left) 0 }
+		.select.main.set.left.scale set $ED(Left)
+   } else {
+	set ED(Left) [.select.main.set.left.scale get]
+   }
+
+   # Pack the left scale widgets.
+   pack .select.main.set.left.instr -fill x -expand 1 -anchor w
+   pack .select.main.set.left.scale\
+	.select.main.set.left.label \
+	  -side left -fill x -expand 1 
+
+   # The scale widget for setting the insertion point 2.
+  frame .select.main.set.right -bg $ConfigSet(cBG1)
+  label .select.main.set.right.instr \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Right Insertion Point"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+   entry .select.main.set.right.label \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "ED(Right)"\
+			-font $ConfigSet(FNT_S) \
+			-width 5\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   # Bind the entry with special characteristics.
+   bindScale .select.main.set.right .select.main.done.butt
+		 
+   scale .select.main.set.right.scale\
+			-showvalue 0\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cFG1)\
+			-from 0 -to $SAMPLE(Size)\
+			-width 10 -length 100\
+			-orient horizontal\
+			-command "EndCallBack"
+
+   # Set initial value of scale, and update the label.
+   if {[info exist ED(Right)]} { 
+		if {$ED(Right)==""} { set ED(Right) 0 }
+		.select.main.set.right.scale set $ED(Right)
+   } else {
+	set ED(Right) [.select.main.set.right.scale get]
+   }
+
+   # Pack the right scale widgets.
+   pack .select.main.set.right.instr -fill x -expand 1 -anchor w
+   pack .select.main.set.right.scale\
+	.select.main.set.right.label \
+	  -side left -fill x -expand 1
+
+   # Pack the right and left scales.
+   pack .select.main.set.left\
+	.select.main.set.right\
+	-expand 1 -padx 5m -pady 3m -side left
+
+   # Label for main window
+   label .select.main.label  \
+		-bg $ConfigSet(cBG1)\
+		-fg $ConfigSet(cFG1)\
+		-text "Set the Position of the Left and Right Marking Points"\
+		-font $ConfigSet(FNT_S) \
+ 		-anchor w
+
+  # The labels to show the time value of the insertion points.
+  frame .select.main.time -bg $ConfigSet(cBG1)
+  label .select.main.time.left	\
+			-bg $ConfigSet(cBG2)\
+			-fg $ConfigSet(cFG2)\
+			-textvariable PLOT(Start)\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor c\
+			-relief groove
+  label .select.main.time.right \
+			-bg $ConfigSet(cBG2)\
+			-fg $ConfigSet(cFG2)\
+			-textvariable PLOT(End)\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor c\
+			-relief groove
+  # Pack the time labels. 
+  pack .select.main.time.left .select.main.time.right\
+	-side left  -expand 1 -padx 15
+
+  # Apply Checkbutton
+  checkbutton .select.main.apply \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+			-text "Mark Range"\
+			-selectcolor $ConfigSet(cAFG)\
+			-anchor w\
+			-relief groove\
+			-variable ED(Apply)\
+			-command {SelectApply}
+
+   # Done Button.
+   frame .select.main.done -bg $ConfigSet(cBG1)\
+			  -relief groove\
+			  -bd 2
+   button .select.main.done.butt \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text Done\
+			-command {global ED;set ED(Apply) 0 ;destroy .select}
+   # Pack the done button.
+   pack .select.main.done.butt -expand 1 -ipadx 2m -pady 3m
+   # Bind the return key to invoke the done button.
+   bind .select.main.done.butt <Return> { .select.main.done.butt invoke }
+   # Set the focus on the done button.
+   focus .select.main.done.butt
+
+
+   # Pack into main.
+   pack .select.main.label \
+	.select.main.set\
+	.select.main.time\
+	.select.main.done\
+	-fill both -expand 1 -side top
+   pack .select.main.apply -before .select.main.done -anchor w -fill x -expand 1\
+			  -pady 1m 
+   # Pack Main.
+   pack .select.main -fill both -expand 1
+}
+
+###################################################################
+#
+# This procedure is the callback to the Edit-Zoom menu item.
+# The parameter direction has three acceptable values:
+# 1. up   : This adjusts the view in the editing plot so that the
+#	    marked area fills the entire area.
+# 2. down : This fills the editing plot with the last zoom, with the
+#	    entire sample filling the plot in the case of there not 
+#	    being a previous view.
+# 3. init : This takes care of initialisation of the zoom variables etc.
+proc Zoom {{direction up}} {
+   global ConfigSet FILE FLAG PLOT LINE
+
+   # The zoom up operation: 
+   if {$FLAG(Marked) && $direction=="up" && $PLOT(Blocksize)>2 } {
+
+	# Enable down button in the menu.
+	MenuItemDisable .menubar.edit.menu.zoom "Zoom Out" 0
+
+	# Copy the marked area to the temporary file.
+	Copy $FILE(TMP5)
+	
+        # Increment the count of Zoom Levels.
+	incr PLOT(ZoomCount)
+	
+	# Get the lower valued insertion point.
+	if {$PLOT(Startx)<$PLOT(Endx)} {
+		set temp $PLOT(Startx)
+		set LINE(MagFactor$PLOT(ZoomCount)) [expr [expr $LINE(MagFactor[expr $PLOT(ZoomCount) - 1])] * ($PLOT(Total).0 / ($PLOT(Endx) - $PLOT(Startx)))]
+	} else {
+		set temp $PLOT(Endx)
+		set LINE(MagFactor$PLOT(ZoomCount)) [expr [expr $LINE(MagFactor[expr $PLOT(ZoomCount) - 1])] * ($PLOT(Total).0 / ($PLOT(Startx) - $PLOT(Endx)))]
+	}
+
+	# Store the data to reconstruct this level, for Zoom down operation.
+	set PLOT(Zoom$PLOT(ZoomCount)) "$PLOT(Blocksize) $PLOT(Offset)\
+			$PLOT(Startx) $PLOT(Endx)"
+	# Set the insertion points to the start and end of the plot window.
+	set PLOT(Startx) 0
+	set PLOT(Endx) $PLOT(Width)
+
+	# Store the number of bytes in the sample prior to the point now 
+	# at the zero point (left) of the plot canvas. 
+	# This is for copy, cut and paste purposes.
+	set PLOT(Offset) [expr $PLOT(Offset)+$temp*$PLOT(Blocksize)]
+
+	# Update the editing plot with the contents of the temporary file.
+	FillPlot init $FILE(TMP5)
+	
+  # The zoom down operation.
+  } elseif {$direction=="down" && $PLOT(ZoomCount)>0} {
+
+  # Now, the stack only holds the last context, but before we can use it
+  # fully, we have to set up the new TMP5 file (that's the one which
+  # contains the zoom-in we're working on. So, first of all, make a local
+  # copy of the things we need...
+
+  # NB "old" means "value on entry", "cur" means "target values"
+
+	set oldBlocksize $PLOT(Blocksize)
+	set oldStartx    $PLOT(Startx)
+	set oldEndx      $PLOT(Endx)
+
+	set curBlocksize [lindex $PLOT(Zoom$PLOT(ZoomCount)) 0]
+	set curOffset    [lindex $PLOT(Zoom$PLOT(ZoomCount)) 1]
+	set curStartx	 [lindex $PLOT(Zoom$PLOT(ZoomCount)) 2]
+	set curEndx    	 [lindex $PLOT(Zoom$PLOT(ZoomCount)) 3]
+	set curMarked    $FLAG(Marked)
+
+	set bsr [expr $oldBlocksize.0/$curBlocksize]
+
+	# Decrement the zoom level count: we've finished with this stack
+        # entry now.
+	incr PLOT(ZoomCount) -1
+
+	# Set up the Copy command, but make sure the whole plot gets copied.
+
+	set PLOT(Blocksize) $curBlocksize
+	set PLOT(Offset)    $curOffset
+	set PLOT(Startx)    0
+	set PLOT(Endx)      $PLOT(Total)
+
+	# Need to set Marked, or nothing will happen.
+	set FLAG(Marked) 1
+
+	# Copy the new area of interest to the temporary file.
+	Copy $FILE(TMP5)
+
+	# Set the insertion points to the start and end of the plot window.
+        # Adjust for any marker movement now we've zoomed out
+	set PLOT(Endx)      [expr round($curEndx+($oldEndx-$PLOT(Total))*$bsr)]
+	set PLOT(Startx)    [expr round($curStartx+$oldStartx*$bsr)]
+	set FLAG(Marked)    $curMarked
+
+	if {$PLOT(ZoomCount)} {
+		# Update the editing plot with the contents of the temporary file.
+		FillPlot init $FILE(TMP5)
+	} else {
+		# Update the editing plot with the whole sample.
+		FillPlot
+	}
+
+  
+
+	# Initialisation.
+	} elseif {$direction=="init"} {
+		# Set the Zoom Variables
+		set PLOT(ZoomCount) 		0
+		set PLOT(Offset)		0
+ 	}
+
+	# Disable Menu items if required.
+	if {$PLOT(Blocksize)<=2} {
+		.plotbox.cs.marker.zoom.zoomin configure -state disabled
+  	} else {
+		.plotbox.cs.marker.zoom.zoomin configure -state normal
+	}
+
+	if {$PLOT(ZoomCount)<=0} {
+		.plotbox.cs.marker.zoom.zoomout configure -state disabled
+	} else {
+		.plotbox.cs.marker.zoom.zoomout configure -state normal
+	}
+}
+
+
+###################################################################
+# Insert
+# This procedure is the callback to the Edit-Insert File menu item.
+# It pastes the contents of a sample file at the insertion point.
+proc Insert {} {
+	global FILE
+
+	# Load a file into the clipboard file.
+	Load $FILE(TMP2)
+
+	# Paste the clipboard into the working file.
+	Paste
+}
+
+###################################################################
+# EditMenuStates
+# This procedure is the callback to variable traces on edit status flags.
+# It enables and disables the relevant parts of the Edit menu according
+# to the state of the Edited, Marked and Clipboard Flags. The traces are 
+# defined in the "New" procedure of the file module. 
+# This procedure is called each time the flags are written to.
+# The parameters are not used, but are required as a trace callback. 
+proc EditMenuStates {var w op} {
+   global PLOT FILE FLAG
+
+   if {$FLAG(Edited)} {
+	MenuItemDisable .menubar.edit.menu Undo 0
+   } else {
+	MenuItemDisable .menubar.edit.menu Undo 1
+   }
+
+   if {$FLAG(Clip)} {
+	MenuItemDisable .menubar.edit.menu Paste 0
+   } else {
+	MenuItemDisable .menubar.edit.menu Paste 1
+   }
+
+   if {$FLAG(Marked)} {
+	if {$PLOT(Blocksize)>2 } {
+		MenuItemDisable .menubar.edit.menu.zoom "Zoom In" 0
+	}
+	MenuItemDisable .menubar.edit.menu Copy 0
+	MenuItemDisable .menubar.edit.menu Delete 0
+	MenuItemDisable .menubar.edit.menu Cut 0
+        MenuItemDisable .menubar.edit.menu Trim 0
+
+   } else {
+	
+	MenuItemDisable .menubar.edit.menu.zoom "Zoom In" 1
+	MenuItemDisable .menubar.edit.menu Copy 1
+	MenuItemDisable .menubar.edit.menu Delete 1
+	MenuItemDisable .menubar.edit.menu Cut 1
+	MenuItemDisable .menubar.edit.menu Trim 1
+   }
+
+}

@@ -1,0 +1,160 @@
+#################################
+# The InfoBar Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 15/2/95
+#
+# Revision: 1
+# Date: 11/4/95
+
+###################################################################
+# InfoBar
+# This procedure sets up and displays the information bar at 
+# the base of the window. This will contain info about the sample.
+# There are 3 options.
+# 1. init : this sets up   but doesn't display them.
+# 2. show : this packs.
+# 3. noshow : this unpacks.
+proc InfoBar { option } {
+   global ConfigSet
+
+   # Set Constants.
+   # A list with the field names and widths.
+   set InfoList {{{Sample} {13}} {{Length} {9}}\
+		 {{Rate} {8}} {{Type} {4}} {{Stereo} {7}} }
+   # The relief style for the info bar.
+   set InfoRelief groove
+
+   # Initialisation option.
+   if {$option == "init" } {
+
+      # Create the widgets if non-existant.
+      if {![winfo exists .infobar]} {
+
+	# Create the general frame.
+	frame .infobar
+
+	# Create the title label.
+	label .infobar.title
+
+	# Create the Information fields.
+	foreach Box $InfoList {
+		# Each Box is to consist of a variable label
+		# and a label indicating what information is shown.
+		
+		# Make Box lower case for widget creation
+		set box [string tolower [lindex [lindex $Box 0] 0]]
+
+		# Create the frame to contain these.
+		frame .infobar.$box -background $ConfigSet(cBG1)
+
+		# Create the box.
+		label .infobar.$box.box 
+
+		# Create the label.
+		label .infobar.$box.label 
+		# Pack.
+		pack .infobar.$box.box .infobar.$box.label\
+			-side top -fill x   	
+		pack .infobar.$box  \
+			-side left -fill x -padx 2 -expand 1
+	}
+	# Packing.
+	pack .infobar.title \
+	   -side top \
+	   -before .infobar.[string tolower [lindex [lindex $InfoList 0] 0]]\
+	   -anchor w 
+	}
+
+	# Configure the widgets.
+
+	# Configure the frame to contain the InfoBar
+	 .infobar config -background $ConfigSet(cBG1)\
+			-borderwidth $ConfigSet(BDW)\
+			-relief $ConfigSet(REL)
+
+	# The title label
+	 .infobar.title config -text Information \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor w \
+			-font $ConfigSet(FNT_S)
+
+	# Configure the Info boxes
+	foreach Box $InfoList {
+		# Each Box is to consist of a variable label
+		# and a label indicating what information is shown.
+		
+		# Make Box lower case for widget creation
+		set box [string tolower [lindex [lindex $Box 0] 0]]
+
+		# Configure the frame to contain these.
+		 .infobar.$box config -background $ConfigSet(cBG1)
+
+		# Set variable names for the boxes.
+		set variable "INFO([lindex [lindex $Box 0] 0])"
+
+		# Configure the box.
+		 .infobar.$box.box config\
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-anchor c \
+			-textvariable $variable \
+			-relief $InfoRelief\
+			-font $ConfigSet(FNT_L)\
+			-width [lindex $Box 1]
+
+		# Configure the label.
+		 .infobar.$box.label config\
+				-text [lindex $Box 0]\
+				-background $ConfigSet(cBG1) \
+				-foreground $ConfigSet(cFG1) \
+				-anchor w \
+				-font $ConfigSet(FNT_S)
+	}
+
+
+   }\
+   elseif {[winfo exists .infobar]} {
+	# The Show option.
+	if {$option == "show"} { 
+	   	global PACK
+		if {$PACK(InfoBar) != ""} {
+	  	 pack .infobar -fill x -after $PACK(InfoBar)
+		} else {
+	  		pack .infobar -fill x 
+		}
+
+	# The No Show option.
+ 	}\
+	elseif {$option == "noshow" } { 
+		pack forget .infobar
+	}\
+ 	else { 
+		puts "Error in MenuBar: illegal option." 
+	}
+   }\
+   else { puts "Sound Studio: proc MenuBar: 'init' option must be called first!"}
+}
+
+
+###################################################################
+# InfoFill
+# This procedure updates the contents of the information bar, based 
+# on the current information.
+proc InfoFill {} {
+   global INFO SAMPLE FILE
+
+   set INFO(Sample) [file tail $FILE(CURR)]
+   set time [expr $SAMPLE(Size)/$SAMPLE(rate).000 ]
+   set INFO(Length) [Sec2Time $time]
+   set INFO(Type) "$SAMPLE(bit) bit"
+   set yn { {} Mono Stereo {} {Quad} }
+   set INFO(Stereo) [lindex $yn $SAMPLE(chnl)]
+   set INFO(Rate) "$SAMPLE(rate) Hz"
+}
+
+
