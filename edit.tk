@@ -196,6 +196,57 @@ proc Delete {{toUndo 1}} {
 }
 
 ###################################################################
+# AddSilence
+# Add silence to the current insertion point.  The length of the
+# current selection determintes the amount of silence to add, but
+# the current selction is not cleared or modified.
+#
+# Code donated by Bryce@obviously.com
+
+proc AddSilence {{file default}} {
+   global FLAG PLOT FILE MACHINE LOAD
+
+   # Assign default file to be the clipboard.
+   if { $file =="default" } {
+        set file $FILE(TMP2)
+        set FLAG(Clip) 1
+   }
+
+   # Only take action if there is a marked area.
+   if {$FLAG(Marked)} {
+        # Indicate that there will be a delay
+        WaitPlease
+        # Get the size of the samples in bytes
+        set bytes [GetWordSize]
+        # The "if" statement is necessary since the insertion point marker
+        # "Startx" is not necessarily before "Endx".  Modify the insertion
+        # point so that silence is inserted, without deleting anything.
+        if {$PLOT(Startx)>$PLOT(Endx)} {
+            set len [expr ($PLOT(Startx) - $PLOT(Endx)) * $PLOT(Blocksize) * $bytes]
+            set PLOT(Endx) $PLOT(Startx)
+        } else {
+            set len [expr ($PLOT(Endx) - $PLOT(Startx)) * $PLOT(Blocksize) * $bytes]
+            set PLOT(Startx) $PLOT(Endx)
+        }
+
+        # Create a file with silence of just the right length, then
+        # paste it in if the dd worked
+        set err [ catch {
+		    exec dd if=/dev/zero count=1 bs=$len | sox -t .raw -s -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) - -t .raw -$LOAD(style) -$LOAD(size) -r $LOAD(rate) -c $LOAD(chnl) $file
+		  }
+	]
+puts "$err"
+        if { $err == 1 } {
+	  # Un-mark the segment so it won't be overwritten
+	  set $FLAG(Marked) 0
+	  Paste
+	}
+        # End delay indication.
+        WaitPlease 0
+   }
+}
+
+###################################################################
 # Trim
 # This procedure is the callback to the Edit-Trim menu item.
 # It removes the samples not in the marked area from the working file.
@@ -760,14 +811,15 @@ proc EditMenuStates {var w op} {
 	MenuItemDisable .menubar.edit.menu Delete 0
 	MenuItemDisable .menubar.edit.menu Cut 0
         MenuItemDisable .menubar.edit.menu Trim 0
+	MenuItemDisable .menubar.edit.menu "Insert Silence" 0
 
-   } else {
-	
+   } else {	
 	MenuItemDisable .menubar.edit.menu.zoom "Zoom In" 1
 	MenuItemDisable .menubar.edit.menu Copy 1
 	MenuItemDisable .menubar.edit.menu Delete 1
 	MenuItemDisable .menubar.edit.menu Cut 1
 	MenuItemDisable .menubar.edit.menu Trim 1
+	MenuItemDisable .menubar.edit.menu "Insert Silence" 1
    }
 
 }
