@@ -211,7 +211,7 @@ case $1 in
 		 if [ $targetDir != $PWD ] ; then
 		     if [ "$Ask" != "Don't" ] ; then
 		         printf "%s\n" "Copy stdio files and binaries into which target directory?"
-		         printf "%s" "\(must not already exist\) [\"$targetDir\"]: "
+		         printf "%s" "[\"$targetDir\"]: "
 		         read x
 		         targetDir=${x:-$targetDir}
 		     fi
