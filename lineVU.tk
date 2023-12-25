@@ -1,0 +1,557 @@
+#################################
+# The Playline / VU Meter Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe. This module by Robin Whitehead
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 15/4/99
+
+# A collection of procedures that relate to the play-line and the
+# VU meter
+
+
+###################################################################
+# Reader
+# The Callback procedure to the event that there is data to be read
+# from the pipe set up by play or record. The playline is advanced and/or
+# the VU display is updated.
+# Date 29/4/99
+proc Reader { pipe } { 
+        global PLOT FLAG PLAY LINE FILE FX LOAD VU
+        
+        if {$FILE(PID) == 0} {
+             gets $pipe FILE(PID)            
+        }
+
+	if [eof $pipe] {
+	     #catch { close $pipe }
+             update idletasks
+             if {$LINE(On) == 1} {
+                #set temp [expr round([lindex [.plotbox.cs.canvas coords $LINE(Id)] 0])]
+             	#.plotbox.cs.canvas move $LINE(Id) -$temp 0
+             }
+             # A bit of a hack - this moves the line to the end of the plot window, or the end of the marked region
+             # upon the eof of the pipe
+             if {$FLAG(Marked)} {
+             	.plotbox.cs.canvas move $LINE(Id) [expr $PLOT(Endx) - [lindex [.plotbox.cs.canvas coords $LINE(Id)] 0]] 0
+             } else {
+         
+             	.plotbox.cs.canvas move $LINE(Id) [expr $PLOT(Total) - 1 - [lindex [.plotbox.cs.canvas coords $LINE(Id)] 0]] 0
+             }     
+             set LINE(TotalPixelsMoved) 0
+             set FILE(PID) 0
+           
+             Stop
+             if {$VU(PeakOn) && $VU(On)} {
+             	set VU(PeakOn) 0
+             	for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+             		PutPeak $i 0
+             	}
+             	set VU(PeakOn) 1
+             }
+             close $pipe
+             return
+        }
+	if {$FLAG(Playing) == 0} {
+	     catch { close $pipe }
+             update idletasks
+             set LINE(TotalPixelsMoved) 0 
+             if {$VU(PeakOn) && $VU(On)} {
+             	set VU(PeakOn) 0
+             	for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+             		PutPeak $i 0
+             	}
+             	set VU(PeakOn) 1
+             }
+                          
+             return
+        }
+        
+        if {$LINE(PixelsMovedInPlot) >= 450} {
+                 .plotbox.cs.canvas xview scroll 1 pages
+                 set LINE(PixelsMovedInPlot) [expr $LINE(PixelsMovedInPlot) - 450]
+        }
+          
+        gets $pipe number
+        
+        if {[string index $number 0] == "l"} {
+	  set number [lindex [split $number .] 1]
+	  
+	  if {$LINE(On) == 1} {
+	    if {$number != ""} {
+	      set LINE(PixelsMovedInPlot) [expr $number + $LINE(PixelsMovedInPlot)]	
+	      .plotbox.cs.canvas move $LINE(Id) $number 0
+	      set PLAY(Time) [expr round((($PLOT(NumberOfSamples).0 / $LOAD(rate)) / $PLOT(Total)) * $LINE(TotalPixelsMoved) * 10) / 10.0]
+	      update idletasks
+	      set LINE(TotalPixelsMoved) [expr $LINE(TotalPixelsMoved) + $number]
+	    }
+	    
+	  } else {
+	    set LINE(PixelsMovedInPlot) 0
+	    set LINE(TotalPixelsMoved) 0
+	    set PLAY(Time) 0
+	  }
+
+        }
+        if {[string index $number 0] == "v" && $VU(On)} {
+        	set number [lindex [split $number .] 1]
+        	
+        	if {$number != ""} {
+
+		     for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+		     	
+		     	set vu_data [lindex $number $i]
+		     	
+		     	#set vu_data [lindex [split $number .] 1]
+		     	
+		     	if {$vu_data == "-Inf"} {set vu_data -51}
+		     	
+		     	set vu_data [expr round($vu_data)]
+		     
+		     	if {$vu_data == 0} {light $i 10
+		     	} elseif {$vu_data == -1} {light $i 9
+		     	} elseif {$vu_data == -2} {light $i 8
+		     	} elseif {$vu_data == -3} {light $i 7
+		     	} elseif {$vu_data <= -4 && $vu_data >= -5} {light $i 6
+		     	} elseif {$vu_data <= -6 && $vu_data >= -10} {light $i 5
+		     	} elseif {$vu_data <= -11 && $vu_data >= -15} {light $i 4
+		     	} elseif {$vu_data <= -16 && $vu_data >= -25} {light $i 3
+		     	} elseif {$vu_data <= -26 && $vu_data >= -35} {light $i 2
+		     	} elseif {$vu_data <= -35 && $vu_data >= -50} {light $i 1
+		     	} elseif {$vu_data < -50} {light $i 0}
+		     	update idletasks
+		     }
+		     
+	        }
+        }
+}
+###################################################################
+# SetupVU_Channels
+# A callback procedure that sets up and display a VU meter in a toplevel
+# transient window, or destroys the VU meter, depending on whether a
+# meter is in existence. The option 'channels' can either be 1, 2 or 4.
+# Date 30/4/99
+proc SetupVU_Channels { channels } {
+
+	global VU_Marker lightlit Peak_Marker ConfigSet reset VU FLAG 
+
+	# destroy the VU meter if it already exists
+	# and remember its coordinates
+	if {[winfo exists .vu]} {   set VU(xpos) [winfo rootx .vu]
+				    set VU(ypos) [winfo rooty .vu]
+				    destroy .vu}
+
+	# record the number of channels being used at the moment
+	set VU(channels) $channels
+
+	toplevel .vu -bg $ConfigSet(cBG1)
+	wm title .vu "VU Meter     "
+	
+	# Set window as a pop-up child of the root window.
+   	wm transient .vu .
+	
+	wm protocol .vu WM_DELETE_WINDOW {
+		set VU(On) 0
+		Show_VU
+        }
+	frame .vu.main -bg $ConfigSet(cBG1)\
+			-bd 2 -relief $ConfigSet(REL)
+			
+	frame .vu.main.set -bg $ConfigSet(cBG1)
+	
+	checkbutton .vu.main.peak \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+			-text "Peak ON/OFF"\
+			-selectcolor $ConfigSet(cAFG)\
+			-anchor w\
+			-variable VU(PeakOn)\
+			-relief groove \
+                        -command {if {$VU(PeakOn) && $FLAG(Playing)} {
+			            Peak_Reset
+			          }}	
+	
+	button .vu.main.done \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text Done\
+ 			-command {set VU(On) 0
+ 			          Show_VU}
+	
+	button .vu.main.reset \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text "Peak Reset"\
+			-command {if {$VU(PeakOn) && $FLAG(Playing)} {
+					Peak_Reset
+				  	}}	
+	
+	canvas .vu.main.set.c -height 130 -width 76 -bg black
+	
+	.vu.main.set.c create text 20 16 -text 0 -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 16 26 -text "-1" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 16 36 -text "-2" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 16 46 -text "-3" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 16 56 -text "-5" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 13 66 -text "-10" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 13 76 -text "-15" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 13 86 -text "-25" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 13 96 -text "-35" -fill white -font $ConfigSet(FNT_S)
+	.vu.main.set.c create text 13 106 -text "-50" -fill white -font $ConfigSet(FNT_S)
+	
+	.vu.main.set.c create text 15 120 -text "dB" -fill white -font $ConfigSet(FNT_S)
+	
+	for {set j 0} {$j < $channels} {incr j} {
+		set offset [expr $j * 20]
+
+		for {set i 0} {$i < 10} {incr i} {
+		
+		
+		
+			if {$i < 6} {
+				set colour "green"
+				set colour2 "darkgreen"
+			}
+			if {$i > 6 && $i < 8} {
+				set colour "orange"
+				set colour2 "darkorange4"
+			}
+			if {$i > 8} {
+				set colour "red"
+				set colour2 "darkred"
+			}
+			.vu.main.set.c create rectangle [expr 30 + $offset] [expr (-$i * 10) + 100] [expr 46 + $offset] [expr (-$i * 10) + 110] -fill grey15
+			set VU_Marker(left$j$i) [.vu.main.set.c create rectangle -70 [expr (-$i * 10) + 100] -67 [expr (-$i * 10) + 110] -fill $colour2 -tag moveable]
+			set VU_Marker(middle$j$i) [.vu.main.set.c create rectangle -67 [expr (-$i * 10) + 100] -57 [expr (-$i * 10) + 110] -fill $colour -tag moveable]
+			set VU_Marker(right$j$i) [.vu.main.set.c create rectangle -57 [expr (-$i * 10) + 100] -54 [expr (-$i * 10) + 110] -fill $colour2 -tag moveable]
+			set lightlit($j) 0
+		}
+
+		set Peak_Marker(left$j)   [.vu.main.set.c create rectangle [expr 30 + $offset] 150 [expr 33 + $offset] 160 -fill darkblue]		
+		set Peak_Marker(middle$j) [.vu.main.set.c create rectangle [expr 33 + $offset] 150 [expr 43 + $offset] 160 -fill blue]
+		set Peak_Marker(right$j)  [.vu.main.set.c create rectangle [expr 43 + $offset] 150 [expr 46 + $offset] 160 -fill darkblue]
+		
+		if {$FLAG(Playing)} {
+		
+			PutPeak 0 1
+		}
+	}
+	if {$channels == 2} {.vu.main.set.c config -width 96}
+	if {$channels == 4} {.vu.main.set.c config -width 136}
+	
+	if {![info exists VU(xpos)]} {
+		wm geometry .vu 170x212+[expr [winfo rootx .] + 10]+[expr [winfo rooty .]+300]
+	} else {
+		wm geometry .vu 170x212+[expr $VU(xpos) - 5]+[expr $VU(ypos) - 24]
+	}
+	
+	pack .vu.main.set.c -pady 5
+	pack .vu.main.set
+	pack .vu.main.peak -anchor w -expand 1 -fill x -pady 1m
+	pack .vu.main.reset -side left -padx 1 -pady 1
+	pack .vu.main.done -side right -padx 1 -pady 1
+	pack .vu.main
+	set VU(On) 1
+	
+	
+}
+###################################################################
+# light
+# A procedure that lights a particular LED on the VU meter, represented
+# by the option 'number' - which goes from 0 (no LEDs lit) to 10 (all LEDs lit),
+# of a particular channel, represented by the option 'channel'.
+# Date 30/4/99
+proc light { channel number } {
+	global lightlit VU_Marker LOAD Peak_Marker VU
+	
+	set offset [expr $channel * 20]
+
+	# approach from below
+	if {$lightlit($channel) < $number} {
+		#light up between lightlit and number
+		for {set i $lightlit($channel)} {$i < $number} {incr i} {
+			.vu.main.set.c move $VU_Marker(left$channel$i) [expr $offset + 100] 0
+			.vu.main.set.c move $VU_Marker(middle$channel$i) [expr $offset + 100] 0
+			.vu.main.set.c move $VU_Marker(right$channel$i) [expr $offset + 100] 0
+		}
+		set lightlit($channel) $number
+	} elseif {$lightlit($channel) > $number} {
+	# approach from above
+		#turn off between lightlit and number+1
+		for {set i $number} {$i < $lightlit($channel)} {incr i} {
+			.vu.main.set.c move $VU_Marker(left$channel$i) -[expr $offset + 100] 0
+			.vu.main.set.c move $VU_Marker(middle$channel$i) -[expr $offset + 100] 0
+			.vu.main.set.c move $VU_Marker(right$channel$i) -[expr $offset + 100] 0
+		}
+		set lightlit($channel) $number
+	}
+	if {$number > 0 && $number > $VU(Peak$channel)} {	
+		PutPeak $channel $number
+	}
+	if {!$VU(PeakOn)} {
+		for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+			set offset [expr 150 - [lindex [.vu.main.set.c coords $Peak_Marker(left$i)] 0]]
+			.vu.main.set.c move $Peak_Marker(left$i) 0 $offset
+			.vu.main.set.c move $Peak_Marker(middle$i) 0 $offset
+			.vu.main.set.c move $Peak_Marker(right$i) 0 $offset
+			set VU(Peak$channel) 0
+		}
+	
+	}
+	
+		
+	
+}
+###################################################################
+# PutPeak
+# A procedure that adjusts the position of the peak marker of a particular channel
+# on the VU meter. The option 'number' represents the marker's position (0..10) and 
+# the option 'channel' represents which peak marker 'number' refers to. 
+# Date 2/5/99
+proc PutPeak { channel number } {
+	global Peak_Marker VU peakon2 LOAD
+	
+	if {$number > 0 && $number <= 10} {
+		if {$VU(Peak$channel) == 0} {
+			set offset [expr (40 + ($number * 10)) * -1]
+		} else {
+			set offset [expr (($number - $VU(Peak$channel)) * 10) * -1]
+		}
+		.vu.main.set.c move $Peak_Marker(left$channel) 0 $offset
+		.vu.main.set.c move $Peak_Marker(middle$channel) 0 $offset
+		.vu.main.set.c move $Peak_Marker(right$channel) 0 $offset
+		set VU(Peak$channel) $number
+		
+	} elseif {$number == 0} {
+		set offset [expr 150 - [lindex [.vu.main.set.c coords $Peak_Marker(left$channel)] 1]]
+		.vu.main.set.c move $Peak_Marker(left$channel) 0 $offset
+		.vu.main.set.c move $Peak_Marker(middle$channel) 0 $offset
+		.vu.main.set.c move $Peak_Marker(right$channel) 0 $offset
+		set VU(Peak$channel) 0
+	}
+
+}
+###################################################################
+# SetVUParameters
+# The callback procedure to the 'Set VU Parameters' option in the Options menu 
+# Date 4/5/99
+proc SetVUParameters {} {
+   global ConfigSet VU
+
+   # Create the dialog box.
+	
+   # Create toplevel window.
+   toplevel .vusettings -bg $ConfigSet(cBG1)
+   wm title .vusettings "VU Meter Settings"
+   # Set window as a pop-up child of the root window.
+   wm transient .vusettings .
+   # Stop entry from the main window. (grab).
+   catch { grab .vusettings }
+
+   # Create Widgets
+   # Create the general frame.	   
+   frame .vusettings.main -bg $ConfigSet(cBG1)\
+			-bd 2 -relief $ConfigSet(REL)
+
+   # Create the set frame to contain the scale widgets.
+   frame .vusettings.main.set -bg $ConfigSet(cBG1)  
+
+   # Create the attack scale widget. 
+   frame .vusettings.main.set.attack -bg $ConfigSet(cBG1)
+   label .vusettings.main.set.attack.instr \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Sample Attack Time (ms)"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+   entry .vusettings.main.set.attack.label \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "VU(Attack)"\
+			-font $ConfigSet(FNT_S) \
+			-width 5\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   # Bind the entry with special characteristics.
+   bindScale .vusettings.main.set.attack .vusettings.main.done.butt
+		 
+   scale .vusettings.main.set.attack.scale\
+			-showvalue 0\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)\
+			-from 1 -to 500\
+			-width 10 -length 100\
+			-orient horizontal\
+			-command "set VU(Attack)"
+
+   # Make sure that the value is being displayed and the scale slider
+   # is in the correct position.
+   if {[info exist VU(Attack)]} {
+		if {$VU(Attack)==""} { set VU(Attack) 0 }
+		.vusettings.main.set.attack.scale set $VU(Attack)
+   } else {
+	set VU(Attack) [.vusettings.main.set.attack.scale get]
+   }
+   pack .vusettings.main.set.attack.instr -fill x -expand 1\
+					-anchor w
+   pack .vusettings.main.set.attack.scale\
+	.vusettings.main.set.attack.label \
+	  -side left -fill x -expand 1 
+
+   # Create the decay scale widget.
+   frame .vusettings.main.set.decay -bg $ConfigSet(cBG1)
+   label .vusettings.main.set.decay.instr \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Decay Time (s)"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+    entry .vusettings.main.set.decay.label \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-textvariable "VU(Decay)"\
+			-font $ConfigSet(FNT_S) \
+			-width 5\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+   # Bind the entry with special characteristics.
+   bindScale .vusettings.main.set.decay .vusettings.main.done.butt
+		 
+   scale .vusettings.main.set.decay.scale\
+			-showvalue 0\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)\
+			-from 0.1 -to 2\
+			-width 10 -length 100\
+			-orient horizontal\
+			-resolution 0.1\
+			-command "set VU(Decay)"
+
+   # Make sure that the value is being displayed and the scale slider
+   # is in the correct position.
+   if {[info exist VU(Decay)]} { 
+		if {$VU(Decay)==""} { set VU(Decay) 0 }
+		.vusettings.main.set.decay.scale set $VU(Decay)
+   } else {
+	set VU(Decay) [.vusettings.main.set.decay.scale get]
+   }
+
+   pack .vusettings.main.set.decay.instr -fill x -expand 1\
+					-anchor w
+   pack .vusettings.main.set.decay.scale\
+	.vusettings.main.set.decay.label \
+	  -side left -fill x -expand 1
+
+   # Pack the scale widgets.
+   pack .vusettings.main.set.attack\
+	.vusettings.main.set.decay\
+	-expand 1 -padx 5m -pady 3m -side left
+
+   # Create the label for the main window.
+   label .vusettings.main.label  \
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-text "Set the VU Meter Parameters"\
+			-font $ConfigSet(FNT_S) \
+ 			-anchor w
+
+   # Create the Select checkbutton.
+   checkbutton .vusettings.main.apply \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+			-text "Display VU Meter"\
+			-selectcolor $ConfigSet(cAFG)\
+			-anchor w\
+			-variable VU(On)\
+			-command Show_VU\
+			-relief groove
+
+   # Create the Done Button
+   frame .vusettings.main.done -bg $ConfigSet(cBG1)\
+			  -relief groove\
+			  -bd 2
+   button .vusettings.main.done.butt \
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+ 			-text Done\
+			-command {destroy .vusettings}
+   pack .vusettings.main.done.butt -expand 1 -ipadx 2m -pady 3m
+
+   # Set the focus on the done button.
+   focus .vusettings.main.done.butt
+
+   # Pack into main.
+   pack .vusettings.main.label \
+	.vusettings.main.set\
+	.vusettings.main.done\
+		-fill both -expand 1 -side top
+   pack .vusettings.main.apply -before .vusettings.main.done -anchor w -fill x -expand 1\
+			  -pady 1m 
+
+   # Pack main.
+   pack .vusettings.main -fill both -expand 1
+}
+
+proc Show_VU {} {
+	global VU LOAD Peak_Marker FLAG
+	
+	if {!$VU(On)} {
+		if {[winfo exists .vu]} {   
+			set VU(xpos) [winfo rootx .vu]
+		    	set VU(ypos) [winfo rooty .vu]
+			destroy .vu
+		}
+	} else {
+		if {[info exists VU(Peak0)]} {
+			for {set j 0} {$j < $LOAD(chnl)} {incr j} {
+				set oldpeak($j) $VU(Peak$j)
+			}
+		}	
+		SetupVU_Channels $LOAD(chnl)
+		if {$FLAG(Playing)} {
+			for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+        			set temp [.vu.main.set.c coords $Peak_Marker(left$i)]
+				set tempy [lindex $temp 1]
+				.vu.main.set.c move $Peak_Marker(left$i) 0 [expr 150 - $tempy]
+				.vu.main.set.c move $Peak_Marker(middle$i) 0 [expr 150 - $tempy]
+				.vu.main.set.c move $Peak_Marker(right$i) 0 [expr 150 - $tempy]
+				#PutPeak $i $VU(Peak$i)
+				#set temp $VU(Peak$i)
+				set VU(Peak$i) 0
+				PutPeak $i $oldpeak($i)
+			}
+		}
+	}
+	
+}
+
+proc Peak_Reset {} {
+	global LOAD
+	
+	for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+		PutPeak $i 0
+	}
+
+}

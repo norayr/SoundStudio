@@ -1,0 +1,534 @@
+#################################
+# The PlayPanel Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 15/2/95
+#
+# Revision:3a 
+# Date: 2/3/95
+
+##########################
+# playPanel - Is the procedure that setups and displays the panel containing 
+# the play, record and stop buttons. 
+# There are 3 options.
+# 1. init : this sets up   but doesn't display them.
+# 2. show : this packs.
+# 3. noshow this unpacks.
+proc PlayPanel { option } {
+
+   global ConfigSet FILE PLAY FLAG
+
+   
+   # Other Settings
+   set PLAY(ButtList) [list Play Record Stop]
+   set Playicon "@$FILE(SRC)\/play.ico"
+   set Recordicon  "@$FILE(SRC)\/rec.ico"
+   set Stopicon "@$FILE(SRC)\/stop.ico"
+   set ButtWidth 30
+   # Assume records are for real
+   set FLAG(MonitorOnly) 0
+
+   if {$option == "init" } {
+      if {![winfo exists .playpanel]} {
+	# Create the play panel widgets.
+
+	frame .playpanel -background $ConfigSet(cBG1)
+	frame .playpanel.title 
+	label .playpanel.title.label -text Controls
+	label .playpanel.title.timel -text "Play Time:" -justify left
+	label .playpanel.title.time -textvariable PLAY(Time)\
+				     -width 3 -anchor w
+	pack .playpanel.title.label -side left -fill x -expand 1\
+		-anchor w -ipady 1m
+	pack .playpanel.title.timel .playpanel.title.time -side left\
+			-ipady 1m
+
+	# Create the Buttons
+	foreach Button $PLAY(ButtList) {
+		# Each Button is to consist of a button
+		# and a label
+		
+		# Make Button lower case for widget creation
+		set button [string tolower $Button]
+
+		# Create the frame to contain these.
+		frame .playpanel.$button
+
+		# Set the icon and command name for the buttons.
+		eval set icon $[format "%sicon" $Button]
+		set command $Button
+
+		# Create the button.
+		button .playpanel.$button.button \
+			-bitmap $icon \
+			-command $command
+			
+
+		# Create the label.
+		label .playpanel.$button.label \
+				-text $Button
+		# Pack.
+		pack .playpanel.$button.button .playpanel.$button.label\
+			-side top -fill x   	
+		pack .playpanel.$button  \
+			-side left -fill x -expand 1 -padx 2
+		# Bind button 3 event to commands that simulate button 1 event
+		# ie when clicked button depressed - if button held and mouse moved
+		# off button it becomes deselected. Button function only called when
+		# mouse button released and pointer is over button
+		
+		if {$button=="stop"} {
+			bind .playpanel.$button.button <Button-3> { .playpanel.stop.button config -relief sunken
+								    set StopButtonState active }
+			bind .playpanel.$button.button <B3-Motion> { set StopButtonState [lindex [ .playpanel.stop.button config -state] 4]
+								     if {$StopButtonState != "active"} { .playpanel.stop.button config -relief raised}
+								     if {$StopButtonState == "active"} { .playpanel.stop.button config -relief sunken}
+								    }
+			bind .playpanel.$button.button <ButtonRelease-3> { if {$StopButtonState == "active"} { .playpanel.stop.button config -relief raised 
+													       Trim_Stop }
+									 }
+									   	
+		}
+		
+		# Bind record button to call up box to set recording
+		# settings with button 3 pressed, and to record to
+		# /dev/null on button 2 (for setting levels)
+		if {$button=="record"} {
+			bind .playpanel.$button.button <Button-3> { .playpanel.record.button config -relief sunken
+								    set RecButtonState active }
+			bind .playpanel.$button.button <B3-Motion> { set RecButtonState [lindex [ .playpanel.record.button config -state] 4]
+								     if {$RecButtonState != "active"} { .playpanel.record.button config -relief raised}
+								     if {$RecButtonState == "active"} { .playpanel.record.button config -relief sunken}
+								    }
+			bind .playpanel.$button.button <ButtonRelease-3> { if {$RecButtonState == "active"} { .playpanel.record.button config -relief raised 
+													       Settings }
+									 }
+				
+			bind .playpanel.$button.button <Button-2> { .playpanel.record.button config -relief sunken
+								    set RecButtonState active }
+			bind .playpanel.$button.button <B2-Motion> { set RecButtonState [lindex [ .playpanel.record.button config -state] 4]
+								     if {$RecButtonState != "active"} { .playpanel.record.button config -relief raised}
+								     if {$RecButtonState == "active"} { .playpanel.record.button config -relief sunken}
+								    }
+			bind .playpanel.$button.button <ButtonRelease-2> { if {$RecButtonState == "active"} {
+			  .playpanel.record.button config -relief raised
+			  set FLAG(MonitorOnly) 1
+			  # TMP7 gets overwritten from time to time:
+			  # it's as good as anywhere.
+			  Record $FILE(TMP7) }
+			}
+		}
+	}
+
+	# Packing.
+	pack .playpanel.title \
+		-side top \
+		-before .playpanel.[string tolower [lindex $PLAY(ButtList) 0]]\
+		-fill x -expand 1
+
+	# Set the Button states and start the checking routine
+	#PP_Playing
+	
+	PP_ButtonAble
+      }
+      # Configure the PlayPanel widgets.
+      .playpanel config -background $ConfigSet(cBG1)\
+		-borderwidth $ConfigSet(BDW)\
+			-relief $ConfigSet(REL)
+	
+      .playpanel.title.label config \
+			-background $ConfigSet(cBG1)
+      .playpanel.title.label config \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor w \
+			-font $ConfigSet(FNT_S)
+
+      .playpanel.title.timel config \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor w \
+			-font $ConfigSet(FNT_S)
+      .playpanel.title.time  config \
+			-background $ConfigSet(cBG1) \
+			-foreground $ConfigSet(cFG1) \
+			-anchor w \
+			-font $ConfigSet(FNT_S)
+
+      # Configure the Buttons
+      foreach Button $PLAY(ButtList) {
+
+	# Make Button lower case for widget creation
+	set button [string tolower $Button]
+
+	# Configure the frame to contain these.
+	.playpanel.$button config -background $ConfigSet(cBG1)
+
+	# Configure the button.
+	 .playpanel.$button.button config\
+			-foreground $ConfigSet(cFG2) \
+			-background $ConfigSet(cBG2) \
+			-activebackground $ConfigSet(cABG) \
+			-activeforeground $ConfigSet(cAFG) \
+			-disabledforeground $ConfigSet(cDFG) \
+			-width $ButtWidth
+
+	# Configure the label.
+	 .playpanel.$button.label config \
+				-background $ConfigSet(cBG1) \
+				-foreground $ConfigSet(cFG1) \
+				-anchor w \
+				-font $ConfigSet(FNT_S)
+      }
+
+   # The show option.
+   } \
+   elseif {$option == "show"} { 
+	global PACK
+	if {$PACK(PlayPanel) != ""} {
+		pack .playpanel -fill x -after $PACK(PlayPanel)
+	}  else {
+		pack .playpanel -fill x
+	}
+
+   # the No show option.			 
+   } \
+   elseif {$option == "noshow" } { pack forget .playpanel } 
+}
+
+
+
+###################################################################
+# Play
+# This procedure is the callback to the play button in the play panel.
+# It plays back the sample in the sound card.
+proc Play {} {
+   global  FILE FLAG FX PLAY DialogCfg LOAD PLOT LINE WarningCommand MACHINE peakon2 VU Peak_Marker
+
+   # Only play if there is a loaded file and a sound card is detected.
+   if {$FLAG(Loaded) && $FLAG(Card_Exist)} {		
+     set test [catch {exec $FILE(Tool) diagnostics} err ]
+     if {$test} {
+	dialog .err Error \
+		[format "Cannot play\nThe Sound Card is not available:\n$err"]\
+		 $DialogCfg {error} {0} {OK}
+	
+     } else {
+        # Move the line back to the beginning of the plot window
+
+        set linepos \
+            [lindex [.plotbox.cs.canvas coords $LINE(Id)] 0]
+        .plotbox.cs.canvas move $LINE(Id) [expr $linepos * -1] 0
+	.plotbox.cs.canvas itemconfigure $LINE(Id) -fill red
+
+	# Set the play-back source, based on whether the sample is marked or not.
+	if {$FLAG(Marked)} {
+		Copy $FILE(TMP3)
+		set source $FILE(TMP3)
+	} else {
+		set source $FILE(TMP1)
+	}
+
+	# Apply Effects temporarily if in Preview Mode
+	if {$FX(Preview)} {
+		set source [AddFX]  
+	} else {
+		if {$FLAG(Marked)} {
+			Copy $FILE(TMP3)
+			set source $FILE(TMP3)
+		} else {
+			set source $FILE(TMP1)
+		}
+	}
+	if {$WarningCommand == "cancel"} {
+		set WarningCommand "don't know"
+	} else {
+		# Set state variables.
+  		set PLAY(Time) 0
+  		set FLAG(Playing) 1
+  	
+  		PP_ButtonAble
+	
+		# Play the sample.
+	
+		#set  FILE(PID)  [exec $FILE(Tool) play $source $LOAD(bit)\
+			$LOAD(chnl) $LOAD(rate) &]
+		set PLOT(NumberOfSamples) [expr (([file size $FILE(TMP1)] * 8) / $LOAD(bit)) / $LOAD(chnl)]
+	
+	
+		if {$MACHINE(PLATFORM) == "SunOS"} {
+			SUN_GetMixInfo
+			SUN_SetSliders
+		}
+
+        # reset line to start of canvas
+
+	.plotbox.cs.canvas move $LINE(Id) [expr -1 * [lindex [.plotbox.cs.canvas coords $LINE(Id)] 0]] 0
+
+		set LINE(PixelsMovedInPlot) 0
+		set LINE(TotalPixelsMoved) 0
+	
+		if {$FLAG(Marked) == 1} {
+         
+            		set LINE(Startx) $PLOT(Startx)
+
+            		if {$LINE(Startx) > $PLOT(Endx)} {
+                  
+                  		set LINE(Startx) $PLOT(Endx)
+                  
+            		}      
+            		.plotbox.cs.canvas xview moveto [expr [expr $LINE(Startx) - 20] / $PLOT(Total).0] 
+  
+       		 } else {
+            		set LINE(Startx) 0
+            		.plotbox.cs.canvas xview moveto 0.0
+
+        	}
+        	if {$FX(Preview) == 0} {
+			set LINE(On) 1
+			if {!$FLAG(Marked) && $PLOT(ZoomCount) > 0} {
+				FillPlot
+			}
+		} else {
+			set LINE(On) 0
+			set LINE(Startx) 0
+		}	
+        	set FILE(PID) 0
+        	set linelist [list line [expr round($PLOT(Total) * $LINE(MagFactor$PLOT(ZoomCount)))] $PLOT(NumberOfSamples)]
+        	for {set cnt 0} {$cnt < $LOAD(chnl)} {incr cnt} {
+			set VU(Peak$cnt) 0
+			set peakon2($cnt) 1
+		}
+		
+		
+		
+        	
+        	#SetupVU_Channels $LOAD(chnl)
+        	
+        	if {[winfo exists .vu]} {
+        		for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+        			set temp [.vu.main.set.c coords $Peak_Marker(left$i)]
+				set tempy [lindex $temp 1]
+				.vu.main.set.c move $Peak_Marker(left$i) 0 [expr 150 - $tempy]
+				.vu.main.set.c move $Peak_Marker(middle$i) 0 [expr 150 - $tempy]
+				.vu.main.set.c move $Peak_Marker(right$i) 0 [expr 150 - $tempy]
+			}
+		}
+        	
+		.plotbox.cs.canvas move $LINE(Id) $LINE(Startx) 0
+
+                # puts "Playback command: $FILE(Tool) play $source $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10] $linelist"
+
+		set pipe [open "|$FILE(Tool) play $source $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10] $linelist" "r+"]
+
+		fileevent $pipe readable [list Reader $pipe]
+		
+		update idletasks
+	
+     	}
+     }
+  }
+}
+
+
+proc Trim_Stop {} {
+	global LINE FLAG PLOT
+	
+	if {$FLAG(Playing)} {
+		if {$FLAG(Marked)} {
+			if {$PLOT(Endx) > $PLOT(Startx)} {
+				set PLOT(Endx) [expr $PLOT(Startx) + $LINE(TotalPixelsMoved)]
+			} else {
+				set PLOT(Startx) [expr $PLOT(Endx) + $LINE(TotalPixelsMoved)]
+			}
+			MarkPlot
+		}
+		Stop
+	}
+
+}
+
+
+###################################################################
+# Stop
+# This procedure is the callback to the stop button in the play panel.
+# It simply kills the processes whose IDs is stored in FILE(PID) and
+# sets the state variables.
+proc Stop {} {
+   global FILE FLAG MACHINE LOAD
+   #foreach pid [list $FILE(PID)]{
+	#catch {exec kill $pid}
+   #}
+   WaitPlease 
+        
+  if {$FILE(PID) != 0} {
+    
+    catch {exec kill $FILE(PID) >& $FILE(TMP7) &}
+    exec rm $FILE(TMP7)
+    if {$MACHINE(PLATFORM) == "SunOS"} {
+      exec $FILE(SRC)/SUNKillVol
+    }
+  }
+
+
+   if {[winfo exists .vu]} {
+   	for {set i 0} {$i < $LOAD(chnl)} {incr i} {
+   		light $i 0
+   	}
+   }
+
+   # Set the state variables.
+   set FLAG(Playing) 0
+   PP_ButtonAble
+   update idletasks
+   WaitPlease 0
+
+   # Add a recorded to the sample if required.
+   if {$FLAG(Recording)} {
+     if {$FLAG(MonitorOnly)} {
+       set FLAG(MonitorOnly) 0
+     } else {
+       Paste $FILE(TMP3)
+     }
+	set FLAG(Recording) 0
+   }
+}
+
+###################################################################
+# Record
+# This procedure is the callback to the record button in the play panel.
+# It causes the sound card to receive data and stores this data.
+proc Record {{target default}} {
+   global FILE INFO SAMPLE FLAG DialogCfg LOAD VU LINE
+
+    # Record and check that card is available
+    set test [catch {exec $FILE(Tool) diagnostics} err ]
+   if {$test} {
+	dialog .err Error \
+		[format "Cannot record\nThe Sound Card is not available"]\
+		 $DialogCfg {error} {0} {OK}
+	
+   } else {
+     # The default recording target is the third temp file
+     if {$target=="default"} {
+       set targetFile $FILE(TMP3)
+     } else {
+       set targetFile $target
+     }
+	# Set the recording parameters as set by user if it is a 
+	# fresh recording (ie. not recording into a loaded file).
+
+        # Added the size assignment so file.tk:saver could work.  NJB.
+        if { !$FLAG(Loaded) } {
+		set LOAD(bit) $SAMPLE(bit)
+		set LOAD(chnl) $SAMPLE(chnl)
+		set LOAD(rate) $SAMPLE(rate)
+	        set SAMPLE(size) [lindex [Bit2SoxSize $SAMPLE(bit)] 0]
+                set LOAD(size) $SAMPLE(size)
+	  # The following fixes problems with saving 8-bit files recorded
+	  # from an external source (not loaded in).  Unless the base style
+	  # agrees with what the studio tool expects, there is a confusion
+	  # about whether the file should be signed or not.  NJB-21/10/97
+	  if { $LOAD(size) == "b" } {
+	    set LOAD(style) "u"
+	  } else {
+	    set LOAD(style) "s"
+	  }
+	}
+
+	# Set Flags
+	set FLAG(Playing) 1
+	set FLAG(Recording) 1
+        set reallyLoaded $FLAG(Loaded)
+        set FLAG(Loaded) 1
+	set FILE(PID) 0
+	set LINE(On) 0
+	set LINE(PixelsMovedInPlot) 0
+	set LINE(TotalPixelsMoved) 0
+
+	# Enable Stop Button
+	PP_ButtonAble
+
+        # We were only joking about loading iff !MonitorOnly
+        if {$FLAG(MonitorOnly)} {set FLAG(Loaded) $reallyLoaded}
+
+	# Record
+	#set FILE(PID) [exec $FILE(Tool) rec $FILE(TMP3)\
+	#		 $LOAD(bit) $LOAD(chnl) $LOAD(rate) &]
+
+	set pipe [open "|$FILE(Tool) rec $targetFile $LOAD(bit) $LOAD(chnl) $LOAD(rate) meter $VU(Attack) [expr $VU(Decay) * 10]" "r+"]
+
+        # Start the record time counter running
+        PP_Recording start
+
+	fileevent $pipe readable [list Reader $pipe]
+   }
+}
+
+###################################################################
+# PP_ButtonAble
+# This procedure sets the states of the play panel buttons according
+# to the state flags.
+proc PP_ButtonAble {} {
+   global FLAG
+   if {$FLAG(Loaded)} {
+     if {$FLAG(Playing)} {
+   	.playpanel.stop.button configure -state normal
+   	.playpanel.record.button configure -state disabled
+   	.playpanel.play.button configure -state disabled
+     } else {
+   	.playpanel.stop.button configure -state disabled
+   	.playpanel.record.button configure -state normal
+   	.playpanel.play.button configure -state normal
+     } 
+  }\
+  else {
+  	.playpanel.stop.button configure -state disabled
+   	.playpanel.record.button configure -state normal
+   	.playpanel.play.button configure -state disabled
+  }
+}
+
+
+###################################################################
+# PP_Recording
+# This procedure is a procedure which produces the estimated play
+# time. It runs continuously in the background after being invoked once.
+# It only actually does anything if Sound Studio is in the state of
+# recording (FLAG(Playing)).
+# It updates the estimated time (PLAY(Time)), by detecting a difference
+# in the current system clock to that stored from the last time PP_Playing
+# called itself (PLAY(TimeMark)).
+
+proc PP_Recording {action} {
+
+   global FILE FLAG PLAY MACHINE
+
+   if {"$action" == "start"} {
+     set PLAY(TimeMark) 0
+     after 100 PP_Recording next
+   } else {
+     if {$FLAG(Playing) && $MACHINE(PLATFORM)=="Linux"} {
+       # Compare the time mark.
+       if {$PLAY(TimeMark)!=0} {
+	 set temp $PLAY(TimeMark)
+	 set PLAY(TimeMark) [exec date +%s]
+	 set PLAY(Time) [expr $PLAY(Time)+($PLAY(TimeMark)-$temp) ]
+	 update idletasks
+	 
+	 # Set the time mark (the first time).
+       } else {
+	 set PLAY(Time) 0
+	 set PLAY(TimeMark) [exec date +%s]
+       }
+
+       # Call this procedure again after 200ms.
+	 after 200 PP_Recording next
+     } else {
+       set PLAY(TimeMark) 0
+     }
+   }
+}

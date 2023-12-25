@@ -1,0 +1,508 @@
+#################################
+# The Mixer Module
+#
+# Part of the SharpeSound Editor
+# by Paul D. Sharpe
+# A 3rd Year Project at the University of Leeds;
+# Department of Electronic and Electrical Engineering.
+# Date: 27/2/95
+#
+# Revision:1 
+# Date: 8/3/95
+
+# The mixer functions.
+
+#################################
+# GLOBAL SETTINGS.
+# Set the Flag indicating that the mixer exists.
+set FLAG(Mixer_Exist) \
+	[expr ![catch {exec $FILE(Mixer) get dev all}]]
+if $FLAG(Mixer_Exist) {
+	set MIXER(All) [exec $FILE(Mixer) get dev all]
+
+	# Store the labels of the mixer sources.
+	set MIXER(labels) [exec $FILE(Mixer) get dev labels]
+} else {
+	set MIXER(All) ""
+}
+
+###################################################################
+# Mixer
+# This procedure that creates the mixer board section of the Sound Studio.
+# There are 3 options.
+# 1. init : this sets up   but doesn't display them.
+# 2. show : this packs.
+# 3. noshow this unpacks.
+proc Mixer { option } {
+   global MIXER MACHINE ConfigSet FLAG
+
+   if {$option == "init" && $FLAG(Mixer_Exist) } { 
+      if {![winfo exists .mixer]} {
+
+   	# Set the MIXER array.
+   	MIX_DeviceGet 
+
+  	# Create Widgets.
+	# Create the general frame.
+	frame .mixer
+	# Create the section label.
+	label .mixer.label
+
+	# Create the frame to contain the input/output sources
+	frame .mixer.box
+	
+	# Create Output and Input source mixers.
+	MIX_Reset init
+
+	# Pack the rest
+	pack .mixer.label .mixer.box -fill x
+      }
+
+      # Configure the general frame.
+      .mixer config  	-bg $ConfigSet(cBG1) \
+		    	-relief $ConfigSet(REL)\
+		     	-borderwidth $ConfigSet(BDW)
+      # Configure the label.
+      .mixer.label config\
+		 	-bg $ConfigSet(cBG1) \
+			-fg $ConfigSet(cFG1) \
+			-font $ConfigSet(FNT_S)\
+			-text Mixer\
+			-anchor w
+
+      # Configure the frame to contain the input/output sources.
+      .mixer.box config -bg $ConfigSet(cBG1)
+
+      # Configure Output and Input soource mixers.
+      MIX_Reset init 
+	
+      return 0
+   } \
+   elseif {[winfo exists .mixer]} {
+      # The Show option.
+      if {$option == "show"} { 
+	global PACK
+	if {$PACK(Mixer) != ""} {
+		pack .mixer -expand 1 -fill both -after $PACK(Mixer)
+	} else {
+		pack .mixer -expand 1 -fill both
+	}
+
+      # The Now show option. 
+      }\
+      elseif {$option == "noshow" } { 
+		pack forget .mixer 
+      }\
+      else {
+	# Debug information
+	puts stderr "Error in Mixer: invalid option."
+      }
+   }\
+   else {
+	# Debug information
+	puts stderr "Sound Studio: No mixer device is detected." 
+        puts stderr "The mixer facilities will be disabled."
+   } 
+}
+
+
+
+###################################################################
+# MIX_DeviceGet
+# This procedure gets the source to be shown in the mixer and stores
+# Them in the two globals MIXER(O_chnnls) for the output sources and
+# MIXER(I_Chnnls) for the input sources.
+proc MIX_DeviceGet {} {
+   global MIXER FILE
+   # Check if there is a mixer present
+   if {[catch {exec $FILE(Mixer) get dev all}]} { return -1 }
+
+   # Get the source listings from the mixer interface.
+   # Get list of all available output devices (indices)
+   set dev(out) [exec $FILE(Mixer) get dev out ]
+   # Get list of all stereo devices (indices)
+   set dev(stereo) [exec $FILE(Mixer) get dev stereo ]
+   # Get list of input devices (indices)
+   set dev(record) [exec $FILE(Mixer) get dev rec]
+   # Get list of active input devices (indices)
+   set dev(active) [exec $FILE(Mixer) get src ]
+     
+   # Initialise the storage variables.
+   set MIXER(O_chnnls) ""
+   set MIXER(I_chnnls) ""
+
+   # Create lists of valid i/o mixer devices.
+   # Each item in these lists contain data needed for the MkSlider
+   # procedure.
+
+   # OUTPUT 
+	foreach item $dev(out) {
+	  # Check that the slider is to be shown (user request)
+	  set is2Bshown [expr ([lsearch -exact $MIXER(noshow) $item]== -1)]
+	  if {$is2Bshown} {
+	    set temp {}
+	    # Store the name of the source.
+	    lappend temp [lindex $MIXER(labels) $item]
+
+	    # Store the number of channels of the source.
+	    if {[lsearch -exact $dev(stereo) $item]!= -1} {
+	    	lappend temp 2
+	    } else {
+		lappend temp 1
+	    }
+
+	    # Store the current volume setting of the source.
+	    lappend temp [exec $FILE(Mixer) get vol $item]
+
+ 	    # Store a flag indicating whether this is a recording source.
+	    lappend temp 0
+
+	    # Add to the Output source list.
+	    lappend MIXER(O_chnnls) $temp
+	  }
+	}
+   # INPUT
+ 	foreach item $dev(record) {
+	  # Check that the slider is to be shown (user request)
+	  set is2Bshown [expr ([lsearch -exact $MIXER(noshow) $item]== -1)]
+	  if {$is2Bshown} {
+	    set temp {}
+
+	    # Store the number of channel of the source.
+	    lappend temp [lindex $MIXER(labels) $item]
+
+	    # Store the number of channels of the source.
+	    if {[lsearch -exact $dev(stereo) $item]!= -1} {
+	    	lappend temp 2
+	    } else {
+		lappend temp 1
+	    }
+
+	    # Store the current volume setting of the source.
+	    lappend temp [exec $FILE(Mixer) get vol $item]
+
+ 	    # Store a flag indicating whether this is a recording source.
+	    lappend temp 1
+
+	    # Add to the Input source list.
+	    lappend MIXER(I_chnnls) $temp
+ 	  }
+	}
+}
+
+###################################################################
+# MIX_Reset
+# This procedure creates the input and output sections of the mixer.
+proc MIX_Reset {{opt reset}} {
+   global MIXER
+ 
+   # Get the list of devices to be on the mixer board.
+   MIX_DeviceGet 
+ 
+   # Display sliders
+
+   # Fix the window sizes
+   HoldWindow .mixer.box
+   HoldWindow .
+
+   # Generate the sliders.
+   MixerSliders .mixer.box.out "Output Channels" $MIXER(O_chnnls) $opt
+   MixerSliders .mixer.box.in "Input Channels" $MIXER(I_chnnls) $opt
+}
+
+
+###################################################################
+# MixerSliders
+# This procedure creates and configures a Mixer Board Section.
+# It has the followinf parameters:
+# w : the path of the frame. This is created in this procedure.
+# text : the title text of the section.
+# chnls : a list of the channels. Each item in this list is a list
+#	  of the form:  1. name of source
+#			2. channels in source.
+#			3. volume settings of channels
+#			4. boolean indicating recording source.
+#	  ( See parameters of MkSlider )
+# opt : If it is init, then the sliders are created or configured.
+# 	If it is reset then the sliders are recreated and configured. 
+proc MixerSliders {w text chnls {opt init}} {
+   global ConfigSet
+   if {$opt=="init"} {
+      if {![winfo exists $w ]} {
+	# Create the section frame.
+	frame $w
+
+	# Create the section title label.
+	label $w.label
+
+	# Create a frame for the sliders.
+	frame $w.scales 
+
+	# Create a slider for all sources.
+	foreach channel $chnls {
+		MkSlider $w.scales\
+			[lindex $channel 0]\
+			[lindex $channel 1]\
+			[lindex $channel 2]\
+			[lindex $channel 3]
+	}
+
+	#Pack label & scales
+	pack $w.label $w.scales -fill both -expand 1 
+	#Pack in/out frames
+	pack $w -fill both -expand 1 -side left
+      }
+      # Configure the Widgets. 
+      # Configure the section frame.
+      $w config	-bg $ConfigSet(cBG1) \
+		-relief groove\
+		-borderwidth 3
+      # Configure the section label.
+      $w.label config \
+	 	-bg $ConfigSet(cBG1) \
+		-fg $ConfigSet(cFG1) \
+		-font $ConfigSet(FNT_S)\
+		-text $text\
+		-anchor w
+
+      # Configure the slider frame.
+      $w.scales config -bg $ConfigSet(cBG1)
+
+      #Configure the Sliders of each channel.
+      foreach channel $chnls {
+		MkSlider $w.scales\
+			[lindex $channel 0]\
+			[lindex $channel 1]\
+			[lindex $channel 2]	 
+      }
+
+   } elseif {$opt=="reset"} {
+	# Detroy the section
+	destroy $w
+	# Recreate the section.
+	MixerSliders  $w $text $chnls 
+   }
+}
+
+###################################################################
+# MkSlider
+# This procedure makes the sliders for a mixer source.
+# The slider widget consists of a vertical slider with editable 
+# value label (entry) for each channel, and a title label or in the case
+# of a recording source (rec_flag), a checkbutton.
+# The parameters are;
+# wPath : the path name of the frame to contain the slider widget.
+# Name  : name of the source (Used in title label)
+# chnnls : number of channels of the source.
+# volume : a list with initial values for scales
+# rec_flag : a boolean indicating a recording source.
+#
+# Returns a list of the actual scale widgets.
+proc MkSlider { wPath Name chnnls {volume {0 0 0 0}} {rec_flag 0} } {
+   global ConfigSet
+
+   # Get a lower case version of Name for use in widget paths.
+   set name [lindex [string tolower $Name] 0]
+
+   # Initialise the return list.
+   set returnlist {}
+	
+   # Set left/right labels for channels if necessary
+   if {$chnnls==2} { set ch_list { L R }}\
+   else  { set ch_list {  }}
+
+   # Set a variable to contain the slider path.
+   set slPath $wPath.$name
+
+   # Proceed only if the path is non-existant.
+   if {![winfo exists $slPath ]} {
+
+	# Create a frame for the slider widget.
+	frame $slPath
+
+	# Create the title label or checkbutton.
+	if {!$rec_flag} {
+	   label $slPath.label \
+			-text $Name\
+			-anchor w
+	} else {
+	   checkbutton $slPath.label \
+			-text $Name\
+			-anchor w\
+			-variable MIXER(flag$Name)\
+			-command "RecSrcSet $Name"\
+			-relief flat
+	}
+	
+	# Create the channel sliders.
+	frame $slPath.box -bg $ConfigSet(cBG1)
+	for {set i 0 } {$i < $chnnls} {incr i } {
+		frame $slPath.box.$i -bg $ConfigSet(cBG1)
+		
+		label $slPath.box.$i.titl\
+			-text [lindex $ch_list $i]
+
+		entry $slPath.box.$i.label \
+			-textvariable MIXER(label$name$i)\
+			-width 3
+		scale $slPath.box.$i.scale \
+			-showvalue 0\
+			-from 100 -to 0\
+			-width 10 -length 100\
+			-command "VolSet $Name $i"
+
+	        proc setall {root which name chans} {
+		  set val [$root.$which.scale get]
+		  for {set sld 0} {$sld < $chans} {incr sld} {
+		    if {$sld != $which} {
+      		      $root.$sld.scale set $val
+		      VolSet $name $sld $val
+		    }
+		  }
+		}
+
+	        bind $slPath.box.$i.scale <ButtonRelease-2> \
+		    "setall $slPath.box $i $Name $chnnls"
+	        bind $slPath.box.$i.scale <B2-Motion> \
+		    "setall $slPath.box $i $Name $chnnls"
+
+		# Set the scale and entry to the initial setting.
+		$slPath.box.$i.scale set [lindex $volume $i]
+		set MIXER(label$name$i) [$slPath.box.$i.scale get]
+
+  		# Bind the entry with special characteristics.
+		bindScale $slPath.box.$i none
+
+		pack $slPath.box.$i.scale \
+		     $slPath.box.$i.label\
+		     $slPath.box.$i.titl \
+ 			-fill y \
+			 -expand 1 
+		pack $slPath.box.$i -side left
+
+		#append the return list with the scale path.
+		lappend returnlist { $slPath.box.$i.scale }
+	
+	}
+	pack $slPath.label $slPath.box -fill both -side top 
+	pack $slPath -side left -padx 2 -expand 1
+   } 
+
+   # Configure widgets
+   $slPath config -bg $ConfigSet(cBG1)
+
+   # Configure the title label or checkbutton.
+   if {!$rec_flag} {
+	   $slPath.label config -bg $ConfigSet(cBG1)	\
+			-fg $ConfigSet(cFG1)\
+			-font $ConfigSet(FNT_S)
+   } else {
+	    $slPath.label config -bg $ConfigSet(cBG1)	\
+			-fg $ConfigSet(cFG1)\
+			-font $ConfigSet(FNT_S)\
+			-activeforeground $ConfigSet(cAFG)\
+			-activebackground $ConfigSet(cABG)\
+			-selectcolor $ConfigSet(cAFG)
+   }
+
+   # Configure the slider widgets.
+   $slPath.box config -bg $ConfigSet(cBG1)
+   for {set i 0 } {$i < $chnnls} {incr i } {
+	$slPath.box.$i config -bg $ConfigSet(cBG1)
+		
+	$slPath.box.$i.titl config\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-font $ConfigSet(FNT_S)
+
+	$slPath.box.$i.label config\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-font $ConfigSet(FNT_S)\
+			-insertbackground $ConfigSet(cFG1)\
+			-selectforeground $ConfigSet(cAFG)\
+			-selectbackground $ConfigSet(cABG)\
+			-cursor arrow
+			
+
+	$slPath.box.$i.scale config\
+			-bg $ConfigSet(cBG1)\
+			-fg $ConfigSet(cFG1)\
+			-activebackground $ConfigSet(cABG)
+	}   
+
+   # Return the list of scale paths.
+   return $returnlist
+}		
+
+
+###################################################################
+# RecSrcSet
+# This procedure is the callback to the title checkbuttons of the 
+# recording source sliders.
+# Makes request to card for change to rec source, and then
+# modifies the settings to what the card has done.
+# The callback should sent the MIXER index (textual) (eg. Vol)
+proc RecSrcSet { index } {
+   global MIXER FILE
+
+   # Get the numerical index of the device.
+   set num [lsearch -exact $MIXER(labels) $index ]
+
+   # Request change to active sources
+   set dev(active) [exec $FILE(Mixer) set src $num $MIXER(flag$index)]
+
+   # Reset the checkbutton values accordingly.
+   foreach name [array names MIXER] {
+    # Include only relevant array items (flags).
+    if {[string range $name 0 3]=="flag"} {
+	set name [string range $name 4 end]
+	
+	set ind [lsearch -exact $MIXER(labels) $name ]
+
+	# Is the source among the active devices or not?
+	if {[lsearch -exact $dev(active) $ind ]==-1} {
+		set MIXER(flag$name) 0 
+	} else {
+		set MIXER(flag$name) 1
+	}
+     }
+   }
+}
+
+
+###################################################################
+# VolSet
+# This procedure is the callback to the channel scales.
+# It requests the volume change from the mixer device.
+# The parameters are:
+# Index : The textual name for the source.
+# channel : The channel number.
+# Value : The new volume value to be requested.
+#
+# BUGS : This does not extend to 4 channels, only 1 or 2 channels are
+#        acceptable.
+proc VolSet { Index channel value } {
+   global MIXER FILE
+
+   if {$value==100} { set value 99 }
+   # Get a lower case version of the source name.   
+   set index [string tolower $Index]
+
+   # Adjust the value label.
+   set MIXER(label$index$channel) $value
+
+   # Get the numerical index of the device.
+   set num [lsearch -exact $MIXER(labels) $Index ]
+
+   # Get the value  of the 2nd channel if it exists.
+   if {[info exists MIXER([format "label%s1" $index])]} {
+   	set temp $MIXER([format "label%s1" $index])
+   } else {
+	set temp 0
+   }
+
+   # Request the new volume to be set.
+   set temp [exec $FILE(Mixer) set vol $num \
+		$MIXER([format "label%s0" $index]) $temp]
+}

@@ -1,0 +1,13 @@
+set FILE(SRC) .
+wm iconify .
+source help.tk
+UserManual
+proc killparent {} {
+  after 1000 { 
+	if {[winfo exist .help]==0} {
+		destroy .
+	}
+	killparent
+  }
+}
+killparent

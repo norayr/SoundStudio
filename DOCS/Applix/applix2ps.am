@@ -1,0 +1,195 @@
+
+
+
+/*
+This macro can be called from the unix command line to
+have Applixware automatically print an Applix document
+to a PostScript file.  The file ends up in
+../PS/file-basename.ps
+
+If a 'foreign file' for which Applixware has an import filter
+is specified, that's OK too.
+
+To run the macro from the command line, you would do
+something like this
+
+applix -macro print_utility -pass /full/pathname/to/the/file
+
+*/
+
+
+/*
+Note:  built in directory displayer prints files by doing this
+
+	set_system_var@("ddprtfile!", "/etc/passwd")
+	pend_for_new_task@("dd_print_dlg")
+
+*/
+
+
+
+
+MACRO applix2ps
+
+
+VAR filename
+VAR printer
+VAR colorFlag
+VAR copies
+VAR bannerFlag
+VAR allPagesFlag
+VAR startPage
+VAR endPage
+VAR viewName
+VAR mergeFile
+VAR tempFile
+VAR startText
+VAR endText
+VAR class
+VAR deleteWhenDoneFlag
+VAR baggage
+
+VAR strings, binary, outdir, outfile
+
+
+	SET_MACRO_PARENT_TASK@(0)
+		'Don't let Applix exit until this macro is ALL DONE
+		'Even if there are no more dialog boxes or other windows
+		'being displayed.
+
+
+	filename = get_the_filename()
+
+	IF IS_NULL@(filename)  RETURN
+
+	IF NOT FILE_EXISTS@(filename)  RETURN
+
+	printer = NULL
+
+	colorFlag = TRUE
+
+	copies = 1
+
+	bannerFlag = FALSE
+
+	allPagesFlag = TRUE
+
+	startPage = 1
+
+	endPage = 999
+
+	viewName = ""
+
+	mergeFile = ""
+
+	tempFile = get_the_tempfilename (filename)
+
+	startText = 0
+
+	endText = 0
+
+	class = "PostScript"
+
+	deleteWhenDoneFlag = FALSE
+
+	baggage = NULL
+
+
+/*
+	If you are printing a foreign file, it will need to go thru
+	the Import Wizard.  This code will allow short circuit the
+	import wizard.  The dialog box will be displayed, but will
+	immediately return control -- so you don't have to click on
+	the 'Finish' button.
+
+	This code can be taken out if you don't want that to happen.
+	The only line of code that you need is the PRINT_FILE@ statement.
+*/
+
+	SYSTEM_MODE$(TRUE)
+
+	strings = "FUNCTION DB_EXIT_CTRL@(dbox)",
+			"RETURN (\"Finish\")",
+			"ENDMACRO"
+
+	binary = ELF_COMPILE_ARRAY@("dbox_overlay", strings)
+
+	ELF_INSTALL_BINARY@(binary)
+
+	PRINT_FILE@(filename, printer, colorFlag, copies, bannerFlag, 
+		allPagesFlag, startPage, endPage, NULL, viewName, mergeFile,
+		tempFile, NULL, NULL, NULL, startText, endText, class,
+		deleteWhenDoneFlag, baggage)
+
+	WAIT_WHILE_BUSY@()
+
+	strings = "", ""
+
+	binary = ELF_COMPILE_ARRAY@("dbox_overlay", strings)
+
+	ELF_INSTALL_BINARY@(binary)
+
+	SYSTEM_MODE$(FALSE)
+
+	PARSE_PATHNAME@(tempFile, outdir, outfile)
+	PRINTF@("============================>Generated %s\n", outfile)
+
+ENDMACRO
+
+
+/*
+This macro will read the command line used to launch Applixware.
+
+It will confirm the existence of the string
+
+	-macro applix2ps
+
+It will confirm the existence of the string
+
+	-pass /your/filename/goes/here
+
+It will return the filename to the calling macro.
+*/
+
+
+MACRO get_the_filename
+
+VAR tmp, the_file, offset
+
+	tmp = COMMAND_LINE_OPTIONS@()
+
+	offset = ARRAY_INDEX@(tmp, "-macro")
+
+	IF offset = -1 RETURN
+
+	IF tmp [offset + 1] <> "applix2ps" RETURN
+
+	offset = ARRAY_INDEX@(tmp, "-pass")
+
+	IF offset = -1 RETURN
+
+	the_file = tmp [offset + 1]
+
+	IF FILE_EXISTS@(the_file)  RETURN (the_file)
+
+	RETURN
+
+ENDMACRO
+
+FUNCTION get_the_tempfilename (pathname)
+
+VAR dirname, filename, extindex
+
+	PARSE_PATHNAME@(pathname, dirname, filename)
+
+	IF dirname = ""
+		dirname = TEMP_DIR@()
+
+	extindex = STRING_INDEX_REVERSE@(filename, ".aw")
+	IF extindex > 2
+		filename = SUBSTRING@ (filename, 1, extindex-1)
+	RETURN (dirname ++ "/../PS/" ++ filename ++ ".ps")
+
+ENDMACRO
+
+
