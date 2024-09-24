@@ -4,7 +4,7 @@
 # Restart using wish.  Don't delete the backslash! \
 exec wish "$0" -- "$@"
 
-# Bs sure wish is in your $PATH!
+# Be sure wish is in your $PATH!
 
 #################################
 # Sound Studio
@@ -22,18 +22,17 @@ exec wish "$0" -- "$@"
 # Please set them as is applicable.
 
 
-# I need the full path Where my files are;
+# I need the full path where my files are;
 set MYFILES @MYFILES@
 
 # I need a directory to store my temporary files;
 set TEMP_DIR @TEMP_DIR@
 
 # Where do I find Sox?
-@SOX_DIR_CMD@
+set SOX_CMD @SOX_DIR_CMD@
 
 # What's the current version number?
 set VERSION "@version@\n"
-
 
 ##################################
 # Please Leave the Rest to me.....

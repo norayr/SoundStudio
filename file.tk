@@ -11,7 +11,7 @@
 # Date: 11/4/95
 
 # The callback procedures to the file menu
- 
+
 
 ###################################################################
 # New
@@ -20,10 +20,10 @@
 # setting globals to their default values and clearing the editing plot.
 # The parameter option has two acceptable values;
 # 1. init ; this is the setting function. It excludes those operations
-#	    which cannot be done until Sound Studio is set-up properly.
-# 2. any ; this is the default value, and is essentially the resetting 
-#	   function.
-# Return value : A boolean parameter indicating success. 
+#      which cannot be done until Sound Studio is set-up properly.
+# 2. any ; this is the default value, and is essentially the resetting
+#     function.
+# Return value : A boolean parameter indicating success.
 # (There is an option to abort if the previous sample was not saved.
 
 proc New {{option any}} {
@@ -34,15 +34,15 @@ proc New {{option any}} {
 
       # Make User aware that the previous sample was not saved.
       if {$FLAG(Edited)} {
-	  # Generate a dialog box.
-	  set opt [dialog .exit "" [format \
-		"%s\n has changed.\n Do you want to discard changes?"\
-		$FILE(CURR)]\
-	  	$DialogCfg warning 1 "Discard Changes" "Cancel"]
+    # Generate a dialog box.
+    set opt [dialog .exit "" [format \
+    "%s\n has changed.\n Do you want to discard changes?"\
+    $FILE(CURR)]\
+      $DialogCfg warning 1 "Discard Changes" "Cancel"]
 
-	  # Check the User's response to the dialog box.
-	  # (Return if cancelled)	
-	  if {$opt} { return 0 }
+    # Check the User's response to the dialog box.
+    # (Return if cancelled)
+    if {$opt} { return 0 }
       }
    }
 
@@ -53,15 +53,15 @@ proc New {{option any}} {
 #FC in this way raw loading is performed without additional operations
    if {$FLAG(First)} {
 #FC set the default for SB 16 PnP card
-	   set SAMPLE(rate) 44100
-	   set SAMPLE(bit) 16
-	   set SAMPLE(chnl) 1
-	   set SAMPLE(Size) 0
-	   set SAMPLE(size) w
-	   set SAMPLE(format) raw
-	   set SAMPLE(style) s
+     set SAMPLE(rate) 44100
+     set SAMPLE(bit) 16
+     set SAMPLE(chnl) 1
+     set SAMPLE(Size) 0
+     set SAMPLE(size) w
+     set SAMPLE(format) raw
+     set SAMPLE(style) s
 
-	   set FLAG(First) 0
+     set FLAG(First) 0
    }
 
    # Set initial LOAD parameters.
@@ -76,27 +76,27 @@ proc New {{option any}} {
 
 
    #Set Other Globals to initial values
-   set FILE(CURR)		Untitled
+   set FILE(CURR)    Untitled
 
    # Update InfoBar
    InfoFill
 
    # Reset status flags.
-   set FLAG(Loaded) 		0
-   set FLAG(Edited)		0
-   set FLAG(Playing)		0
-   set FLAG(Recording) 		0
-   set FLAG(Marked)		0
-   set FLAG(Edited)		0
-   set FLAG(Converted)		0
-   set FLAG(Card_Exist)		1
+   set FLAG(Loaded)     0
+   set FLAG(Edited)    0
+   set FLAG(Playing)    0
+   set FLAG(Recording)     0
+   set FLAG(Marked)    0
+   set FLAG(Edited)    0
+   set FLAG(Converted)    0
+   set FLAG(Card_Exist)    1
    # Reset the estimated play time.
-   set PLAY(Time)		0
+   set PLAY(Time)    0
 
    # Reset the editing plot parameters.
-   set PLOT(Startx)		0
-   set PLOT(Endx)		0
-   set PLOT(Blocksize)		0
+   set PLOT(Startx)    0
+   set PLOT(Endx)    0
+   set PLOT(Blocksize)    0
    set PLOT(Width)            550
    set PLOT(Magnification)      1
    set PLOT(ViewWinLeft)        0
@@ -105,34 +105,34 @@ proc New {{option any}} {
    # The following is not required upon initialisation.
    if {$option!="init"} {
 
-	# Delete previous sample
-	catch {exec rm $FILE(TMP1)}
-	catch {exec rm $FILE(TMP3)}
-	catch {exec rm $FILE(TMP4)}
-	catch {exec rm $FILE(TMP5)}
+  # Delete previous sample
+  catch {exec rm $FILE(TMP1)}
+  catch {exec rm $FILE(TMP3)}
+  catch {exec rm $FILE(TMP4)}
+  catch {exec rm $FILE(TMP5)}
 
-	# Reset the Zoom
-	Zoom init
+  # Reset the Zoom
+  Zoom init
 
-	# Set the play panel button states.
-	PP_ButtonAble
+  # Set the play panel button states.
+  PP_ButtonAble
 
-	# Empty Plot Canvas
-	FillPlot delete
-   
+  # Empty Plot Canvas
+  FillPlot delete
+
    # The following is only done upon initialisation.
    } else {
 
-	# Set the clipboard status flag. 
-	# (In case of a common clipboard)
-	set FLAG(Clip) [expr [file exists $FILE(TMP2)]]
+  # Set the clipboard status flag.
+  # (In case of a common clipboard)
+  set FLAG(Clip) [expr [file exists $FILE(TMP2)]]
 
-	# Set traces to adjust states of menu items.
-	trace variable FLAG(Loaded) w FileMenuStates
-	trace variable FLAG(Marked) w FileMenuStates
-	trace variable FLAG(Edited) w EditMenuStates
-	trace variable FLAG(Marked) w EditMenuStates
-	trace variable FLAG(Clip) w EditMenuStates
+  # Set traces to adjust states of menu items.
+  trace variable FLAG(Loaded) w FileMenuStates
+  trace variable FLAG(Marked) w FileMenuStates
+  trace variable FLAG(Edited) w EditMenuStates
+  trace variable FLAG(Marked) w EditMenuStates
+  trace variable FLAG(Clip) w EditMenuStates
    }
 
    # Return notice that the new was successful.
@@ -150,11 +150,11 @@ proc New {{option any}} {
 # parameter "loadfile". Load then converts this file to a raw data file,
 # extracting the sampling parameters from the file. The raw data file
 # is stored in the file whose name given by the parameter "file".
-# The default file is the working file (TMP1). 
+# The default file is the working file (TMP1).
 proc Load {{file default} {loadfile ""}} {
 #FC2 added StatOut
    global ConfigSet FLAG PLOT  FILE INFO SAMPLE CARD LOAD StatOut MACHINE
-   # Some initial settings 
+   # Some initial settings
    set info {}
    set temp [split $ConfigSet(FNT_L) -]
    set fontname [lindex $temp 2 ]
@@ -162,27 +162,27 @@ proc Load {{file default} {loadfile ""}} {
    # Generate a file browsing dialog box.
    if ([string length $loadfile]==0) {
      catch {set loadfile \
-	[FileBrowser "Load File" \
-	  [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
-	   $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] \
-	  {{*.wav *.voc *.au *.aiff *.hcom *.raw *.sf *.cdr *.dat *.smp} {*} }\
-	  { {All Sound Files} {All Files} } ]}
+  [FileBrowser "Load File" \
+    [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
+     $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] \
+    {{*.wav *.voc *.au *.aiff *.hcom *.raw *.sf *.cdr *.dat *.smp} {*} }\
+    { {All Sound Files} {All Files} } ]}
    }
-   # Indicate that there will be a delay.			
+   # Indicate that there will be a delay.
    WaitPlease
 
    # The following action requires a file name to have been returned.
    if {$loadfile!=""} {
       # In the default case set the file to be the working file.
-      if {$file=="default"} { 
-	set file $FILE(TMP1)
+      if {$file=="default"} {
+  set file $FILE(TMP1)
 
-	# Reset Values, only continue if New operation is successful.
-	if {![New]} {
-		# End delay indication.
-		WaitPlease 0; 
-		return
-	}
+  # Reset Values, only continue if New operation is successful.
+  if {![New]} {
+    # End delay indication.
+    WaitPlease 0;
+    return
+  }
       }
 
       # Get information about the sample file from conversion file.
@@ -190,198 +190,200 @@ proc Load {{file default} {loadfile ""}} {
       # FC3 (changed to allow the use of the current version of sox)
       # avoids -e stat
 
-      exec $FILE(Sox) -V -t .auto $loadfile $FILE(TMP6).wav >& $FILE(TMP3)
+      #exec $FILE(Sox) -V -t .auto $loadfile $FILE(TMP6).wav >& $FILE(TMP3)
+      exec $FILE(Sox) -V -t wav $loadfile $FILE(TMP6).wav >& $FILE(TMP3)
+
 
       # The follwing action is only taken if the file is the working file.
-      if {$file==$FILE(TMP1)} { 
-	# puts "Load: parsing file information"
-	# Get information about the sample
+      if {$file==$FILE(TMP1)} {
+  # puts "Load: parsing file information"
+  # Get information about the sample
 
-	set info [parse_sox $FILE(TMP3)]
+  set info [parse_sox $FILE(TMP3)]
 
-	# Store information into globals.
-	# Sampling rate.
-	set SAMPLE(rate) 	[lindex $info 0]
-	# Bit resolution.
-	set SAMPLE(bit) 	[lindex $info 1]
-	set SAMPLE(size)	[lindex [Bit2SoxSize $SAMPLE(bit)] 0]
-	# Channels.
-	set SAMPLE(chnl) 	[lindex $info 2]
-	# The maximum volume factor.
-	set LOAD(maxvol) 	[lindex $info 3]
-	# The style of the data.
-	set SAMPLE(style) 	[lindex [lindex $info 4] 0]
-	# The file format (eg. wav, voc)
-	set SAMPLE(format) 	[lindex $info 5]
-	# The file name of the current file.
-	set FILE(CURR) 	$loadfile
-	
-	if {$MACHINE(PLATFORM) == "SunOS" && $SAMPLE(bit) == 8} {
-		set SAMPLE(bit) 16
-		set SAMPLE(style) w
-	}
-	# Update InfoBar.
-	InfoFill
+  # Store information into globals.
+  # Sampling rate.
+  set SAMPLE(rate)   [lindex $info 0]
+  # Bit resolution.
+  set SAMPLE(bit)   [lindex $info 1]
+  set SAMPLE(size)  [lindex [Bit2SoxSize $SAMPLE(bit)] 0]
+  # Channels.
+  set SAMPLE(chnl)   [lindex $info 2]
+  # The maximum volume factor.
+  set LOAD(maxvol)   [lindex $info 3]
+  # The style of the data.
+  set SAMPLE(style)   [lindex [lindex $info 4] 0]
+  # The file format (eg. wav, voc)
+  set SAMPLE(format)   [lindex $info 5]
+  # The file name of the current file.
+  set FILE(CURR)   $loadfile
 
-	# Convert SAMPLE parameters to those playable by card
-	if {$FLAG(Card_Exist)} {
+  if {$MACHINE(PLATFORM) == "SunOS" && $SAMPLE(bit) == 8} {
+    set SAMPLE(bit) 16
+    set SAMPLE(style) w
+  }
+  # Update InfoBar.
+  InfoFill
 
-	   # Set the Bit resolution to the nearest one available.
-	   if {[lsearch $CARD(Bits) $SAMPLE(bit)]==-1} {
-		# Change the Bit resolution.
-		set LOAD(bit) [lindex $CARD(Bits) 0]
-		set temp [Bit2SoxSize $LOAD(bit) ]
-		set LOAD(size) [lindex $temp 0]
-		set LOAD(style) [lindex $temp 1]
-		
-		# Set status flag to show that conversion was necessary.
-		set FLAG(Converted) 1
-	   } else { 
-		# Keep the Bit resolution.
-		set LOAD(bit) $SAMPLE(bit)
-		# NJB LOAD(format) reqd by FC's code
-		set LOAD(format) $SAMPLE(format)
-		set LOAD(size) [lindex [Bit2SoxSize $SAMPLE(bit) ] 0]
-		#set LOAD(style) [lindex [lindex $info 4] 1]
-		# Set the loaded style to fit in with what the tool
-		# expects (unsigned for bytes, signed otherwise)
-		if { $LOAD(size) == "b" } {
-		  set LOAD(style) "u"
-		} else {
-		  set LOAD(style) "s"
-		}
-	   }
+  # Convert SAMPLE parameters to those playable by card
+  if {$FLAG(Card_Exist)} {
 
-	   # Convert the number of channels to the nearest channels.	
-	   if {[lsearch $CARD(Chnnls) $SAMPLE(chnl)]==-1} {
-		# Average the channels to the nearest available.
-		set LOAD(chnl) [lindex $CARD(Chnnls) 0]
+     # Set the Bit resolution to the nearest one available.
+     if {[lsearch $CARD(Bits) $SAMPLE(bit)]==-1} {
+    # Change the Bit resolution.
+    set LOAD(bit) [lindex $CARD(Bits) 0]
+    set temp [Bit2SoxSize $LOAD(bit) ]
+    set LOAD(size) [lindex $temp 0]
+    set LOAD(style) [lindex $temp 1]
 
-		# Set status flag to show that conversion was necessary.
-		set FLAG(Converted) 1
-	   } else {
-		# Keep the channels.
-		set LOAD(chnl) $SAMPLE(chnl) 
-	   }
+    # Set status flag to show that conversion was necessary.
+    set FLAG(Converted) 1
+     } else {
+    # Keep the Bit resolution.
+    set LOAD(bit) $SAMPLE(bit)
+    # NJB LOAD(format) reqd by FC's code
+    set LOAD(format) $SAMPLE(format)
+    set LOAD(size) [lindex [Bit2SoxSize $SAMPLE(bit) ] 0]
+    #set LOAD(style) [lindex [lindex $info 4] 1]
+    # Set the loaded style to fit in with what the tool
+    # expects (unsigned for bytes, signed otherwise)
+    if { $LOAD(size) == "b" } {
+      set LOAD(style) "u"
+    } else {
+      set LOAD(style) "s"
+    }
+     }
 
-	   # Convert the sampling rate to the nearest sampling rate.
-	   set index [expr $SAMPLE(chnl) -1]
-	   if {	$SAMPLE(rate)> [lindex $CARD(Maxrates) $index]} {
-		# Convert rate to maximum available rate.
-		set LOAD(rate) [lindex $CARD(Maxrates) $index]
+     # Convert the number of channels to the nearest channels.
+     if {[lsearch $CARD(Chnnls) $SAMPLE(chnl)]==-1} {
+    # Average the channels to the nearest available.
+    set LOAD(chnl) [lindex $CARD(Chnnls) 0]
 
-		# Set status flag to show that conversion was necessary.
-		set FLAG(Converted) 1
-	   } elseif {$SAMPLE(rate)< [lindex $CARD(Minrates) $index]} {
-		# Convert rate to the minimum avaliable.
-		set LOAD(rate) [lindex $CARD(Minrates) $index]
+    # Set status flag to show that conversion was necessary.
+    set FLAG(Converted) 1
+     } else {
+    # Keep the channels.
+    set LOAD(chnl) $SAMPLE(chnl)
+     }
 
-		# Set status flag to show that conversion was necessary.
-		set FLAG(Converted) 1
-	   } else {
-		# Keep the sampling rate.
-		set LOAD(rate) $SAMPLE(rate)
-	   }
+     # Convert the sampling rate to the nearest sampling rate.
+     set index [expr $SAMPLE(chnl) -1]
+     if {  $SAMPLE(rate)> [lindex $CARD(Maxrates) $index]} {
+    # Convert rate to maximum available rate.
+    set LOAD(rate) [lindex $CARD(Maxrates) $index]
 
-	# If there is no sound card keep the parameters.
-	} else {
-	
-	   foreach name [array names SAMPLE] {
-		set LOAD($name) $SAMPLE($name)
-		puts "$name :$LOAD($name)"
-	   }
-	}
+    # Set status flag to show that conversion was necessary.
+    set FLAG(Converted) 1
+     } elseif {$SAMPLE(rate)< [lindex $CARD(Minrates) $index]} {
+    # Convert rate to the minimum avaliable.
+    set LOAD(rate) [lindex $CARD(Minrates) $index]
 
-	
-	# Perform the convertion of the sample file to raw format.
-	# puts "Converting input file to raw"
-#FC	exec $FILE(Sox) -V -t .auto $loadfile \
-		-t .raw -u -$LOAD(size) \
-		-r $LOAD(rate) -c $LOAD(chnl) $file rate >& $FILE(TMP3)
+    # Set status flag to show that conversion was necessary.
+    set FLAG(Converted) 1
+     } else {
+    # Keep the sampling rate.
+    set LOAD(rate) $SAMPLE(rate)
+     }
+
+  # If there is no sound card keep the parameters.
+  } else {
+
+     foreach name [array names SAMPLE] {
+    set LOAD($name) $SAMPLE($name)
+    puts "$name :$LOAD($name)"
+     }
+  }
+
+
+  # Perform the convertion of the sample file to raw format.
+  # puts "Converting input file to raw"
+#FC  exec $FILE(Sox) -V -t .auto $loadfile \
+    -t .raw -u -$LOAD(size) \
+    -r $LOAD(rate) -c $LOAD(chnl) $file rate >& $FILE(TMP3)
 #FC (added to directly manage input raw files)
-#FC2	if {$LOAD(format)=="raw"} 
-	if {$StatOut=="ko"} {
-		exec /bin/cp -f $loadfile $file
-	# puts "/bin/cp -f $loadfile $file"
-	} else {
+#FC2  if {$LOAD(format)=="raw"}
+  if {$StatOut=="ko"} {
+    exec /bin/cp -f $loadfile $file
+  # puts "/bin/cp -f $loadfile $file"
+  } else {
 
 #NJB Originally tried to do size conversion, but the working files are
 #NJB /unsigned/, right?
 #FC not really; for 16 bit cards signed is needed
 #FC this should allow to generalize the loading operation
-	#puts "$FILE(Sox) -V \
-		-t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		-r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
-		-t .raw -$LOAD(style) -$LOAD(size) \
-		-r $LOAD(rate) -c $LOAD(chnl) $file"
-	exec $FILE(Sox) -V \
-		-t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		-r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
-		-t .raw -$LOAD(style) -$LOAD(size) \
-		-r $LOAD(rate) -c $LOAD(chnl) $file >& $FILE(TMP3)
+  #puts "$FILE(Sox) -V \
+    -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+    -r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
+    -t .raw -$LOAD(style) -$LOAD(size) \
+    -r $LOAD(rate) -c $LOAD(chnl) $file"
+  exec $FILE(Sox) -V \
+    -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+    -r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
+    -t .raw -$LOAD(style) -$LOAD(size) \
+    -r $LOAD(rate) -c $LOAD(chnl) $file >& $FILE(TMP3)
 #FC
-	}
+  }
 
-	# Plot into the Canvas
-	FillPlot init
+  # Plot into the Canvas
+  FillPlot init
 
    # The file is not the working file do the following:
    } else {
-	# Convert the file to the parameters of the working file 
-	# and store in "file".	NJB: same as above: TMP3 ALWAYS unsigned?
+  # Convert the file to the parameters of the working file
+  # and store in "file".  NJB: same as above: TMP3 ALWAYS unsigned?
         # Replaced -$LOAD(style) with -u.
-#FC		 -r $LOAD(rate) -$LOAD(size) -u
-	#puts "Reading insert file..."
+#FC     -r $LOAD(rate) -$LOAD(size) -u
+  #puts "Reading insert file..."
         #puts "$FILE(Sox) -V -t .auto $loadfile \
-		-t .raw -c $LOAD(chnl)\
-		 -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
-		 $file rate >& $FILE(TMP3)"
-	exec $FILE(Sox) -V -t .auto $loadfile \
-		-t .raw -c $LOAD(chnl)\
-		 -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
-		 $file >& $FILE(TMP3)
-	
+    -t .raw -c $LOAD(chnl)\
+     -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
+     $file rate >& $FILE(TMP3)"
+  exec $FILE(Sox) -V -t .auto $loadfile \
+    -t .raw -c $LOAD(chnl)\
+     -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
+     $file >& $FILE(TMP3)
+
    }
    # Set Loaded status flag.
-	set FLAG(Loaded) 1
-	# Enable playpanel buttons.
-	PP_ButtonAble	
+  set FLAG(Loaded) 1
+  # Enable playpanel buttons.
+  PP_ButtonAble
     }
   # End delay indication.
   Show_VU
   WaitPlease 0
-} 
+}
 
 ###################################################################
 # Bit2SoxSize
 # Used in the Load procedure.
 # This function converts the bit resolution into a list of letters.
-# These letters represent the size and style of the data for the 
+# These letters represent the size and style of the data for the
 # conversion utility (Sox).
 # The parameter option is a boolean indicating the direction of the
 # convertion. By default a bit resloution is converted to a list.
-# The alternate conversion is a letter indicating the size (eg. b for 
+# The alternate conversion is a letter indicating the size (eg. b for
 # bytes) and returning the bit resolution (eg. 8).
 #
 # BUGS: This is set up based on the way data would be expected from
-# the sound card, for example an 8 bit recording would be in unsigned 
-# bytes. There may be cases where this is not true especially in 
+# the sound card, for example an 8 bit recording would be in unsigned
+# bytes. There may be cases where this is not true especially in
 # converting different file formats.
 proc Bit2SoxSize { bit {option 1} } {
    if {$option } {
-	switch $bit {
-		8  { set size "b u"}
-		16 { set size "w s"}
-		32 { set size "l s"}
-		default {set size ""}
-	}
+  switch $bit {
+    8  { set size "b u"}
+    16 { set size "w s"}
+    32 { set size "l s"}
+    default {set size ""}
+  }
    } else {
-	switch $bit {
-		b  { set size 8}
-		w { set size 16}
-		l { set size 32}
-		default {set  size ""}
-	}
+  switch $bit {
+    b  { set size 8}
+    w { set size 16}
+    l { set size 32}
+    default {set  size ""}
+  }
 
    }
    return $size
@@ -401,7 +403,7 @@ proc Bit2SoxSize { bit {option 1} } {
 # there may be occasion when this may fail. It is robust however for
 # 8,16 bit, mono, stereo, wav,voc,au,raw conversions. (Tested).
 proc parse_sox { filename } {
- 
+
  #FC  added SAMPLE
  #FC2 added StatOut
    global LOAD SAMPLE StatOut
@@ -418,12 +420,20 @@ proc parse_sox { filename } {
    END { print v }}  $filename ]
 
    # Extract sampling rate.
-   set rate [exec grep rate $filename | awk {$NF!=prev {print $NF; prev=$NF}}]
+   #set rate [exec grep rate $filename | awk {$NF!=prev {print $NF; prev=$NF}}]
+   #exec grep rate $filename | awk '{if ($NF!=prev) {print $NF; prev=$NF}}'
+   catch {set rate [exec grep rate $filename | awk "\{if (\$NF!=prev) \{print \$NF; prev=\$NF\}\}"]} errMsg
+if {$errMsg != ""} {
+    puts stderr "Error: $errMsg"
+    return
+}
+
+
 
    # Extract the line containing channel, style and size information.
    set line  [split [exec grep channel $filename]]
 
-   # Extract the channels.     
+   # Extract the channels.
    set chnnl [lindex $line [expr [lsearch $line channel*]-1]]
 
    set searchstyle [lsearch $line style]
@@ -444,7 +454,7 @@ proc parse_sox { filename } {
 # work; changed lsearch from channel to channel* so it could find the string
 # "channels" too. NJB
 
-   # Extract the maximum volume factor.	
+   # Extract the maximum volume factor.
 #FC3 this allows to recognize the presence of maxvol info (not in new sox)
 #    otherwise the default value is taken
 #  set maxvol [exec grep adjustment $filename | awk {{print $3}}]
@@ -463,42 +473,42 @@ proc parse_sox { filename } {
    if ([catch {exec grep AUTO $filename}]==0) {
    set format [exec grep AUTO $filename | awk {prev!=1 {print $NF; prev=1}}]
    } else {
-       set format [exec grep Detected $filename | awk {prev!=1 {print $NF; prev=1}}] 
+       set format [exec grep Detected $filename | awk {prev!=1 {print $NF; prev=1}}]
    }
 
    # Convert sample size to a bit resolution
    switch -glob $size {
-	b* { set bit 8 }
-	w* { set bit 16 }
-	s* { set bit 16 }
-	default { set bit {} }
+  b* { set bit 8 }
+  w* { set bit 16 }
+  s* { set bit 16 }
+  default { set bit {} }
    }
 
    # Convert syles into the parameters for sox.
-   # The first in list is the actual value, 
+   # The first in list is the actual value,
    # the second is the value to be used by the working file.
    switch -glob $style {
-	unsigned { set style {u u}}
-	signed	 { set style {s s}}
-	u-law	 { set style {U u}}
-	a-law	 { set style {A u}}
-	adpcm    { set style {a s}}
+  unsigned { set style {u u}}
+  signed   { set style {s s}}
+  u-law   { set style {U u}}
+  a-law   { set style {A u}}
+  adpcm    { set style {a s}}
    }
 
 #FC if the input file is raw use the actual parameter set
-   if {$StatOut=="ko" || $NewStatOut=="ko"} { 
-	set rate	$SAMPLE(rate)
-	set bit		$SAMPLE(bit)
-	set chnnl	$SAMPLE(chnl)
-	switch -glob $SAMPLE(style) {
-		s	{ set style {s s}}
-		u	{ set style {u u}}
-		U	{ set style {U u}}
-		A	{ set style {A u}}
-		a       { set style {a s}}
-	}
-	set size	$SAMPLE(size)
-	set format	$SAMPLE(format)
+   if {$StatOut=="ko" || $NewStatOut=="ko"} {
+  set rate  $SAMPLE(rate)
+  set bit    $SAMPLE(bit)
+  set chnnl  $SAMPLE(chnl)
+  switch -glob $SAMPLE(style) {
+    s  { set style {s s}}
+    u  { set style {u u}}
+    U  { set style {U u}}
+    A  { set style {A u}}
+    a       { set style {a s}}
+  }
+  set size  $SAMPLE(size)
+  set format  $SAMPLE(format)
    }
 
    # Return the list of information.
@@ -519,19 +529,19 @@ proc Save {} {
    # Proceed only if the file has been edited.
    if {$FLAG(Edited)} {
       if {$FILE(CURR)!="Untitled"} {
-      	# Save the file
-      	Saver $FILE(CURR) $SAMPLE(format)
+        # Save the file
+        Saver $FILE(CURR) $SAMPLE(format)
       } else {
-	# The File needs a name: call the convert subroutine
-	Convert
-      }	
+  # The File needs a name: call the convert subroutine
+  Convert
+      }
    }
 }
 
 
 ###################################################################
 # Saver
-# This procedure simply does the work that is common to the 
+# This procedure simply does the work that is common to the
 # Save and Convert procedures.
 # The parameters are the things that vary between the two procedures:
 # filename :the name of the output file.
@@ -541,39 +551,39 @@ proc Saver {filename format } {
 
    # Check that the number of channels is not to be increased.
    if {($SAMPLE(chnl)>=$LOAD(chnl))} {
-	set chnl $LOAD(chnl)
+  set chnl $LOAD(chnl)
    } else {
-	set chnl $SAMPLE(chnl)
+  set chnl $SAMPLE(chnl)
    }
 
    # Perform conversion and save in the file given by filename.
     catch {exec $FILE(Sox) -t .raw \
-		-r $LOAD(rate) \
-		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		 -r $LOAD(rate) -c $chnl\
-		$FILE(TMP6)} err
+    -r $LOAD(rate) \
+    -$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
+     -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+     -r $LOAD(rate) -c $chnl\
+    $FILE(TMP6)} err
                 #puts "$FILE(Sox) -t .raw \
-		-r $LOAD(rate) \
-		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		 -r $LOAD(rate) -c $chnl\
-		$FILE(TMP6)"
+    -r $LOAD(rate) \
+    -$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
+     -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+     -r $LOAD(rate) -c $chnl\
+    $FILE(TMP6)"
 
     if { $err != "" } {puts stderr $err}
-		
+
     catch {exec $FILE(Sox) -r $LOAD(rate) -c $chnl \
                 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
-	        -r $SAMPLE(rate) -c $chnl \
-	        $filename } err
+    $FILE(TMP6) \
+          -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+          -r $SAMPLE(rate) -c $chnl \
+          $filename } err
                 #puts "$FILE(Sox) -r $LOAD(rate) -c $chnl \
                 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
-	        -r $SAMPLE(rate) -c $chnl \
-	        $filename "
+    $FILE(TMP6) \
+          -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+          -r $SAMPLE(rate) -c $chnl \
+          $filename "
 
     if { $err != "" } {puts stderr $err}
 
@@ -592,39 +602,39 @@ proc Convert {} {
 
    # Proceed only if there are sample to be saved.
    if {$FLAG(Loaded)} {
-      	# Get a filename and the desired format from User
-	# Create a list of the available sample file formats.
-	# (For the call to FileBrowser2)
-	set ConversionList { "Convert to:" 5 5\
-			aiff au cdr dat hcom raw sf smp voc wav }
-	# Get the font family for the configuration list of FileBrowser2.
-	set temp [split $ConfigSet(FNT_L) -]
-   	set fontname [lindex $temp 2 ]
-	# Call FileBrowser2.
-	set result [FileBrowser2 {Save File} \
-			[list $ConfigSet(cBG1) $ConfigSet(cFG1)\
-	   		  $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] {}\
-			 "[file tail $FILE(CURR)]" $ConversionList]
+        # Get a filename and the desired format from User
+  # Create a list of the available sample file formats.
+  # (For the call to FileBrowser2)
+  set ConversionList { "Convert to:" 5 5\
+      aiff au cdr dat hcom raw sf smp voc wav }
+  # Get the font family for the configuration list of FileBrowser2.
+  set temp [split $ConfigSet(FNT_L) -]
+     set fontname [lindex $temp 2 ]
+  # Call FileBrowser2.
+  set result [FileBrowser2 {Save File} \
+      [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
+           $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] {}\
+       "[file tail $FILE(CURR)]" $ConversionList]
 
-	# Store the results of the FileBrowser.
-	set filename [lindex $result 0]
-	set format [lindex $result 1]
+  # Store the results of the FileBrowser.
+  set filename [lindex $result 0]
+  set format [lindex $result 1]
 
-	# The following requires a file name.
-	if {$filename!=""} {
-	   	# If no format was selected use the samples own.
-		if {$format==""} { set format $SAMPLE(format) }
+  # The following requires a file name.
+  if {$filename!=""} {
+       # If no format was selected use the samples own.
+    if {$format==""} { set format $SAMPLE(format) }
 
-		# Convert and save the file.
-		Saver $filename $format
+    # Convert and save the file.
+    Saver $filename $format
 
-		# Set the current sample format to the new format.
-		set SAMPLE(format) $format
+    # Set the current sample format to the new format.
+    set SAMPLE(format) $format
 
-		# Set the current sample name to the new filename.
-		set FILE(CURR) $filename
-	}
-	InfoFill
+    # Set the current sample name to the new filename.
+    set FILE(CURR) $filename
+  }
+  InfoFill
    }
 }
 
@@ -634,7 +644,7 @@ proc Convert {} {
 # SaveMarked
 # This procedure is the callback to the File-Save Marked As menu item.
 # It produces a dialog box which allows the user to enter a filename
-# and specify a file format for marked area of the sample to be 
+# and specify a file format for marked area of the sample to be
 # converted into.
 
 proc SaveMarked {} {
@@ -660,7 +670,7 @@ proc SaveMarked {} {
       # Create a list of the available sample file formats.
       # (For the call to FileBrowser2)
       set ConversionList { "Convert to:" 5 5\
-		        aiff au cdr dat hcom raw sf smp voc wav }
+            aiff au cdr dat hcom raw sf smp voc wav }
       # Get the font family for the configuration list of FileBrowser2.
       set temp [split $ConfigSet(FNT_L) -]
       set fontname [lindex $temp 2 ]
@@ -671,9 +681,9 @@ proc SaveMarked {} {
       set path_filename [lreplace $path_filename $lastelement $lastelement $temp1]
       set markedname [join $path_filename /]
       set result [FileBrowser2 {Save Marked As} \
-		       [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
-	   	       $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] {}\
-		       "[file tail $markedname]" $ConversionList]
+           [list $ConfigSet(cBG1) $ConfigSet(cFG1)\
+              $ConfigSet(cABG) $ConfigSet(cAFG) $fontname] {}\
+           "[file tail $markedname]" $ConversionList]
 
       # Store the results of the FileBrowser.
       set filename [lindex $result 0]
@@ -681,49 +691,49 @@ proc SaveMarked {} {
 
       # The following requires a file name.
       if {$filename!=""} {
-   	# If no format was selected use the samples own.
-	if {$format==""} { set format $SAMPLE(format) }
+     # If no format was selected use the samples own.
+  if {$format==""} { set format $SAMPLE(format) }
 
           # Check that the number of channels is not to be increased.
           if {($SAMPLE(chnl)>=$MARKED(chnl))} {
-	   set chnl $MARKED(chnl)
+     set chnl $MARKED(chnl)
           } else {
-	   set chnl $SAMPLE(chnl)
+     set chnl $SAMPLE(chnl)
           }
 
           # Perform conversion and save in the file given by filename.
           catch {exec $FILE(Sox) -t .raw \
-		-r $MARKED(rate) \
-		-$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		 -r $MARKED(rate) -c $chnl\
-		$FILE(TMP6)} err
+    -r $MARKED(rate) \
+    -$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
+     -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+     -r $MARKED(rate) -c $chnl\
+    $FILE(TMP6)} err
           #puts "$FILE(Sox) -t .raw \
-		-r $MARKED(rate) \
-		-$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		 -r $MARKED(rate) -c $chnl\
-		$FILE(TMP6)"
+    -r $MARKED(rate) \
+    -$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
+     -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+     -r $MARKED(rate) -c $chnl\
+    $FILE(TMP6)"
 
           if { $err != "" } {puts stderr $err}
-		
+
           catch {exec $FILE(Sox) -r $MARKED(rate) -c $chnl \
                 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
-	        -r $SAMPLE(rate) -c $chnl \
-	        $filename } err
+    $FILE(TMP6) \
+          -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+          -r $SAMPLE(rate) -c $chnl \
+          $filename } err
           #puts "$FILE(Sox) -r $MARKED(rate) -c $chnl \
                 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
-		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
-	        -r $SAMPLE(rate) -c $chnl \
-	        $filename "
+    $FILE(TMP6) \
+          -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+          -r $SAMPLE(rate) -c $chnl \
+          $filename "
 
           if { $err != "" } {puts stderr $err}
 
       }
-      
+
    }
 
 }
@@ -735,14 +745,14 @@ proc SaveMarked {} {
 # It generates a pop-up window containing sample and card information.
 proc Info {} {
    global DialogCfg INFO FILE SAMPLE CARD FLAG
-  
+
    # Create the lines of information.
    # Hardware Types
    set count 0
    set HW "\t"
    while {[info exists CARD(HW$count)]} {
-	set HW "$HW$CARD(HW$count)\n\t"
-	incr count
+  set HW "$HW$CARD(HW$count)\n\t"
+  incr count
    }
    # Card Maximum Sampling rates.
    set list {Mono Stereo {} Quad}
@@ -750,47 +760,47 @@ proc Info {} {
    set MaxRate ""
    set insert "\t"
    foreach rate $CARD(Maxrates) {
-	set MaxRate "$MaxRate$insert\([lindex $list $count]) $rate"
-	set insert "\n\t\t\t"
-	incr count
+  set MaxRate "$MaxRate$insert\([lindex $list $count]) $rate"
+  set insert "\n\t\t\t"
+  incr count
    }
    # Card Minimum Sampling rates.
    set count 0
    set MinRate ""
    set insert "\t"
    foreach rate $CARD(Minrates) {
-	set MinRate "$MinRate$insert\([lindex $list $count]) $rate"
-	set insert "\n\t\t\t"
-	incr count
+  set MinRate "$MinRate$insert\([lindex $list $count]) $rate"
+  set insert "\n\t\t\t"
+  incr count
    }
 
    # Create a line indicating that the file has been converted.
    if {$FLAG(Converted)} {
-	set convert "This Sample has been coverted to play on this card"
+  set convert "This Sample has been coverted to play on this card"
    } else {set convert ""}
 
    # Generate the Pop-up.
    set opt [dialog .info "File Information" \
-	[format "\
-		SAMPLE INFORMATION\n\n\
-		Filename:\t\t$INFO(Sample)\n\
-		Length:\t\t\t$INFO(Length)\n\
-	  	Sample Rate:\t\t$SAMPLE(rate)\n\
-		Bits per Sample:\t\t$SAMPLE(bit)\n\
-		Channels:\t\t$SAMPLE(chnl) ($INFO(Stereo))\n\
-		Format:\t\t\t$SAMPLE(format)\n\n\
-		$convert\n\n\
-		CARD INFORMATION\n\n\
-		Bit Resolutions:\t\t[join $CARD(Bits) ,]\n\
-		Possible Channels:\t[join $CARD(Chnnls) ,]\n\
-		Min. Sampling Rate:$MinRate\n\
-		Max. Sampling Rate:$MaxRate\n\n\
-		DRIVER INFORMATION\t\n\n\
-		Driver Version:\t\t$CARD(Driver)\n\
-		Hardware:\n\
-		$HW\n\
-		 "]\
-	$DialogCfg info 0 "OK" ]
+  [format "\
+    SAMPLE INFORMATION\n\n\
+    Filename:\t\t$INFO(Sample)\n\
+    Length:\t\t\t$INFO(Length)\n\
+      Sample Rate:\t\t$SAMPLE(rate)\n\
+    Bits per Sample:\t\t$SAMPLE(bit)\n\
+    Channels:\t\t$SAMPLE(chnl) ($INFO(Stereo))\n\
+    Format:\t\t\t$SAMPLE(format)\n\n\
+    $convert\n\n\
+    CARD INFORMATION\n\n\
+    Bit Resolutions:\t\t[join $CARD(Bits) ,]\n\
+    Possible Channels:\t[join $CARD(Chnnls) ,]\n\
+    Min. Sampling Rate:$MinRate\n\
+    Max. Sampling Rate:$MaxRate\n\n\
+    DRIVER INFORMATION\t\n\n\
+    Driver Version:\t\t$CARD(Driver)\n\
+    Hardware:\n\
+    $HW\n\
+     "]\
+  $DialogCfg info 0 "OK" ]
 }
 
 
@@ -798,74 +808,74 @@ proc Info {} {
 ###################################################################
 # Exit
 # This procedure is the callback to the File-Exit menu item and
-# and the SAVE_YOURSELF and DELETE_WINDOW Window manager protocols. 
+# and the SAVE_YOURSELF and DELETE_WINDOW Window manager protocols.
 # It terminates the current session of Sound Studio, allowing the user
 # to save edited data and removing the temporary files.
 proc Exit {} {
    global INFO DialogCfg FLAG PID TEMP_DIR MACHINE
-   # Query user about edited data.	
+   # Query user about edited data.
    if {$FLAG(Edited)} {
-	# Generate a dialog box.
-	set opt [dialog .exit "Exit" \
-		[format "\
-			$INFO(Sample)\n\
-			has changed.\n\
-			Do you want to save it?"\
-		]\
-		$DialogCfg warning 1 "Exit" "Save and Exit" "Cancel" ]
+  # Generate a dialog box.
+  set opt [dialog .exit "Exit" \
+    [format "\
+      $INFO(Sample)\n\
+      has changed.\n\
+      Do you want to save it?"\
+    ]\
+    $DialogCfg warning 1 "Exit" "Save and Exit" "Cancel" ]
 
-	#Check the User's response to the dialog box.
-	switch $opt {
-		0 {	
-			set FLAG(Edited) 0
-		  }
-		1 {
-			Save
-		  }
-		2 {
-			return
-		  }
-	}
+  #Check the User's response to the dialog box.
+  switch $opt {
+    0 {
+      set FLAG(Edited) 0
+      }
+    1 {
+      Save
+      }
+    2 {
+      return
+      }
+  }
    }
-	# Remove the temporary files.
-	catch {eval exec rm [glob $TEMP_DIR/SoundStudio.tmp$PID*]}
+  # Remove the temporary files.
+  catch {eval exec rm [glob $TEMP_DIR/SoundStudio.tmp$PID*]}
 
-	# Kill outstanding sound I/O processes
-	if {$MACHINE(PLATFORM) == "SunOS"} {
+  # Kill outstanding sound I/O processes
+  if {$MACHINE(PLATFORM) == "SunOS"} {
           KillProcess SUN
         }
-	KillProcess studio_tool
-	
-	# Destroy the window.
-	catch {destroy .}
+  KillProcess studio_tool
+
+  # Destroy the window.
+  catch {destroy .}
 }
 
 ###################################################################
 # FileMenuStates
 # This procedure is the callback to variable traces on file status flags.
 # It enables and disables the relevant parts of the File and Edit menu according
-# to the state of the Loaded Flag. The traces are 
-# defined in the "New" procedure of the file module. 
+# to the state of the Loaded Flag. The traces are
+# defined in the "New" procedure of the file module.
 # This procedure is called each time the flags are written to.
 # The parameters are not used, but are required as a trace callback.
 proc FileMenuStates {var w op} {
    global PLOT FLAG
 
    if {$FLAG(Loaded)} {
-	MenuItemDisable .menubar.file.menu Save 0
-	MenuItemDisable .menubar.file.menu "Save As" 0
-	MenuItemDisable .menubar.edit.menu "Mark Range" 0
+  MenuItemDisable .menubar.file.menu Save 0
+  MenuItemDisable .menubar.file.menu "Save As" 0
+  MenuItemDisable .menubar.edit.menu "Mark Range" 0
 
    } else {
-	MenuItemDisable .menubar.file.menu Save 1
-	MenuItemDisable .menubar.file.menu "Save As" 1
-	MenuItemDisable .menubar.edit.menu "Mark Range" 1
+  MenuItemDisable .menubar.file.menu Save 1
+  MenuItemDisable .menubar.file.menu "Save As" 1
+  MenuItemDisable .menubar.edit.menu "Mark Range" 1
    }
    if {$FLAG(Marked)} {
-	MenuItemDisable .menubar.file.menu "Save Marked As" 0
+  MenuItemDisable .menubar.file.menu "Save Marked As" 0
 
    } else {
-	MenuItemDisable .menubar.file.menu "Save Marked As" 1
+  MenuItemDisable .menubar.file.menu "Save Marked As" 1
    }
 }
 

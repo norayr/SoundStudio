@@ -56,82 +56,85 @@ case $1 in
        fi
        sedCmd2="s:@TEMP_DIR@:$TEMP_DIR:"
 
-       if SOX="`which sox`" ; then
-     SOX_DIR=`dirname $SOX`
-     SOX_CMD="if {[expr [catch {set which_sox [exec which sox]}]]} {set SOX_CMD $MYFILES/$UNAME/sox} else {set SOX_CMD \$which_sox}"
-            if [ "$Ask" != "Don't" ] ; then
-         choice=1;
-          printf "%s\n" "Sox is already installed in $SOX_DIR"
-         printf "%s\n" "You should use this one unless you have a good excuse."
-         printf "%s\n" "However, for your convenience, you could cause studio to "
-         printf "%s\n" "use $MYFILES/$UNAME/sox instead, or choose between"
-         printf "%s\n\n" "them automatically at run time.  Here's what you can do:"
-         printf "\t%s\n" "(1) Look in the system path for sox at run-time,"
-         printf "\t%s\n" "    fall back to the supplied version on failure;"
-         printf "\t%s\n" "(2) Always use the version of sox in the path;"
-         printf "\t%s\n" "(3) Always use the supplied sox (not advised)."
-         printf "%s" "Enter your choice [1]:"
-         read x
-         choice=${x:-$choice}
-         if [ "$choice" = "1" -o "$choice" = "3" ] ; then
-           printf "%s\n" "If you want to use some other copy of sox I don't know about as the fallback"
-           printf "%s" "tell me its directory [\"$SOX_DIR\"]:"
-           read x
-           SOX_DIR=${x:-$SOX_DIR}
-         fi
-         case $choice in
-            2)       SOX_CMD="set SOX_CMD [exec which sox]"
-          ;;
-      3)       SOX_CMD="set SOX_CMD $SOX_DIR/sox"
-          ;;
-      *) if [ "$choice" != "1" ] ; then
-            echo "eh? Using default."
-         fi
-         ;;
-         esac
-         printf "\n"
-     fi
-       else
-           SOX_DIR="$MYFILES/$UNAME"
-           if [ "$Ask" != "Don't" ] ; then
-         printf "%s\n" "Sox isn't in your path, but a convenience version of this"
-         printf "%s\n" "application has been provided at $MYFILES/$UNAME/sox"
-         printf "%s\n" "I recommend acquiring and installing an official version."
-         if [ -x studio ] ; then
-             altSoxDir=`awk '$2=="SOX_CMD" {print $3}' studio`
-       if [ "$altSoxDir" != "" ] ; then
-          printf "%s\n" "You previously installed Studio using a version of sox at"
-          printf "%s\n" "$altSoxDir"
-       fi
-               fi
+# Check if Sox is available on the system
+SOX=$(which sox 2>/dev/null)
 
-                     printf "%s\n" "Tell me where to find the version of sox you want to use"
-         printf "%s" "[\"$SOX_DIR\"]: "
-         read x
-               SOX_CMD="set SOX_CMD ${x:-$SOX_DIR}"
-         printf "\n"
-          fi
-       fi
-       sedCmd3="s=@SOX_DIR_CMD@=$SOX_CMD="
+if [ -x "$SOX" ]; then
+    # Sox was found, get the directory of the sox executable
+    SOX_DIR=$(dirname "$SOX")
+    SOX_CMD="$SOX"
 
-       printf "%s\n" "*** Building script \"studio\""
-       sed -e "$sedCmd1" \
-                 -e "$sedCmd2" \
-                 -e "$sedCmd3" \
-                 -e "s:@version@:$VERSION:" \
-                      studio.template > studio
-       chmod a+x studio
+    if [ "$Ask" != "Don't" ]; then
+        # Prompt user for what Sox to use
+        choice=1
+        echo "Sox is already installed in $SOX_DIR"
+        echo "You should use this one unless you have a good excuse."
+        echo "However, for your convenience, you could cause studio to use"
+        echo "$MYFILES/$UNAME/sox instead, or choose between them automatically at run time."
+        echo "Here's what you can do:"
+        echo -e "\t(1) Look in the system path for sox at run-time, fall back to the supplied version on failure;"
+        echo -e "\t(2) Always use the version of sox in the path;"
+        echo -e "\t(3) Always use the supplied sox (not advised)."
+        read -p "Enter your choice [1]: " x
+        choice=${x:-$choice}
 
-#             case $PROCESSOR in
-#                 i?86) ENDIAN=LittleEndian ;;
-#                 sun*) ENDIAN=BigEndian ;;
-#             esac
-        if [ "$(printf '\x01' | od -An -tx1 | head -n1)" = "01" ]; then
-            ENDIAN="LittleEndian"
-        else
-            ENDIAN="BigEndian"
+        if [ "$choice" = "1" ] || [ "$choice" = "3" ]; then
+            read -p "If you want to use some other copy of sox I don't know about as the fallback, tell me its directory [\"$SOX_DIR\"]: " x
+            SOX_DIR=${x:-$SOX_DIR}
         fi
 
+        case "$choice" in
+            2) SOX_CMD=$(which sox 2>/dev/null) ;;
+            3) SOX_CMD="$SOX_DIR/sox" ;;
+            *) echo "eh? Using default." ;;
+        esac
+        echo ""
+    fi
+
+else
+    # Sox was not found, provide a fallback option
+    SOX_DIR="$MYFILES/$UNAME"
+    SOX_CMD="$SOX_DIR/sox"
+
+    if [ "$Ask" != "Don't" ] ; then
+        echo "Sox isn't in your path, but a convenience version of this"
+        echo "application has been provided at $MYFILES/$UNAME/sox"
+        echo "I recommend acquiring and installing an official version."
+
+        if [ -x studio ]; then
+            altSoxDir=$(awk '$2=="SOX_CMD" {print $3}' studio)
+            if [ "$altSoxDir" != "" ]; then
+                echo "You previously installed Studio using a version of sox at"
+                echo "$altSoxDir"
+            fi
+        fi
+
+        read -p "Tell me where to find the version of sox you want to use [\"$SOX_DIR\"]: " x
+        SOX_CMD="${x:-$SOX_DIR/sox}"
+        echo ""
+    fi
+fi
+
+# Replace @SOX_DIR_CMD@ in the studio template with the actual Sox command
+sedCmd3="s=@SOX_DIR_CMD@=$SOX_CMD="
+
+echo "*** Building script \"studio\""
+sed -e "$sedCmd1" \
+    -e "$sedCmd2" \
+    -e "$sedCmd3" \
+    -e "s:@version@:$VERSION:" \
+    studio.template > studio
+
+chmod a+x studio
+
+# Determine system endianness
+if [ "$(printf '\x01' | od -An -tx1 | head -n1)" = "01" ]; then
+    ENDIAN="LittleEndian"
+else
+    ENDIAN="BigEndian"
+fi
+
+       
 
        printf "%s\n" "*** Building common executables..."
        printf "%s" "   fader..."
@@ -252,7 +255,7 @@ case $1 in
            x="yes"
                          fi
 
-       if [ $x = "y" -o $x = "yes" ] ; then
+       if [ $x = "y" -o $x = "yes" ]; then
            printf "*** Setting Permissions\n"
            chmod a+rw $WrongPerms
        fi
@@ -299,4 +302,3 @@ case $1 in
              ./build
        ;;
     esac
-
