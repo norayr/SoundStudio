@@ -3,7 +3,12 @@ Welcome to Sound Studio version @version@.
 ------------------------------------------------------------------
 In a hurry?  Type "./build dfltinst".  You really should read the
 following first, though.  Can't be bothered but want more control?
-Do "./build config", answer the questions, and "./build install" 
+Do "./build config", answer the questions, and "./build install"
+
+on Linux before running ./studio, type
+modprobe snd_pcm_oss
+as root
+
 ------------------------------------------------------------------
 
 This is a graphical sound sample editor, with recording and playback
@@ -15,7 +20,7 @@ http://www.ee.leeds.ac.uk/homes/NJB/Software/Studio/screens.html
 It makes extensive use of sox, the sound exchange program, by Lance
 Norskog. It is currently actively maintained by Chris Bagwell. See
 
-		http://home.sprynet.com/~cbagwell/sox.html
+    http://home.sprynet.com/~cbagwell/sox.html
 
 for details (nice one, Chris!).  There is a version of sox supplied
 with this package for Linux elf platforms, but you are encouraged to
@@ -39,36 +44,36 @@ Robin Whitehead, 1998-1999, Leeds, UK.
 Maintained by Nick Bailey, nick@polonius.demon.co.uk, via the
 studio-bug mail list.  To join, send an email to majordomo@leeds.ac.uk
 with the body:
-			subscribe studio-bug
+      subscribe studio-bug
 
 To leave, send "unsubscribe studio-bug" to the same address.  Send
 messages for the list to studio-bug@leeds.ac.uk
 
 To decompress use:
-			tar xvzf studio.tgz
-This contains 
-	1. executable TCL/tk scripts and templates
-	2. source C code for studio components
-	3. icons for use in studio.
-	4. the on-line help text
-	5. the manual in a variety of formats
-	6. a compiled version of Sox for Linux and Solaris
-	   and its and manual page.
+      tar xvzf studio.tgz
+This contains
+  1. executable TCL/tk scripts and templates
+  2. source C code for studio components
+  3. icons for use in studio.
+  4. the on-line help text
+  5. the manual in a variety of formats
+  6. a compiled version of Sox for Linux and Solaris
+     and its and manual page.
 
 To compile studio type:
 
-			./build default
+      ./build default
 
 in the directory containing the studio files. You can then try out
 studio by issuing the command:
 
-			./studio
+      ./studio
 
 If you like what you see, try "./build install" as root.  If you
 don't, try "./build config": this asks you questions instead of using
 the assumed defaults.
 
-			studio <filename>
+      studio <filename>
 
 Will load the file and play it. Thus it should be possible to
 configure a web browser to play sound files via. studio.
@@ -76,47 +81,47 @@ configure a web browser to play sound files via. studio.
 For more details you can access the online documentation, providing
 wish is installed, by issuing the command:
 
-			wish StudioHelp
+      wish StudioHelp
 
 from within the directory containing the studio files.
 
 Patch history:
 
-	a: got rid of silly bug in init.tk (didn't manifest itself on
-	   Paul's or my machine!).  Thanks to Jasom Adams.  7/11/96.
-	b, c: Sundry nicities (OK, I forgot to update this file! 0%
-	   for software engineering!! Nick.)
-	d: Addressed major bugs in 16-bit, high sample rate and stereo
-	   files.  Patched file.tk and playpanel.tk.        12/9/97.
+  a: got rid of silly bug in init.tk (didn't manifest itself on
+     Paul's or my machine!).  Thanks to Jasom Adams.  7/11/96.
+  b, c: Sundry nicities (OK, I forgot to update this file! 0%
+     for software engineering!! Nick.)
+  d: Addressed major bugs in 16-bit, high sample rate and stereo
+     files.  Patched file.tk and playpanel.tk.        12/9/97.
 
-	   Many thanks to franco@kairos.dibe.unige.it for sending me
-	   all the patches to correct my patches, and for contributing
-	   quite a few of his own!  I have also hacked edit.tk to make
-	   editing work on zoomed windows with 16-bit samples.  Still
-	   not sure it's bug-free.  Changes to LOAD array (not yet
-	   documented)  See Franco's comments (#FC).  Thanks also to
-	   Rich Drews for patch in file.tk to fix avg bug.
+     Many thanks to franco@kairos.dibe.unige.it for sending me
+     all the patches to correct my patches, and for contributing
+     quite a few of his own!  I have also hacked edit.tk to make
+     editing work on zoomed windows with 16-bit samples.  Still
+     not sure it's bug-free.  Changes to LOAD array (not yet
+     documented)  See Franco's comments (#FC).  Thanks also to
+     Rich Drews for patch in file.tk to fix avg bug.
 
-	Renamed to version 0.2.4 for sunsite compatibility 1st October
-	1997.  
+  Renamed to version 0.2.4 for sunsite compatibility 1st October
+  1997.
 
-	0.2.5: Another patch from franco to get the program to work with
+  0.2.5: Another patch from franco to get the program to work with
                newer versions of sox, which apparently don't like the
                -e stat flag.
-	       Fixed bugs to do with signed/unsigned tmp files.
-	       User can save at different rate after recording
+         Fixed bugs to do with signed/unsigned tmp files.
+         User can save at different rate after recording
 
-	0.2.6: Fixed broken type/style flags in the effects package
-	       so that it works when the loaded sample is something
-	       other than unsigned bytes.  14th November 1997. NJB.
+  0.2.6: Fixed broken type/style flags in the effects package
+         so that it works when the loaded sample is something
+         other than unsigned bytes.  14th November 1997. NJB.
 
-	0.8.0: Fixed broken editing (incompatibility with dd reading
+  0.8.0: Fixed broken editing (incompatibility with dd reading
                large block sizes from a pipe).  Selected region now
-	       retained after zoom out.  Added magnification feature.
-	       Added single-click adjustment of stereo sources to
-	       set both channels equal.  Tested with large (>80MB)
-	       files.  Made sure that all temp files are deleted, even
-	       when the temporary directory isn't /tmp. 4th March 1998.
+         retained after zoom out.  Added magnification feature.
+         Added single-click adjustment of stereo sources to
+         set both channels equal.  Tested with large (>80MB)
+         files.  Made sure that all temp files are deleted, even
+         when the temporary directory isn't /tmp. 4th March 1998.
 
         0.8.1: Thanks to Franco (again!): fixed silly bug involving
                not having made certain files global in plot.tk, so
@@ -129,50 +134,50 @@ Patch history:
                work (but the new file must have the same rate as the
                one from which it was copied/cut!)   NJB: 27th March 1998.
 
-	0.9.1: thanks to Chel van Gennip, the use of dd for file
+  0.9.1: thanks to Chel van Gennip, the use of dd for file
                copying has been eliminated.  Only head and tail get
-	       used now.  Added the "trim" effect (delete what /isn't/
-	       selected) and the fade in/out code.  Resulting program
-	       is almost useful!  Quite pleased with this one.
-	                                           NJB: 5th January 1999.
+         used now.  Added the "trim" effect (delete what /isn't/
+         selected) and the fade in/out code.  Resulting program
+         is almost useful!  Quite pleased with this one.
+                                             NJB: 5th January 1999.
 
-	1.0:   Robin Whitehead's final year project integrated at
-	       last!  New features include:
+  1.0:   Robin Whitehead's final year project integrated at
+         last!  New features include:
 
-	            * Solaris port
-	            * VU meters with Peak Hold that really work!
-	            * Red play-line which shows you where you are
-	              in the file
-	            * Support for the new features in Sox 12.15
+              * Solaris port
+              * VU meters with Peak Hold that really work!
+              * Red play-line which shows you where you are
+                in the file
+              * Support for the new features in Sox 12.15
 
-	       Processor overhead of all the above is remarkably
-	       small.                                NJB: 22nd July 1999.
+         Processor overhead of all the above is remarkably
+         small.                                NJB: 22nd July 1999.
 
-	1.0.1: Discovered and fixed a bug loading A-law files. Studio
-	       was setting the style flag to 'a' rather than 'A'.
-	       Options->set colours now works immediately on the floating
-	       VU meter as well as the main window.  Documentation
-	       in PostScript and HTML now available again.
-	                                           NJB: 13th August 1999. 
+  1.0.1: Discovered and fixed a bug loading A-law files. Studio
+         was setting the style flag to 'a' rather than 'A'.
+         Options->set colours now works immediately on the floating
+         VU meter as well as the main window.  Documentation
+         in PostScript and HTML now available again.
+                                             NJB: 13th August 1999.
 
-	1.0.2: Tim Powers at Red Hat takes over the Powertools work,
-	       and send me a spec file.  No code changes.
+  1.0.2: Tim Powers at Red Hat takes over the Powertools work,
+         and send me a spec file.  No code changes.
 
-	1.0.3: Fixed a bug with the fader: the C helper program didn't
-	       understand a zero-length fade out, and threw a wobbler.
-	       Major improvements to zoom in and out: it even works a bit
-	       in conjunction with magnification now!
-	                                           NJB 4th November 1999.
+  1.0.3: Fixed a bug with the fader: the C helper program didn't
+         understand a zero-length fade out, and threw a wobbler.
+         Major improvements to zoom in and out: it even works a bit
+         in conjunction with magnification now!
+                                             NJB 4th November 1999.
 
-	1.0.5: (and 1.0.4) Various patches to make the thing work with
-	       more recent Soxes.
+  1.0.5: (and 1.0.4) Various patches to make the thing work with
+         more recent Soxes.
 
-	1.0.6: Working furiously through CVS.  Changes include:
-		   Added "Insert Silence" function
+  1.0.6: Working furiously through CVS.  Changes include:
+       Added "Insert Silence" function
 
-	       More patches from Chris to make things work with the new
-	       new sox; Kevin's change to modernize the way wish is
-	       invoked.
+         More patches from Chris to make things work with the new
+         new sox; Kevin's change to modernize the way wish is
+         invoked.
 
     1.1.0: In October 2002, I received an enormous contribution from
            Gerhard Hilgers. I have decided to call this release 1.1.0, but
