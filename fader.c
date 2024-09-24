@@ -37,30 +37,57 @@ int read_doubles(double result[])
 
   static int sample = 1;
 
-  for (i=0; i<channels; ++i) {
-    if (sampsize==1) {
-      fread(&bsmp, 1, 1, stdin);
-      if (is_signed)
-	result[i] = bsmp/128.0;
-      else
-	result[i] = ((unsigned char)bsmp)/128.0 - 1.0;
-    } else {
-      fread(&wsmp, 2, 1, stdin);
-      if (is_signed)
-	result[i] = wsmp/32768.0;
-      else 
-	result[i] = ((unsigned)wsmp)/32768.0 - 1.0;
+//  for (i=0; i<channels; ++i) {
+//    if (sampsize==1) {
+//      fread(&bsmp, 1, 1, stdin);
+//      if (is_signed)
+//  result[i] = bsmp/128.0;
+//      else
+//  result[i] = ((unsigned char)bsmp)/128.0 - 1.0;
+//    } else {
+//      fread(&wsmp, 2, 1, stdin);
+//      if (is_signed)
+//  result[i] = wsmp/32768.0;
+//      else
+//  result[i] = ((unsigned)wsmp)/32768.0 - 1.0;
+//    }
+
+    for (i = 0; i < channels; ++i) {
+        if (sampsize == 1) {
+            if (fread(&bsmp, 1, 1, stdin) != 1) {
+                // Handle error, e.g., print an error message and break or return
+                fprintf(stderr, "Error reading byte sample from stdin\n");
+                break;
+            }
+            if (is_signed)
+                result[i] = bsmp / 128.0;
+            else
+                result[i] = ((unsigned char)bsmp) / 128.0 - 1.0;
+        } else {
+            if (fread(&wsmp, 2, 1, stdin) != 1) {
+                // Handle error, e.g., print an error message and break or return
+                fprintf(stderr, "Error reading word sample from stdin\n");
+                break;
+            }
+            if (is_signed)
+                result[i] = wsmp / 32768.0;
+            else
+                result[i] = ((unsigned)wsmp) / 32768.0 - 1.0;
+        }
+
+        /* Apply the fade-in law */
+        if (sample <= fadeinlen) {
+            result[i] *= fadein[sample - 1];
+        }
     }
 
-    /* Apply the fade-in law */
-    
-    if (sample <= fadeinlen)
-      result[i] *= fadein[sample-1];
-  }
+    /* Increment the sample counter */
+    ++sample;
 
-  ++sample;
-  return !feof(stdin);
+    /* Return whether we are at the end of the input */
+    return !feof(stdin);
 }
+
 
 /* Write a value through the buffer to stdout in the same format as
    the input */
@@ -80,17 +107,17 @@ void write_doubles(double samp[])
   if (head == tail) {
     for (i=0; i<channels; ++i) {
       if (sampsize==1) {
-	if (is_signed)
-	  *wbuf = 127.0 * buf[channels*tail + i];
-	else 
-	  *((unsigned char *)wbuf) = 128.0 + 127.0 * buf[channels*tail + i];
-	fwrite(wbuf, 1, 1, stdout);
+  if (is_signed)
+    *wbuf = 127.0 * buf[channels*tail + i];
+  else
+    *((unsigned char *)wbuf) = 128.0 + 127.0 * buf[channels*tail + i];
+  fwrite(wbuf, 1, 1, stdout);
       } else {
-	if (is_signed)
-	  *((int *)wbuf) = 32767 * buf[channels*tail + i];
-	else 
-	  *((unsigned int *)wbuf) = 32768 + 32767 * buf[channels*tail + i];
-	fwrite(wbuf, 2, 1, stdout);
+  if (is_signed)
+    *((int *)wbuf) = 32767 * buf[channels*tail + i];
+  else
+    *((unsigned int *)wbuf) = 32768 + 32767 * buf[channels*tail + i];
+  fwrite(wbuf, 2, 1, stdout);
       }
     }
 
@@ -118,7 +145,7 @@ void flush_samples(void)
   if (fadeoutlen) /* Only take action if fadeout is required */
     for (i=0; i<fadeoutlen; ++i)
       for (j=0; j<channels; ++j)
-	buf[channels*((tail+i)%fadeoutlen) + j] *= fadeout[i];
+  buf[channels*((tail+i)%fadeoutlen) + j] *= fadeout[i];
 
   for (i=0; i<fadeoutlen; ++i)
     write_doubles(zeros);
@@ -161,14 +188,14 @@ int main(int argc, char *argv[])
   for (i=0; i<fadeinlen; ++i)
     if (i < fadeinlen/10)
       fadein[i] = 1e-2 * (double)i/fadeinlen;
-    else 
+    else
       fadein[i] = 0.0004641588 * exp(7.6752836 * (double)i/fadeinlen);
 
   for (i=0; i<fadeoutlen; ++i)
     if (i < 0.9*fadeoutlen)
       fadeout[i] = 0.0004641588 *
-	exp(7.6752836 * (double)(fadeoutlen - i)/fadeoutlen);
-    else 
+  exp(7.6752836 * (double)(fadeoutlen - i)/fadeoutlen);
+    else
       fadeout[i] = 1e-2 * (double)(fadeoutlen - i)/fadeoutlen;
 
   /* Now copy the std input to std output */
