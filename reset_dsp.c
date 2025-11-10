@@ -1,7 +1,10 @@
 /* RESET_DSP - Reset DSP card */
 
 #include <stdio.h>
+#include <stdlib.h>        /* for exit */
 #include <fcntl.h>
+#include <unistd.h>        /* for close */
+#include <sys/ioctl.h>     /* for ioctl */
 #include <linux/soundcard.h>
 
 int
