@@ -158,20 +158,42 @@ proc CARDSetter {} {
 
 proc GetSoxVersion {} {
 	global FILE SOXVersion15
-	
+
 	catch {exec $FILE(Sox) -h >& $FILE(TMP7)}
-	
+
+	if {![file exists $FILE(TMP7)]} {
+		set SOXVersion15 0
+		return
+	}
 	set chan [open $FILE(TMP7) r]
 	gets $chan versionline
-	
 	close $chan
-	
-	if {[lindex [split [lindex $versionline 2] .] 1] >= 15} { 
-		set SOXVersion15 1 
+
+	# Parse version: "sox: SoX_ng v14.4.4" → third word is "v14.4.4"
+	set verword [lindex $versionline 2]
+	set verword [string trimleft $verword "v"]
+	set parts [split $verword .]
+	set major_str [lindex $parts 0]
+	set minor_str [lindex $parts 1]
+
+	if {[string is integer $major_str] && $major_str > 0} {
+		set major $major_str
+	} else {
+		set major 0
+	}
+	if {[string is integer $minor_str]} {
+		set minor $minor_str
+	} else {
+		set minor 0
+	}
+
+	# sox 14+ or sox 12.15+ supports the newer effects (reverb, flanger, etc.)
+	if {$major >= 14 || ($major == 12 && $minor >= 15)} {
+		set SOXVersion15 1
 	} else {
 		set SOXVersion15 0
 	}
-	exec rm $FILE(TMP7)
+	catch {exec rm $FILE(TMP7)}
 }
 	
 	

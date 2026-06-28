@@ -337,9 +337,9 @@ proc AddFX {} {
 	# Generate the Sox pipe string according to selected effects.
 	# Set a flag to check if any effects are selected.
 	set effect 0
-	set type ".$LOAD(style)$LOAD(size) -c $LOAD(chnl)"
+	set type ".$LOAD(style)$LOAD(size) -c $LOAD(chnl) -r $LOAD(rate)"
 	# Start the pipe string.
-	set pipe "$FILE(Sox)  -t $type $input -t $type - copy"
+	set pipe "$FILE(Sox)  -t $type $input -t $type -"
 	# Reverse effect.
 	if { $FX(reverse) } { 
 	    set pipe "$pipe | $FILE(Sox) -t $type - -t $type - reverse"
@@ -364,28 +364,30 @@ proc AddFX {} {
 	
 
 	# Vibrato effect.
-	if { $FX(vibrato) } { 
-	    set depth [expr $FX(VIBDepth).0/100]
+	if { $FX(vibrato) } {
 	    set pipe\
-		 "$pipe | $FILE(Sox) -t $type - -t $type - vibro $FX(VIBSpeed) $depth"
+		 "$pipe | $FILE(Sox) -t $type - -t $type - tremolo $FX(VIBSpeed) $FX(VIBDepth)"
 	    set effect 1
 	}
 #########
 # New Sox version 15 effects are below
 	
-	# Reverb effect.
-	if { $FX(reverb) } { 
+	# Reverb effect (modern sox API: reverberance hf-damping room-scale stereo-depth pre-delay wet-gain)
+	if { $FX(reverb) } {
+	    set reverberance [expr {$FX(ReverbTime)/10 > 100 ? 100 : int($FX(ReverbTime)/10)}]
+	    set wetgain [expr {$FX(ReverbGainOut) > 0 ? int(20*log($FX(ReverbGainOut))/log(10)) : -60}]
 	    set pipe\
-		 "$pipe | $FILE(Sox) -t $type - -t $type - reverb $FX(ReverbGainOut) $FX(ReverbTime) $FX(ReverbDelay)"
+		 "$pipe | $FILE(Sox) -t $type - -t $type - reverb $reverberance 50 100 100 $FX(ReverbDelay) $wetgain"
 	    set effect 1
 	}
 	
-        # Flange effect.
-	if { $FX(flanger) } { 
-	    
+        # Flange effect (modern sox API: delay depth regen width speed shape)
+	if { $FX(flanger) } {
+	    set fshape [expr {[string index $FX(FlangerSorT) 0]=="s"?"sinusoidal":"triangular"}]
+	    set fregen [expr {int($FX(FlangerDecay)*90)}]
+	    set fwidth [expr {int($FX(FlangerGainOut)*71)}]
 	    set pipe\
-		 "$pipe | $FILE(Sox) -t $type - -t $type - flanger $FX(FlangerGainIn) $FX(FlangerGainOut) $FX(FlangerDelay) $FX(FlangerDecay)\
-		  $FX(FlangerSpeed) -[string index $FX(FlangerSorT) 0]"
+		 "$pipe | $FILE(Sox) -t $type - -t $type - flanger $FX(FlangerDelay) 5 $fregen $fwidth $FX(FlangerSpeed) $fshape"
 	    set effect 1
 	}
 		
@@ -421,13 +423,13 @@ proc AddFX {} {
 	   switch $FX(FLTtype) {
 		low	{
 	  	  set pipe "$pipe | $FILE(Sox) -t $type - \
-				-t $type - lowp $FX(FLTCentre)"
+				-t $type - lowpass $FX(FLTCentre)"
 			}
 		high    {
 		  set pipe\
 		    "$pipe | $FILE(Sox) -t $type - \
-				-t $type - highp $FX(FLTCentre)"
-			}	
+				-t $type - highpass $FX(FLTCentre)"
+			}
 		band    {
 		  set pipe "$pipe | $FILE(Sox) -t $type - \
 				-t $type - band $FX(FLTCentre) $FX(FLTWidth)"
@@ -447,7 +449,7 @@ proc AddFX {} {
 		# Zero as volume level is not allowed, therefore;
 		if {$volume==0} {set volume 0.001}
 	   }
-	   set pipe "$pipe | $FILE(Sox) -t $type - -t $type -v $volume - copy"
+	   set pipe "$pipe | $FILE(Sox) -t $type - -t $type - vol $volume"
 	   set effect 1
 	}
 	

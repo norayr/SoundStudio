@@ -190,7 +190,7 @@ proc Load {{file default} {loadfile ""}} {
       # FC3 (changed to allow the use of the current version of sox)
       # avoids -e stat
 
-      exec $FILE(Sox) -V -t .auto $loadfile $FILE(TMP6).wav >& $FILE(TMP3)
+      exec $FILE(Sox) -V $loadfile $FILE(TMP6).wav >& $FILE(TMP3)
 
       # The follwing action is only taken if the file is the working file.
       if {$file==$FILE(TMP1)} { 
@@ -315,9 +315,9 @@ proc Load {{file default} {loadfile ""}} {
 		-t .raw -$LOAD(style) -$LOAD(size) \
 		-r $LOAD(rate) -c $LOAD(chnl) $file"
 	exec $FILE(Sox) -V \
-		-t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+		-t .$SAMPLE(format) \
 		-r $SAMPLE(rate) -c $SAMPLE(chnl) $loadfile \
-		-t .raw -$LOAD(style) -$LOAD(size) \
+		-t .$LOAD(style)$LOAD(size) \
 		-r $LOAD(rate) -c $LOAD(chnl) $file >& $FILE(TMP3)
 #FC
 	}
@@ -336,9 +336,9 @@ proc Load {{file default} {loadfile ""}} {
 		-t .raw -c $LOAD(chnl)\
 		 -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
 		 $file rate >& $FILE(TMP3)"
-	exec $FILE(Sox) -V -t .auto $loadfile \
-		-t .raw -c $LOAD(chnl)\
-		 -r $LOAD(rate) -$LOAD(size) -$LOAD(style)\
+	exec $FILE(Sox) -V $loadfile \
+		-t .$LOAD(style)$LOAD(size) -c $LOAD(chnl)\
+		 -r $LOAD(rate) \
 		 $file >& $FILE(TMP3)
 	
    }
@@ -401,10 +401,10 @@ proc Bit2SoxSize { bit {option 1} } {
 # there may be occasion when this may fail. It is robust however for
 # 8,16 bit, mono, stereo, wav,voc,au,raw conversions. (Tested).
 proc parse_sox { filename } {
- 
+
  #FC  added SAMPLE
  #FC2 added StatOut
-   global LOAD SAMPLE StatOut
+   global LOAD SAMPLE StatOut FILE
 
 #FC this allows to recognize a raw file (then StatOut <- "ko")
    set StatOut [exec awk \
@@ -417,88 +417,121 @@ proc parse_sox { filename } {
    {if ($1 == "Do") v = "ko"} \
    END { print v }}  $filename ]
 
-   # Extract sampling rate.
-   set rate [exec grep rate $filename | awk {$NF!=prev {print $NF; prev=$NF}}]
+   # Extract sampling rate: modern "Sample Rate : N", old "Input rate : N"
+   set rate ""
+   catch { set rate [exec awk \
+       {/[Ss]ample [Rr]ate/{for(i=NF;i>=1;i--) \
+       if ($i+0==$i && $i>0){print $i;exit}}} $filename] }
+   if {$rate == ""} {
+       catch { set rate [exec grep "rate" $filename | \
+           awk {$NF!=prev {print $NF; prev=$NF}}] }
+   }
 
-   # Extract the line containing channel, style and size information.
-   set line  [split [exec grep channel $filename]]
+   # Extract channels: modern "Channels : N", old from "channel" line
+   set chnnl ""
+   catch { set chnnl [exec awk {/^Channels/{print $NF; exit}} $filename] }
+   if {$chnnl == ""} {
+       catch {
+           set chline [split [exec grep "channel" $filename]]
+           set chnnl [lindex $chline [expr [lsearch $chline channel*]-1]]
+       }
+   }
 
-   # Extract the channels.     
-   set chnnl [lindex $line [expr [lsearch $line channel*]-1]]
+   # Extract encoding: modern "Sample Encoding: N-bit TYPE", old from style/size
+   set style {}
+   set size  {}
+   set bit   {}
+   set soxencoding ""
+   catch { set soxencoding [exec awk \
+       {/Sample Encoding:/{sub(/.*Sample Encoding:[[:space:]]*/,"");print;exit}} $filename] }
 
-   set searchstyle [lsearch $line style]
-
-   # Extract the style.
-   if {$searchstyle == -1} {
-     set style [string trim [lindex $line [expr [lsearch $line encoding]+1]] ,]
+   if {$soxencoding != ""} {
+       # Modern format: "8-bit u-law", "16-bit Signed Integer PCM"
+       if {[regexp {(\d+)-bit} $soxencoding -> bits]} {
+           set bit $bits
+           switch $bits {
+               8  { set size "b" }
+               16 { set size "w" }
+               32 { set size "l" }
+               default { set size "w"; set bit 16 }
+           }
+       }
+       set enc_lower [string tolower $soxencoding]
+       if {[string match "*u-law*" $enc_lower] || [string match "*mu-law*" $enc_lower] || \
+           [string match "*ulaw*" $enc_lower]} {
+           set style {U u}
+       } elseif {[string match "*a-law*" $enc_lower]} {
+           set style {A u}
+       } elseif {[string match "*unsigned*" $enc_lower]} {
+           set style {u u}
+       } else {
+           set style {s s}
+       }
    } else {
-     set style [string trim [lindex $line [expr [lsearch $line style]+1]] ,]
+       # Old sox format: extract from the channel line
+       set line {}
+       catch { set line [split [exec grep "channel" $filename]] }
+       set searchstyle [lsearch $line style]
+       if {$searchstyle == -1} {
+           set style_str [string trim [lindex $line [expr [lsearch $line encoding]+1]] ,]
+       } else {
+           set style_str [string trim [lindex $line [expr [lsearch $line style]+1]] ,]
+       }
+       set size_str [string trim [lindex $line [expr [lsearch $line size]+1]] ,]
+
+       switch -glob $size_str {
+           b* { set bit 8  }
+           w* { set bit 16 }
+           s* { set bit 16 }
+           default { set bit {} }
+       }
+       set size $size_str
+
+       switch -glob $style_str {
+           unsigned { set style {u u} }
+           signed   { set style {s s} }
+           u-law    { set style {U u} }
+           a-law    { set style {A u} }
+           adpcm    { set style {a s} }
+           default  { set style {s s} }
+       }
    }
 
    catch {exec echo $style $FILE(TMP3)}
 
-   # Extract the sample size.
-   set size [string trim [lindex $line [expr [lsearch $line size]+1]] ,]
-
-# Inserted the split command in the assigment to "line" so that lindex would
-# work; changed lsearch from channel to channel* so it could find the string
-# "channels" too. NJB
-
-   # Extract the maximum volume factor.	
-#FC3 this allows to recognize the presence of maxvol info (not in new sox)
-#    otherwise the default value is taken
-#  set maxvol [exec grep adjustment $filename | awk {{print $3}}]
+   # Volume adjustment: old sox only; default to 2
    set maxvol [exec awk \
    {BEGIN { v = 2 } \
    {if ($1 == "Volume" && $2 == "adjustment:") v = $3} \
    END { print v }}  $filename ]
 
-
-   # Extract the format.
-   set OldAuto [exec awk \
-   {BEGIN { v = "ok" } \
-   {if ($1 == "Trying:") v = "ko"} \
-   END { print v }}  $filename ]
-
-   if ([catch {exec grep AUTO $filename}]==0) {
-   set format [exec grep AUTO $filename | awk {prev!=1 {print $NF; prev=1}}]
-   } else {
-       set format [exec grep Detected $filename | awk {prev!=1 {print $NF; prev=1}}] 
+   # Format: modern "detected file format type `wav'", old "AUTO" or "Detected"
+   set format ""
+   catch { set format [exec awk \
+       {/detected file format type/{split($0,a,/[`']/);if(a[2]!="")print a[2]}} \
+       $filename] }
+   if {$format == ""} {
+       if {[catch {exec grep AUTO $filename}] == 0} {
+           set format [exec grep AUTO $filename | awk {prev!=1 {print $NF; prev=1}}]
+       } else {
+           catch { set format [exec grep Detected $filename | \
+               awk {prev!=1 {print $NF; prev=1}}] }
+       }
    }
 
-   # Convert sample size to a bit resolution
-   switch -glob $size {
-	b* { set bit 8 }
-	w* { set bit 16 }
-	s* { set bit 16 }
-	default { set bit {} }
-   }
-
-   # Convert syles into the parameters for sox.
-   # The first in list is the actual value, 
-   # the second is the value to be used by the working file.
-   switch -glob $style {
-	unsigned { set style {u u}}
-	signed	 { set style {s s}}
-	u-law	 { set style {U u}}
-	a-law	 { set style {A u}}
-	adpcm    { set style {a s}}
-   }
-
-#FC if the input file is raw use the actual parameter set
-   if {$StatOut=="ko" || $NewStatOut=="ko"} { 
-	set rate	$SAMPLE(rate)
-	set bit		$SAMPLE(bit)
-	set chnnl	$SAMPLE(chnl)
-	switch -glob $SAMPLE(style) {
-		s	{ set style {s s}}
-		u	{ set style {u u}}
-		U	{ set style {U u}}
-		A	{ set style {A u}}
-		a       { set style {a s}}
-	}
-	set size	$SAMPLE(size)
-	set format	$SAMPLE(format)
+   if {$StatOut=="ko" || $NewStatOut=="ko"} {
+       set rate    $SAMPLE(rate)
+       set bit     $SAMPLE(bit)
+       set chnnl   $SAMPLE(chnl)
+       switch -glob $SAMPLE(style) {
+           s  { set style {s s} }
+           u  { set style {u u} }
+           U  { set style {U u} }
+           A  { set style {A u} }
+           a  { set style {a s} }
+       }
+       set size    $SAMPLE(size)
+       set format  $SAMPLE(format)
    }
 
    # Return the list of information.
@@ -547,10 +580,9 @@ proc Saver {filename format } {
    }
 
    # Perform conversion and save in the file given by filename.
-    catch {exec $FILE(Sox) -t .raw \
-		-r $LOAD(rate) \
-		-$LOAD(style) -$LOAD(size) -c $LOAD(chnl) $FILE(TMP1)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+    catch {exec $FILE(Sox) -t .$LOAD(style)$LOAD(size) \
+		-r $LOAD(rate) -c $LOAD(chnl) $FILE(TMP1)\
+		 -t .$SAMPLE(format) \
 		 -r $LOAD(rate) -c $chnl\
 		$FILE(TMP6)} err
                 #puts "$FILE(Sox) -t .raw \
@@ -563,9 +595,9 @@ proc Saver {filename format } {
     if { $err != "" } {puts stderr $err}
 		
     catch {exec $FILE(Sox) -r $LOAD(rate) -c $chnl \
-                -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+                -t .$SAMPLE(format) \
 		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+	        -t .$format \
 	        -r $SAMPLE(rate) -c $chnl \
 	        $filename } err
                 #puts "$FILE(Sox) -r $LOAD(rate) -c $chnl \
@@ -692,10 +724,9 @@ proc SaveMarked {} {
           }
 
           # Perform conversion and save in the file given by filename.
-          catch {exec $FILE(Sox) -t .raw \
-		-r $MARKED(rate) \
-		-$MARKED(style) -$MARKED(size) -c $MARKED(chnl) $FILE(TMP2)\
-		 -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+          catch {exec $FILE(Sox) -t .$MARKED(style)$MARKED(size) \
+		-r $MARKED(rate) -c $MARKED(chnl) $FILE(TMP2)\
+		 -t .$SAMPLE(format) \
 		 -r $MARKED(rate) -c $chnl\
 		$FILE(TMP6)} err
           #puts "$FILE(Sox) -t .raw \
@@ -708,9 +739,9 @@ proc SaveMarked {} {
           if { $err != "" } {puts stderr $err}
 		
           catch {exec $FILE(Sox) -r $MARKED(rate) -c $chnl \
-                -t .$SAMPLE(format) -$SAMPLE(style) -$SAMPLE(size) \
+                -t .$SAMPLE(format) \
 		$FILE(TMP6) \
-	        -t .$format -$SAMPLE(style) -$SAMPLE(size) \
+	        -t .$format \
 	        -r $SAMPLE(rate) -c $chnl \
 	        $filename } err
           #puts "$FILE(Sox) -r $MARKED(rate) -c $chnl \
