@@ -130,7 +130,7 @@ if {![winfo exists .plotbox]} {
 
 
 	pack .plotbox.title -fill x -expand 1
-	pack .plotbox.cs -padx 10
+	pack .plotbox.cs -padx 10 -fill x -expand 1
 
 
 	bind .plotbox.cs.canvas <Motion> {
@@ -238,6 +238,16 @@ if {![winfo exists .plotbox]} {
 			set FLAG(Marked) 1
 	}
 
+	bind .plotbox.cs.canvas <Configure> {
+		global PLOT FLAG
+		set w [winfo width .plotbox.cs.canvas]
+		if {$w > 10 && $w != $PLOT(BaseWidth)} {
+			set PLOT(BaseWidth) $w
+			set PLOT(Width) [expr {int($w * $PLOT(Magnification))}]
+			after cancel resize_plot_after
+			after 150 resize_plot_after
+		}
+	}
 
 }
 
@@ -252,7 +262,6 @@ if {![winfo exists .plotbox]} {
 			-font $ConfigSet(FNT_S)	
 	.plotbox.cs config	-background $ConfigSet(cBG1)
 	.plotbox.cs.canvas config -background $ConfigSet(cBG3)\
-				-width $PLOT(Width)\
 				-height $PLOT(Height)\
 				-relief sunken\
 				-cursor crosshair
@@ -569,7 +578,7 @@ proc setPlotMag {factor} {
   .plotbox.cs.canvas delete $LINE(Id)
 
   set magfac [expr $factor.0/$PLOT(Magnification)]
-  set PLOT(Width) [expr 500*$factor]
+  set PLOT(Width) [expr {int($PLOT(BaseWidth) * $factor)}]
   set PLOT(Magnification) $factor
 
   # Adjust the start and end point markers, because the plot width
@@ -626,3 +635,16 @@ proc scroll_it args {
    set PLOT(WEnd) [Sec2Time $PLOT(WEnd)]
 
 }
+
+proc resize_plot_after {} {
+   global PLOT FLAG FILE
+   if {$FLAG(Loaded)} {
+      if {$PLOT(ZoomCount)} {
+         FillPlot init $FILE(TMP5)
+      } else {
+         FillPlot init
+      }
+   }
+}
+
+set PLOT(BaseWidth) 550

@@ -98,6 +98,7 @@ proc New {{option any}} {
    set PLOT(Endx)		0
    set PLOT(Blocksize)		0
    set PLOT(Width)            550
+   set PLOT(BaseWidth)          550
    set PLOT(Magnification)      1
    set PLOT(ViewWinLeft)        0
    PlotBox reset
